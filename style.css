@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
+  text-align: center;
 }
 
 body.fixed-nav .site-wrap {
@@ -85,4 +86,20 @@ nav a {
   color:white;
   transition:all 0.2s;
   text-transform: uppercase;
+}
+
+.main {
+  margin: 5vh 10vh;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-picture {
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
 }

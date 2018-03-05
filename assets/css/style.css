@@ -3,7 +3,6 @@
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
-  text-align: center;
 }
 
 body.fixed-nav .site-wrap {
@@ -16,7 +15,7 @@ header {
   background: linear-gradient(
       rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.45)
-    ), url(desk.jpg) top;
+    ), url(../img/desk.jpg) top;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,8 +87,12 @@ nav a {
   text-transform: uppercase;
 }
 
-.main {
-  margin: 5vh 10vh;
+.main-container {
+  max-width: 900px;
+  margin: 0px auto;
+  padding:30px;
+  text-align: justify;
+  background:pink;
 }
 
 .about {
@@ -98,8 +101,40 @@ nav a {
   align-items: center;
 }
 
+#about-text {
+  padding-right: 30px;
+}
+
 #about-picture {
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
+  border-radius: 50%;
+}
+
+.web, .art {
+  display: flex;
+}
+
+.web img, .art img {
+  width: 100%;
+}
+
+.entry {
+  flex: 1;
+  padding: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .about, .web, .art {
+    display: block
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .main-container {
+  }
+
+  .about, .web, .art {
+    display: block;
+  }
+
 }

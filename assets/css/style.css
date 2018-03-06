@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
-}
-
-body.fixed-nav .site-wrap {
-  transform: scale(1);
 }
 
 header {
@@ -87,54 +89,34 @@ nav a {
   text-transform: uppercase;
 }
 
-.main-container {
-  max-width: 900px;
-  margin: 0px auto;
-  padding:30px;
-  text-align: justify;
-  background:pink;
-}
-
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#about-text {
-  padding-right: 30px;
-}
-
-#about-picture {
-  border-radius: 50%;
-}
-
-.web, .art {
-  display: flex;
-}
-
-.web img, .art img {
+.container {
   width: 100%;
+  max-width: 900px;
+  text-align: justify;
+  background: pink;
+  margin: auto;
 }
 
-.entry {
-  flex: 1;
-  padding: 10px;
+.row:before,
+.row:after {
+    content:"";
+    display: table ;
+    clear: both;
 }
 
-@media screen and (max-width: 650px) {
-  .about, .web, .art {
-    display: block
-  }
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    /*Gutter*/
+    padding-right: 10px;
+    background-color: white;
 }
 
-@media screen and (max-width: 480px) {
+.col-1{ width: 25%; }
+.col-2{ width: 50%; }
+.col-3{ width: 75%; }
+.col-4{ width: 100%; }
 
-  .main-container {
-  }
-
-  .about, .web, .art {
-    display: block;
-  }
-
+.outline, .outline *{
+    outline: 1px dashed #000;
 }

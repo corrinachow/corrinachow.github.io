@@ -4,40 +4,126 @@
     <meta charset="UTF-8">
     <title>Corrina Chow | Developer and Designer</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.css">
   </head>
   <body>
+
+    <!-- HOME -->
+
     <header>
       <h1>Hi, I'm Corrina.</h1>
-      <h3>I'm a developer and designer currently living in Montreal</h3>
+      <h2>I'm a developer and designer currently living in Montreal</h2>
+      <div id="social-links">
+        <h2>
+          <a href="https://github.com/corrinachow/"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
+        <h2>
+      </div>
     </header>
+
+    <!-- NAV BAR -->
+
     <nav id="main">
       <ul>
         <li class="logo"><a href="#">C</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <!-- START MAIN CONTAINER -->
+
     <div class="container outline">
-      <div class="row">
-        <section id="about">
-          <div id="about-text" class="col-2">
-            <a name="about">
-              <h2>About me</h2>
-            </a>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus pharetra purus, non vulputate nisl aliquam non. Phasellus quis pellentesque nisl. Sed semper rhoncus tristique. Donec blandit vel erat laoreet euismod.
+
+    <!-- ABOUT ME -->
+
+      <section id="about">
+        <div class="subheader">
+          <h3>About me</h3>
+        </div>
+        <div class="row about-subsection">
+          <div class="col-2">
+            <h4>&nbsp;</h4>
+              <p>
+                Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel lorem nibh. Proin non tincidunt enim. Etiam imperdiet nibh quis eros feugiat, et pulvinar felis feugiat. Phasellus gravida sollicitudin mi, sit amet varius odio egestas eget. Sed laoreet lorem sed ipsum dictum sollicitudin.
+              </p>
           </div>
-          <img id="profile-picture" class="col-2" src="http://via.placeholder.com/375x375">
-        </section>
+            <h4>Skills</h4>
+          <div class="col-1">
+            <ul>
+              <li>HTML &amp; CSS</li>
+              <li>JavaScript</li>
+              <li>React.js, jQuery</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+          <div class="col-1">
+          <ul>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>InDesign</li>
+            <li>Microsoft Office</li>
+          </ul>
+          </div>
+        <div class="col-4">
+          <p>Front-end: HTML, CSS, JavaScript, React, Redux, jQuery, Bootstrap</p>
+          <p>Back-end: Express, Node.js, MongoDB</p>
+          <p>Design: Adobe Photoshop, Illustrator, InDesign</p>
+        </div>
+        </div> <!-- END ROW -->
+          <!-- <img id="profile-picture" class="col-2" src="http://via.placeholder.com/375x375"> -->
+      </section>
+
+    <!-- MY SERVICES -->
+
+    <section id="services">
+      <div class="subheader">
+        <h3>My Services</h3>
+        <p>I do things</p>
       </div>
+      <div class="row services-subsection">
+        <div class="col-1">
+          <h4><i class="fas fa-code fa-3x"></i></h4>
+            <h4>Development</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-1">
+          <h4><i class="fas fa-desktop fa-3x"></i></h4>
+            <h4>Design</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-1">
+          <h4><i class="far fa-gem fa-3x"></i></h4>
+          <h4>Branding</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-1">
+          <h4><i class="fas fa-paint-brush fa-3x"></i></h4>
+          <h4>Illustration</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+
+      </div> <!-- END ROW -->
+        <!-- <img id="profile-picture" class="col-2" src="http://via.placeholder.com/375x375"> -->
+    </section>
+
+      <!-- MY PORTFOLIO -->
+
+        <div class="row">
+          <a href="projects/projects.html" class="col-2">View all</a>
+        </div>
       <div class="row">
-        <a href="projects/projects.html" class="col-2">Shrug emoji</a>
-        <a href="projects/projects.html" class="col-2">View all</a>
-      </div>
-      <div class="row">
-        <a name="projects">
-          <h2>Web development</h2>
-        </a>
+          <h3>Web development</h3>
         <section id="web">
           <div class="entry col-2" >
             <img src="http://via.placeholder.com/375x300">
@@ -50,10 +136,8 @@
         </section>
       </div>
       <div class="row">
-        <a name="art">
-          <h2>Illustration and design</h2>
-        </a>
         <section id="art">
+          <h3>Illustration and design</h3>
           <div class="entry col-2">
             <img src="http://via.placeholder.com/375x300">
             <p>Description</p>
@@ -63,11 +147,38 @@
             <p>Description</p>
           </div>
       </div>
-      <div class="row">
-      <section class="contact"><a name="contact"></a>
-      </section>
-      </div>
+
+      <!-- CONTACT ME -->
+
+      <section id="about">
+        <div class="subheader">
+          <h3>Contact me</h3>
+        </div>
+        <div class="row contact-subsection">
+          <div class="col-4">
+            <form method="POST" action="https://formspree.io/corrina.yy.chow@gmail.com">
+              <input type="text" id="email" placeholder="Name">
+              <input type="text" id="email" placeholder="Email">
+              <textarea id="message" placeholder="Message" style="height:100px"></textarea>
+              <input type="submit" value="Send">
+            </form>
+          </div>
+        </div>
     </div>
+      <!-- FOOTER -->
+      <footer>
+        <div class="row">
+          <div class="col-2">
+          <h2>Corrina Chow</h2>
+          <p>corrina.yy.chow@gmail.com</p>
+        </div>
+        <div class="col-2">
+          <span>Github</span><span> | </span>
+          <span>LinkedIn</span><span> | </span>
+          <span>Codepen</span>
+        </div>
+        </div>
+      </footer>
     <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>

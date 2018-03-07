@@ -25,4 +25,4 @@ console.log('transition end')
 }
 
 window.addEventListener('scroll', fixNav);
-window.addEventListener('click', toggleNavBar);
+hamburger.addEventListener('click', toggleNavBar);

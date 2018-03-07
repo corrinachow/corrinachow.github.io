@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <title>Corrina Chow | Developer and Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TO MINIFY -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.css">
   </head>
   <body>
@@ -24,11 +32,12 @@
 
     <!-- NAV BAR -->
 
-    <nav id="main">
+    <nav class="topnav">
+        <a class="hamburger">&#9776;</a>
       <ul>
         <li class="logo"><a href="#">C</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -44,36 +53,31 @@
           <h3>About me</h3>
         </div>
         <div class="row about-subsection">
-          <div class="col-2">
-            <h4>&nbsp;</h4>
+          <div class="col-6">
               <p>
                 Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel lorem nibh. Proin non tincidunt enim. Etiam imperdiet nibh quis eros feugiat, et pulvinar felis feugiat. Phasellus gravida sollicitudin mi, sit amet varius odio egestas eget. Sed laoreet lorem sed ipsum dictum sollicitudin.
               </p>
           </div>
             <h4>Skills</h4>
-          <div class="col-1">
+          <div class="col-6">
             <ul>
               <li>HTML &amp; CSS</li>
               <li>JavaScript</li>
               <li>React.js, jQuery</li>
               <li>MongoDB</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>InDesign</li>
+              <li>Microsoft Office</li>
             </ul>
           </div>
-          <div class="col-1">
-          <ul>
-            <li>Photoshop</li>
-            <li>Illustrator</li>
-            <li>InDesign</li>
-            <li>Microsoft Office</li>
-          </ul>
-          </div>
-        <div class="col-4">
+        <div class="col-12">
           <p>Front-end: HTML, CSS, JavaScript, React, Redux, jQuery, Bootstrap</p>
           <p>Back-end: Express, Node.js, MongoDB</p>
           <p>Design: Adobe Photoshop, Illustrator, InDesign</p>
         </div>
         </div> <!-- END ROW -->
-          <!-- <img id="profile-picture" class="col-2" src="http://via.placeholder.com/375x375"> -->
+          <!-- <img id="profile-picture" class="col-6" src="http://via.placeholder.com/375x375"> -->
       </section>
 
     <!-- MY SERVICES -->
@@ -84,28 +88,28 @@
         <p>I do things</p>
       </div>
       <div class="row services-subsection">
-        <div class="col-1">
+        <div class="col-3">
           <h4><i class="fas fa-code fa-3x"></i></h4>
             <h4>Development</h4>
             <p>
               Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
         </div>
-        <div class="col-1">
+        <div class="col-3">
           <h4><i class="fas fa-desktop fa-3x"></i></h4>
             <h4>Design</h4>
             <p>
               Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
         </div>
-        <div class="col-1">
+        <div class="col-3">
           <h4><i class="far fa-gem fa-3x"></i></h4>
           <h4>Branding</h4>
             <p>
               Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
         </div>
-        <div class="col-1">
+        <div class="col-3">
           <h4><i class="fas fa-paint-brush fa-3x"></i></h4>
           <h4>Illustration</h4>
             <p>
@@ -114,52 +118,69 @@
         </div>
 
       </div> <!-- END ROW -->
-        <!-- <img id="profile-picture" class="col-2" src="http://via.placeholder.com/375x375"> -->
+        <!-- <img id="profile-picture" class="col-6" src="http://via.placeholder.com/375x375"> -->
     </section>
 
       <!-- MY PORTFOLIO -->
 
-        <div class="row">
-          <a href="projects/projects.html" class="col-2">View all</a>
+      <section id="portfolio">
+      <div class="subheader">
+        <h3>Featured projects</h3>
+        <a href="projects/projects.html">Click here to see more</a>
+      </div>
+      <div class="row portfolio-subsection">
+        <div class="col-4">
+          <a href="#">
+            <img class="portfolio-entry" src="http://via.placeholder.com/375x232" alt="Description">
+          </a>
+            <p>Technologies</p>
         </div>
-      <div class="row">
-          <h3>Web development</h3>
-        <section id="web">
-          <div class="entry col-2" >
-            <img src="http://via.placeholder.com/375x300">
+        <div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
             <p>Description</p>
-          </div>
-          <div class="entry col-2">
-            <img src="http://via.placeholder.com/375x300">
+        </div><div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
             <p>Description</p>
-          </div>
-        </section>
-      </div>
-      <div class="row">
-        <section id="art">
-          <h3>Illustration and design</h3>
-          <div class="entry col-2">
-            <img src="http://via.placeholder.com/375x300">
+        </div>
+      </div> <!-- END ROW -->
+      <div class="row portfolio-subsection">
+        <div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
+            <p>Technologies</p>
+        </div>
+        <div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
             <p>Description</p>
-          </div>
-          <div class="entry col-2">
-            <img src="http://via.placeholder.com/375x300">
+        </div><div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
             <p>Description</p>
-          </div>
-      </div>
-
+        </div>
+      </div> <!-- END ROW -->
+      <div class="row portfolio-subsection">
+        <div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
+            <p>Technologies</p>
+        </div>
+        <div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
+            <p>Description</p>
+        </div><div class="col-4">
+          <img src="http://via.placeholder.com/375x232" alt="Description">
+            <p>Description</p>
+        </div>
+      </div> <!-- END ROW -->
       <!-- CONTACT ME -->
 
-      <section id="about">
+      <section id="contact">
         <div class="subheader">
           <h3>Contact me</h3>
         </div>
         <div class="row contact-subsection">
-          <div class="col-4">
+          <div class="col-12">
             <form method="POST" action="https://formspree.io/corrina.yy.chow@gmail.com">
               <input type="text" id="email" placeholder="Name">
               <input type="text" id="email" placeholder="Email">
-              <textarea id="message" placeholder="Message" style="height:100px"></textarea>
+              <textarea id="message" placeholder="Hey, I was wondering..." style="height:100px"></textarea>
               <input type="submit" value="Send">
             </form>
           </div>
@@ -168,11 +189,11 @@
       <!-- FOOTER -->
       <footer>
         <div class="row">
-          <div class="col-2">
+          <div class="col-6">
           <h2>Corrina Chow</h2>
           <p>corrina.yy.chow@gmail.com</p>
         </div>
-        <div class="col-2">
+        <div class="col-6">
           <span>Github</span><span> | </span>
           <span>LinkedIn</span><span> | </span>
           <span>Codepen</span>

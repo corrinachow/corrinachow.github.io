@@ -1,4 +1,5 @@
-const nav = document.querySelector('#main');
+const nav = document.querySelector('.topnav');
+const hamburger = document.querySelector('.hamburger');
 let topOfNav = nav.offsetTop;
 
 function fixNav() {
@@ -11,4 +12,17 @@ function fixNav() {
   }
 }
 
+function toggleNavBar() {
+  if (nav.className === "topnav") {
+      nav.className += " responsive";
+  } else {
+      nav.className = "topnav";
+  }
+}
+
+function e() {
+console.log('transition end')
+}
+
 window.addEventListener('scroll', fixNav);
+window.addEventListener('click', toggleNavBar);

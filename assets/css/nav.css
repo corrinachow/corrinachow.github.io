@@ -1,5 +1,5 @@
 nav {
-  background:red;
+  background: transparent;
   top:0;
   width: 100%;
   transition: all 0.5s;
@@ -44,9 +44,10 @@ li.logo a {
 }
 
 nav a {
-  text-decoration: none;
+  text-decoration: underline;
   display: inline-block;
-  color:white;
+  color: var(--main);
+  font-family: 'Nixie One', serif;
 }
 
 nav .hamburger {
@@ -56,7 +57,7 @@ nav .hamburger {
 @media only screen and (max-width: 480px) {
 
   nav {
-    background: none;
+    background: white;
   }
 
   .topnav ul, .logo {
@@ -64,7 +65,6 @@ nav .hamburger {
   }
 
   nav .hamburger {
-    background: rgba(0,0,0,0.5);
     text-align: right;
     padding: 0 3vw;
     display: block;

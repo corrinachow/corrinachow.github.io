@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Nixie+One|Open+Sans');
+
+
+html {
+  --main: #1e2022;
+  --subheader: #e7edf1;
+  --title: #76858F;
+  --emphasis: #b7b9c4;
+  --title2: #A3ADB3;
+  border: solid;
+}
 
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -8,44 +18,57 @@
 
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: #eee;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #8aa1a9;
 }
 
 ul {
   column-count: 2;
+  margin: 0 auto;
 }
 
 img {
   max-width:100%;
-  max-height:100%;
+  max-height:auto;
 }
 
 h1 {
-  color:white;
-  font-size: 7vw;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  color:var(--main);
+  /*text-shadow: 3px 4px 0 rgba(0,0,0,0.2);*/
 }
 
 h2 {
   font-weight: 400;
-  font-size: 3vw;
-  color:white;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2)
+  font-size: 3vh;
+  color:var(--title);
+  /*text-shadow: 3px 4px 0 rgba(0,0,0,0.2)*/
 }
 
 h3, h4 {
+  color: var(--emphasis);
+  font-size:3vh;
   text-align: center;
   text-transform: uppercase;
+}
+
+.title2 {
+  color: var(--title2);
+  text-transform: uppercase;
+  font-family: 'Nixie One', serif;
+  letter-spacing: 2px;
 
 }
 
 .subheader h3:before{
-  content: "< ";
+  content: "";
 }
 
 .subheader h3:after{
-  content: " />";
+  content: "";
 }
 
 .subheader {
@@ -62,6 +85,7 @@ h3, h4 {
   padding: 0 5vw;
 }
 
+
 .row:before,
 .row:after {
     content:"";
@@ -73,7 +97,7 @@ h3, h4 {
     float: left;
     min-height: 1px;
     /*Gutter*/
-    padding-right: 35px;
+    padding: 0 15px;
     background-color: transparent;
 }
 
@@ -90,9 +114,9 @@ h3, h4 {
 .col-11{ width: 91.66%; }
 .col-12{ width: 100%; }
 
-/*.outline, .outline *{
+.outline, .outline *{
     outline: 1px dashed #000;
-}*/
+}
 
 /* Tablet */
 @media only screen and (min-width: 480px) and (max-width: 768px) {
@@ -127,15 +151,11 @@ h3, h4 {
     column-count: 1;
   }
 
-    h1, h2, h3, h4 {
-      font-size: 2em;
-    }
-
     [class*='col-'], img {
       width: 100%;
       padding: 0;
     }
-  }
+}
 
 
 

@@ -3,9 +3,8 @@
 html {
   --main: #1e2022;
   --subheader: #F7F7F7;
-  --title: #76858F;
+  --title: #999494;
   --emphasis: #FC4E4C;
-  --title2: #A3ADB3;
 
 }
 
@@ -26,6 +25,7 @@ a {
 }
 
 p {
+  font-size: 14px;
   margin: 0;
 }
 
@@ -40,13 +40,11 @@ img {
 
 h1 {
   color:var(--main);
-  /*text-shadow: 3px 4px 0 rgba(0,0,0,0.2);*/
 }
 
 h2 {
   font-size: 3vh;
   color:var(--title);
-  /*text-shadow: 3px 4px 0 rgba(0,0,0,0.2)*/
 }
 
 h3 {
@@ -56,13 +54,21 @@ h3 {
   text-transform: uppercase;
 }
 
+span {
+  color: var(--emphasis)
+}
+
+
 .title {
-  color: var(--title2);
+  color: var(--title);
   text-transform: uppercase;
   font-family: 'Nixie One', serif;
   letter-spacing: 2px;
-  padding: 5vh 0;
+  margin: 0vh 0 5vh 0;
+}
 
+.subheader {
+  padding: 8vh 0;
 }
 
 /* HEADER */
@@ -97,17 +103,17 @@ header {
 
 
 #social-links a:first-child {
-  margin-bottom: 1em;
+  margin: 1em 0; /*Aligns top with intro text*/
 }
 
 #social-links a:last-child {
   margin-top: 1em;
 }
 
-span {
-  color: var(--emphasis)
+#down-arrow {
+  padding: 8vh 3vw;
+  color: var(--main);
 }
-
 
 nav {
   background: white;
@@ -198,7 +204,7 @@ input, textarea {
     float: left;
     min-height: 1px;
     /*Gutter*/
-    padding: 0 15px;
+    padding: 0 10px;
     background-color: transparent;
 }
 
@@ -224,11 +230,11 @@ input, textarea {
   .col-1{ width: 8.33%; }
   .col-2{ width: 16.66%; }
   .col-3{ width: 50%; }
-  .col-4{ width: 33.33%; }
+  .col-4{ width: 100%; }
   .col-5{ width: 41.66%; }
   .col-6{ width: 50%; }
   .col-7{ width: 58.33%; }
-  .col-8{ width: 66.66%; }
+  .col-8{ width: 100%; }
   .col-9{ width: 75%; }
   .col-10{ width: 83.33%; }
   .col-11{ width: 91.66%; }

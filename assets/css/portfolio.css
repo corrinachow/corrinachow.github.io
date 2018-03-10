@@ -1,3 +1,33 @@
-.portfolio-entry:hover {
-  transform: scale(1);
+.portfolio-subsection {
+}
+
+[class*='portfolio-entry-'] {
+  height: 325px;
+  width: auto;
+
+}
+
+.portfolio-entry-1 {
+  background: url(../img/1.png) center;
+}
+
+.portfolio-entry-2 {
+  background: url(../img/2.png) center;
+
+}
+.portfolio-entry-3 {
+  background: url(../img/3.png) center;
+
+}
+.portfolio-entry-4 {
+  background: url(../img/4.png) center;
+
+}
+.portfolio-entry-5 {
+  background: url(../img/desk.jpg) center;
+
+}
+[class*='portfolio-entry-']:hover {
+  transform: scale(1.0);
+  transition: all 0.5s;
 }

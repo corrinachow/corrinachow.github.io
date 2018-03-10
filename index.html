@@ -6,92 +6,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TO MINIFY -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/portfolio.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.css">
   </head>
   <body>
 
-    <!-- HOME -->
-
-    <header class="outline">
-      <div class="logo col-12"><i class="fas fa-code fa-3x"></i></div>
-      <p class="col-10 title2">Corrina Chow - Developer and Designer</p>
-      <h1 class="col-10">Hi!  I make a whole bunch of things. <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu massa vel ligula suscipit pretium.</span></h1>
-      <p class="col-2 title2">Contact</p><div id="social-links" class="col-2">
-        <h1>
-          <a href="https://github.com/corrinachow/"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
-        <h1>
-      </div>
-    </header>
-
     <!-- NAV BAR -->
 
-    <nav class="topnav">
+    <nav class="topnav outline">
         <a class="hamburger">&#9776;</a>
       <ul>
-        <li class="logo"><a href="#">C</a></li>
+
+        <li class="logo"><a href="#"><div class="main-logo"></div></a></li>
+
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- START MAIN CONTAINER -->
+    <!-- HOME -->
 
+    <header class="outline">
+      <p class="col-10 title">Corrina Chow - Developer and Designer</p>
+        <h1 class="col-10">Hi!  I make a whole bunch of things. <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu massa vel ligula suscipit pretium.</span>
+        </h1>
+      <div id="social-links" class="col-2">
+        <h1>
+          <a href="https://github.com/corrinachow/"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
+        </h1>
+      </div>
+    </header>
+
+
+
+    <!-- START MAIN CONTAINER -->
+<div class="row">
     <div class="container outline">
 
     <!-- ABOUT ME -->
 
       <section id="about">
         <div class="subheader">
-          <h3></h3>
+          <div class="title">Skills</div>
         </div>
         <div class="row about-subsection">
-          <div class="col-6">
-              <p>
-                Description
-              </p>
-          </div>
-            <h4>Skills</h4>
-          <div class="col-6">
-            <ul>
-              <li>HTML &amp; CSS</li>
-              <li>JavaScript</li>
-              <li>React.js, jQuery</li>
-              <li>MongoDB</li>
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>InDesign</li>
-              <li>Microsoft Office</li>
-            </ul>
-          </div>
         <div class="col-12">
           <p>Front-end: HTML, CSS, JavaScript, React, Redux, jQuery, Bootstrap</p>
           <p>Back-end: Express, Node.js, MongoDB</p>
           <p>Design: Adobe Photoshop, Illustrator, InDesign</p>
+          <p>Project management: Git, Kanban, Basecamp, Slack, Toggl, MS Office</p>
         </div>
         </div> <!-- END ROW -->
           <!-- <img id="profile-picture" class="col-6" src="http://via.placeholder.com/375x375"> -->
       </section>
 
+          <!-- MY SERVICES -->
+
+    <section id="services">
+      <div class="subheader">
+        <div class="title">My Services</div>
+      </div>
+      <div class="row services-subsection">
+        <div class="col-3">
+          <h4><i class="fas fa-code fa-3x"></i></h4>
+            <h4>Development</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-3">
+          <h4><i class="fas fa-desktop fa-3x"></i></h4>
+            <h4>Design</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-3">
+          <h4><i class="far fa-gem fa-3x"></i></h4>
+          <h4>Branding</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+        <div class="col-3">
+          <h4><i class="fas fa-paint-brush fa-3x"></i></h4>
+          <h4>Illustration</h4>
+            <p>
+              Nunc aliquet sapien non dolor sagittis lacinia. Aenean aliquet blandit enim non eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+
+      </div> <!-- END ROW -->
+        <!-- <img id="profile-picture" class="col-6" src="http://via.placeholder.com/375x375"> -->
+    </section>
+
       <!-- MY PORTFOLIO -->
 
       <section id="portfolio">
       <div class="subheader">
-        <h3>Featured projects</h3>
+        <div class="title">Featured projects</div>
         <a href="projects/projects.html">Click here to see more</a>
       </div>
       <div class="row portfolio-subsection">
         <div class="col-12">
           <a href="#">
-            <img class="portfolio-entry" src="http://via.placeholder.com/800x494" alt="Description">
+            <div class="portfolio-entry-1"></div>
           </a>
             <p>Title</p>
             <p>Description</p>
@@ -100,14 +122,14 @@
       <div class="row portfolio-subsection">
         <div class="col-8">
           <a href="#">
-            <img class="portfolio-entry" src="http://via.placeholder.com/800x494" alt="Description">
+            <div class="portfolio-entry-2"></div>
           </a>
             <p>Title</p>
             <p>Description</p>
         </div>
         <div class="col-4">
           <a href="#">
-            <img class="portfolio-entry" src="http://via.placeholder.com/494x800" alt="Description">
+            <div class="portfolio-entry-3"></div>
           </a>
             <p>Title</p>
             <p>Description</p>
@@ -116,49 +138,25 @@
       <div class="row portfolio-subsection">
         <div class="col-4">
           <a href="#">
-            <img class="portfolio-entry" src="http://via.placeholder.com/494x800" alt="Description">
+            <div class="portfolio-entry-4"></div>
           </a>
             <p>Title</p>
             <p>Description</p>
         </div>
         <div class="col-8">
           <a href="#">
-            <img class="portfolio-entry" src="http://via.placeholder.com/800x494" alt="Description">
+            <div class="portfolio-entry-5"></div>
           </a>
             <p>Title</p>
             <p>Description</p>
         </div>
       </div> <!-- END ROW -->
-      <div class="row portfolio-subsection">
-        <div class="col-6">
-          <img src="http://via.placeholder.com/500x309" alt="Description">
-            <p>Technologies</p>
-        </div>
-        <div class="col-6">
-          <img src="http://via.placeholder.com/500x309" alt="Description">
-            <p>Description</p>
-          </div>
-      </div>  <!-- END ROW -->
-      <div class="row portfolio-subsection">
-        <div class="col-4">
-          <img src="http://via.placeholder.com/375x232" alt="Description">
-            <p>Technologies</p>
-        </div>
-        <div class="col-4">
-          <img src="http://via.placeholder.com/375x232" alt="Description">
-            <p>Description</p>
-          </div>
-        <div class="col-4">
-          <img src="http://via.placeholder.com/375x232" alt="Description">
-            <p>Description</p>
-        </div>
-      </div>  <!-- END ROW -->
       </section>
 
     <!-- CONTACT ME -->
     <section id="contact">
       <div class="subheader">
-        <h3>Contact me</h3>
+        <div class="title">Contact me</div>
       </div>
       <div class="row contact-subsection">
         <div class="col-12">
@@ -172,6 +170,7 @@
       </div>
     </section>
   </div>
+</div>
       <!-- FOOTER -->
       <footer>
         <div class="row">

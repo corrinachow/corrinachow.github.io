@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="outline">
   <head>
     <meta charset="UTF-8">
     <title>Corrina Chow | Developer and Designer</title>
@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- NAV BAR -->
-    <nav class="topnav outline">
+    <nav class="topnav ">
       <a class="hamburger">&#9776;</a>
       <ul>
         <li class="logo">
@@ -27,25 +27,27 @@
       </ul>
     </nav>
     <!-- HOME -->
-    <header class="outline">
-      <p class="col-10 title">Corrina Chow - Developer and Designer</p>
+    <header class="">
+      <h2>Corrina Chow - Developer and Designer</h2>
       <h1 class="col-10">Hi!  I make a whole bunch of things. <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu massa vel ligula suscipit pretium.</span>
       </h1>
       <div id="social-links" class="col-2">
-        <h1>
-          <a href="https://github.com/corrinachow/"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
-        </h1>
+          <a href="https://github.com/corrinachow/"><i class="fab fa-github fa-2x"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen fa-2x"></i></a>
+
       </div>
-      <div id="down-arrow" class="col-12"><a href="#about"><i class="fas fa-chevron-down fa-3x"></i></div>
+      <div id="down-arrow" class="col-12">
+        <a href="#about"><i class="fas fa-chevron-down fa-3x"></i>
+        </a>
+      </div>
     </header>
     <!-- START MAIN CONTAINER -->
-    <div class="row container outline">
+    <div class="row container ">
       <!-- ABOUT ME -->
       <section id="about">
         <div class="subheader">
-          <div class="title col-10">Skills</div>
+          <h2>Skills</h2>
         </div>
         <div class="row about-subsection">
           <div class="col-12">
@@ -62,38 +64,40 @@
       <!-- MY PORTFOLIO -->
       <section id="portfolio">
         <div class="subheader">
-          <div class="title col-10">Featured projects</div>
+          <h2>Featured projects</h2>
         </div>
         <div class="row portfolio-subsection">
           <div class="col-12">
             <a href="#">
               <div class="portfolio-entry-1">
-                <p class="col-12">Vivamus rhoncus suscipit porta. Ut efficitur pulvinar ipsum ac placerat. Pellentesque ligula mauris, pharetra id mi vitae, fermentum aliquam tortor. Suspendisse tempus facilisis nibh vitae convallis.</p>
+                <div class="entry-description col-12">
+                  <p>JavaScript Calculator</p>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
-            <p>JavaScript Calculator</p>
-            <p>Description</p>
           </div>
-        </div>
-        <!-- END ROW -->
+        </div> <!-- END ROW -->
         <div class="row portfolio-subsection">
           <div class="col-8">
             <a href="#">
               <div class="portfolio-entry-2">
-                <p class="col-12">Vivamus rhoncus suscipit porta. Ut efficitur pulvinar ipsum ac placerat. Pellentesque ligula mauris, pharetra id mi vitae, fermentum aliquam tortor. Suspendisse tempus facilisis nibh vitae convallis.</p>
+                <div class="entry-description col-12">
+                  <p>JavaScript Calculator</p>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
-            <p>Title</p>
-            <p>Description</p>
           </div>
           <div class="col-4">
             <a href="#">
               <div class="portfolio-entry-3">
-                <p class="col-12">Vivamus rhoncus suscipit porta. Ut efficitur pulvinar ipsum ac placerat. Pellentesque ligula mauris, pharetra id mi vitae, fermentum aliquam tortor. Suspendisse tempus facilisis nibh vitae convallis.</p>
+                <div class="entry-description col-12">
+                  <p>JavaScript Calculator</p>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
-            <p>Title</p>
-            <p>Description</p>
           </div>
         </div>
         <!-- END ROW -->
@@ -101,20 +105,22 @@
           <div class="col-4">
             <a href="#">
               <div class="portfolio-entry-4">
-                <p class="col-12">Vivamus rhoncus suscipit porta. Ut efficitur pulvinar ipsum ac placerat. Pellentesque ligula mauris, pharetra id mi vitae, fermentum aliquam tortor. Suspendisse tempus facilisis nibh vitae convallis.</p>
+                <div class="entry-description col-12">
+                  <p>JavaScript Calculator</p>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
-            <p>Title</p>
-            <p>Description</p>
           </div>
           <div class="col-8">
             <a href="#">
               <div class="portfolio-entry-5">
-                <p class="col-12">Vivamus rhoncus suscipit porta. Ut efficitur pulvinar ipsum ac placerat. Pellentesque ligula mauris, pharetra id mi vitae, fermentum aliquam tortor. Suspendisse tempus facilisis nibh vitae convallis.</p>
+               <div class="entry-description col-12">
+                  <p>JavaScript Calculator</p>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
-            <p>Title</p>
-            <p>Description</p>
           </div>
         </div>
         <!-- END ROW -->
@@ -122,14 +128,17 @@
       <!-- CONTACT ME -->
       <section id="contact">
         <div class="subheader">
-          <div class="title col-10">Contact me</div>
+          <h2>Contact me</h2>
+          <div class="col-12">
+            <p>Have a project you'd like to discuss?</p>
+          </div>
         </div>
         <div class="row contact-subsection">
           <div class="col-12">
             <form method="POST" action="https://formspree.io/corrina.yy.chow@gmail.com">
               <input type="text" id="email" placeholder="Name">
               <input type="text" id="email" placeholder="Email">
-              <textarea id="message" placeholder="Hey, I was wondering..." style="height:100px"></textarea>
+              <textarea id="message" placeholder="Message" style="height:100px"></textarea>
               <input type="submit" value="Send">
             </form>
           </div>
@@ -138,7 +147,7 @@
     </div>
     <!-- FOOTER -->
     <footer>
-      <div class="row">
+      <div class="row ">
         <div class="col-6">
           <h2>Corrina Chow</h2>
           <p>corrina.yy.chow@gmail.com</p>

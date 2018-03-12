@@ -20,9 +20,17 @@ function toggleNavBar() {
   }
 }
 
-function e() {
-console.log('transition end')
+function resizeSocial() {
+  if (window.innerWidth > 480) {
+    document.getElementById('social-links').style.height = document.body.querySelector('h1').clientHeight + 'px';
+  } else if (window.innerWidth < 480) {
+    document.getElementById('social-links').style.height = 1.5 + 'em'
+  }
 }
 
 window.addEventListener('scroll', fixNav);
 hamburger.addEventListener('click', toggleNavBar);
+window.addEventListener('resize', resizeSocial);
+
+
+

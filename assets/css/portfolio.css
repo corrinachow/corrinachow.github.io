@@ -1,12 +1,13 @@
 .portfolio-entry-1 {
   background: url(../img/1.png) center no-repeat;
+  /*filter: grayscale(1);*/
 }
 
 .portfolio-entry-2 {
   background: url(../img/3.gif) top center no-repeat;
 }
 .portfolio-entry-3 {
-  background: url(../img/2.png) center;
+  background: url(../img/1.png) center;
 
 }
 .portfolio-entry-4 {
@@ -24,23 +25,20 @@
 
 .entry-description p:last-child {
   text-transform: uppercase;
-
 }
 
 [class*='portfolio-entry-'] {
   background-size: cover;
-  height: 394px;
+  height: 450px;
   width: auto;
   overflow: hidden;
   transition: all 0.5s;
   display: flex;
-  margin-bottom: 1vh;
+  margin-bottom: 2vw;
 }
 
-
-
 .portfolio-subsection [class*='col-']:first-child {
-  padding-right: 1vh;
+  padding-right: 2vw;
 }
 
 .portfolio-subsection [class*='col-']:last-child {
@@ -63,7 +61,6 @@
     );
   visibility: visible;
   opacity: 1;
-  padding: 3vw;
 }
 
 .col-4 [class*='portfolio-entry-']:hover > :first-child {
@@ -77,7 +74,6 @@
     );
   visibility: visible;
   opacity: 1;
-  padding: 3vw;
 }
 
 [class*='portfolio-entry-'] div {

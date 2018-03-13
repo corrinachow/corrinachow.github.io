@@ -3,17 +3,18 @@ const hamburger = document.querySelector('.hamburger');
 let topOfNav = nav.offsetTop;
 
 function fixNav() {
-  if(window.scrollY >= topOfNav && window.innerWidth > 480) {
+  if(window.scrollY >= topOfNav) {
     document.body.style.paddingTop = nav.offsetHeight + 'px';
     document.body.classList.add('fixed-nav');
+    document.body.style.margin = 0;
   } else {
     document.body.classList.remove('fixed-nav');
-    document.body.style.paddingTop = 0;
+    document.body.style.padding = 0;
   }
 }
 
 function toggleNavBar() {
-  nav.classList.toggle('responsive');
+  nav.classList.toggle('collapse');
 }
 
 function resizeSocial() {
@@ -25,7 +26,7 @@ function resizeSocial() {
 }
 
 window.addEventListener('scroll', fixNav);
-hamburger.addEventListener('click', toggleNavBar);
+nav.addEventListener('click', toggleNavBar);
 window.addEventListener('resize', resizeSocial);
 document.addEventListener("DOMContentLoaded", resizeSocial);
 

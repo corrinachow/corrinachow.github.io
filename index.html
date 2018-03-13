@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="outline">
   <head>
     <meta charset="UTF-8">
     <title>Corrina Chow | Developer and Designer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- TO MINIFY -->
-    <link rel="stylesheet" href="assets/css/portfolio.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.css">
   </head>
   <body>
     <!-- NAV BAR -->
-    <nav class="topnav">
+    <nav class="topnav collapse">
       <a class="hamburger">&#9776;</a>
       <ul class="navigation">
         <li class="logo">
@@ -129,17 +127,34 @@
       <section id="contact">
         <div class="subheader">
           <h1>Contact me</h1>
-          <div class="col-12">
-            <p>Have a project you'd like to discuss?</p>
-          </div>
         </div>
         <div class="row contact-subsection">
           <div class="col-12">
             <form method="POST" action="https://formspree.io/corrina.yy.chow@gmail.com">
-              <input type="text" id="email" placeholder="Name">
-              <input type="text" id="email" placeholder="Email">
-              <textarea id="message" placeholder="Message" style="height:100px"></textarea>
-              <input type="submit" value="Send">
+              <div class="col-12">
+                <label>First &amp; Last Name*</label>
+                  <input type="text" id="name" required>
+              </div>
+              <div class="col-6">
+                <label>Email Address*</label>
+                <input type="text" id="email" required>
+              </div>
+              <div class="col-6">
+                <label>Timeline</label>
+                <select name="timeline" optional>
+                  <option value="">---</option>
+                  <option value="days">Days</option>
+                  <option value="weeks">Weeks</option>
+                  <option value="months">Months</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label>Message</label>
+                <textarea id="message"style="height:100px" required></textarea>
+              </div>
+              <div class="col-12">
+                <input type="submit" value="Send">
+              </div>
             </form>
           </div>
         </div>

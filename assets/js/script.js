@@ -3,7 +3,7 @@ const hamburger = document.querySelector('.hamburger');
 let topOfNav = nav.offsetTop;
 
 function fixNav() {
-  if(window.scrollY >= topOfNav) {
+  if(window.scrollY >= topOfNav && window.innerWidth > 480) {
     document.body.style.paddingTop = nav.offsetHeight + 'px';
     document.body.classList.add('fixed-nav');
   } else {
@@ -28,6 +28,5 @@ window.addEventListener('scroll', fixNav);
 hamburger.addEventListener('click', toggleNavBar);
 window.addEventListener('resize', resizeSocial);
 document.addEventListener("DOMContentLoaded", resizeSocial);
-
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="outline">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8">
     <title>Corrina Chow | Developer and Designer</title>
@@ -13,9 +13,9 @@
   </head>
   <body>
     <!-- NAV BAR -->
-    <nav class="topnav ">
+    <nav class="topnav">
       <a class="hamburger">&#9776;</a>
-      <ul>
+      <ul class="navigation">
         <li class="logo">
           <a href="#">
             <div class="main-logo"></div>
@@ -28,9 +28,9 @@
     </nav>
     <!-- HOME -->
     <header class="">
-      <h2>Corrina Chow - Developer and Designer</h2>
-      <h1 class="col-10">Hi!  I make a whole bunch of things. <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu massa vel ligula suscipit pretium.</span>
-      </h1>
+      <h1>Corrina Chow - Developer and Designer</h1>
+      <p id="intro-text" class="col-10">Hi!  I make a whole bunch of things. <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu massa vel ligula suscipit pretium.</span>
+      </p>
       <div id="social-links" class="col-2">
           <a href="https://github.com/corrinachow/"><i class="fab fa-github fa-2x"></i></a>
           <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
@@ -47,7 +47,7 @@
       <!-- ABOUT ME -->
       <section id="about">
         <div class="subheader">
-          <h2>Skills</h2>
+          <h1>Skills</h1>
         </div>
         <div class="row about-subsection">
           <div class="col-12">
@@ -64,7 +64,7 @@
       <!-- MY PORTFOLIO -->
       <section id="portfolio">
         <div class="subheader">
-          <h2>Featured projects</h2>
+          <h1>Featured projects</h1>
         </div>
         <div class="row portfolio-subsection">
           <div class="col-12">
@@ -128,7 +128,7 @@
       <!-- CONTACT ME -->
       <section id="contact">
         <div class="subheader">
-          <h2>Contact me</h2>
+          <h1>Contact me</h1>
           <div class="col-12">
             <p>Have a project you'd like to discuss?</p>
           </div>
@@ -147,16 +147,17 @@
     </div>
     <!-- FOOTER -->
     <footer>
-      <div class="row ">
+      <div class="row">
+        <hr>
         <div class="col-6">
-          <h2>Corrina Chow</h2>
+          <h1>Say hello</h1>
           <p>corrina.yy.chow@gmail.com</p>
         </div>
-        <div class="col-6">
-          <span>Github</span><span> | </span>
-          <span>LinkedIn</span><span> | </span>
-          <span>Codepen</span>
-        </div>
+        <ul class="col-6 social">
+          <li><i class="fab fa-github fa-2x"></i></li>
+          <li><i class="fab fa-linkedin fa-2x"></i></li>
+          <li><i class="fab fa-codepen fa-2x"></i></li>
+        </ul>
       </div>
     </footer>
     <script type="text/javascript" src="assets/js/script.js"></script>

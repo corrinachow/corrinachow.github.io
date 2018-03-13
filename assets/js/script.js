@@ -13,16 +13,12 @@ function fixNav() {
 }
 
 function toggleNavBar() {
-  if (nav.className === "topnav") {
-      nav.className += " responsive";
-  } else {
-      nav.className = "topnav";
-  }
+  nav.classList.toggle('responsive');
 }
 
 function resizeSocial() {
   if (window.innerWidth > 480) {
-    document.getElementById('social-links').style.height = document.body.querySelector('h1').clientHeight + 'px';
+    document.getElementById('social-links').style.height = document.getElementById('intro-text').clientHeight + 'px';
   } else if (window.innerWidth < 480) {
     document.getElementById('social-links').style.height = 1.5 + 'em'
   }
@@ -31,6 +27,7 @@ function resizeSocial() {
 window.addEventListener('scroll', fixNav);
 hamburger.addEventListener('click', toggleNavBar);
 window.addEventListener('resize', resizeSocial);
+document.addEventListener("DOMContentLoaded", resizeSocial);
 
 
 

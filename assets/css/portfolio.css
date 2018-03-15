@@ -18,12 +18,12 @@
   background: url(../img/desk.jpg) center;
 }
 
-.entry-description p:first-child {
+.entry-description h3 {
   text-transform: uppercase;
   font-weight: 600;
 }
 
-.entry-description p:last-child {
+.entry-description p {
   text-transform: uppercase;
 }
 
@@ -45,39 +45,46 @@
   padding-right: 0;
 }
 
-[class*='portfolio-entry-']:hover {
-  transform: scale(1.01);
+.sm-show {
+  display: none;
 }
 
-.col-12 [class*='portfolio-entry-']:hover > :first-child,
-.col-8 [class*='portfolio-entry-']:hover > :first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:  linear-gradient(to right,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    );
-  visibility: visible;
-  opacity: 1;
-}
+@media only screen and (min-width: 480px) {
+  [class*='portfolio-entry-']:hover {
+    transform: scale(1.01);
+  }
 
-.col-4 [class*='portfolio-entry-']:hover > :first-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:  linear-gradient(to right,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    );
-  visibility: visible;
-  opacity: 1;
+  .col-12 [class*='portfolio-entry-']:hover > :first-child,
+  .col-8 [class*='portfolio-entry-']:hover > :first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:  linear-gradient(to right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      );
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .col-4 [class*='portfolio-entry-']:hover > :first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:  linear-gradient(to right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      );
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 [class*='portfolio-entry-'] div {
-  visibility: hidden;
-  opacity: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
-

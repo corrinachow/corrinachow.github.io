@@ -6,21 +6,21 @@ function fixNav() {
   if(window.scrollY >= topOfNav) {
     document.body.style.paddingTop = nav.offsetHeight + 'px';
     document.body.classList.add('fixed-nav');
-    document.body.style.margin = 0;
   } else {
     document.body.classList.remove('fixed-nav');
-    document.body.style.padding = 0;
   }
+  document.body.style.padding = 0;
 }
 
 function toggleNavBar() {
   nav.classList.toggle('collapse');
+
 }
 
 function resizeSocial() {
   if (window.innerWidth > 480) {
     document.getElementById('social-links').style.height = document.getElementById('intro-text').clientHeight + 'px';
-  } else if (window.innerWidth < 480) {
+    } else if (window.innerWidth < 480) {
     document.getElementById('social-links').style.height = 1.5 + 'em'
   }
 }
@@ -29,5 +29,7 @@ window.addEventListener('scroll', fixNav);
 nav.addEventListener('click', toggleNavBar);
 window.addEventListener('resize', resizeSocial);
 document.addEventListener("DOMContentLoaded", resizeSocial);
+
+
 
 

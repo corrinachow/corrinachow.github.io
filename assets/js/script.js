@@ -18,10 +18,10 @@ function toggleNavBar() {
 }
 
 function resizeSocial() {
-  if (window.innerWidth > 480) {
+  if (window.innerWidth >= 480) {
     document.getElementById('social-links').style.height = document.getElementById('intro-text').clientHeight + 'px';
     } else if (window.innerWidth < 480) {
-    document.getElementById('social-links').style.height = 1.5 + 'em'
+    document.getElementById('social-links').style.height = 1.5 + 'rem'
   }
 }
 

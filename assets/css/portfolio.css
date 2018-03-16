@@ -18,13 +18,12 @@
   background: url(../img/desk.jpg) center;
 }
 
-.entry-description h3 {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
 .entry-description p {
+  font-family: 'Karla', sans-serif;
   text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0;
+  color: black;
 }
 
 [class*='portfolio-entry-'] {

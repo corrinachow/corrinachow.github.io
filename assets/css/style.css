@@ -14,6 +14,7 @@ html {
   --citrus: #fcb239;
   --hawaiiansurf: #1180ae ;
   --raspberry:#d74061;
+  font-size: 1em;
 }
 
 *, *:after, *:before {
@@ -32,7 +33,7 @@ a {
 }
 
 p {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin: 0 0 1em 0;
 }
 
@@ -48,7 +49,7 @@ img {
 h1 {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   color: var(--title);
   letter-spacing: 5px;
@@ -60,10 +61,13 @@ h2 {
 }
 
 h3 {
+  font-family: 'Oswald', sans-serif;
   color: var(--emphasis);
-  font-size:3vh;
-  text-align: center;
+  font-size: 1rem;
   text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  margin: 0;
 }
 
 h4 {
@@ -90,7 +94,8 @@ span {
 
 header {
   background: url(../img/goat.jpg);
-  padding: 18vh 5vw;
+  margin: 10vh 5vw;
+  padding: 5vh 0;
   height:80vh;
   text-align: left;
   transition: all .5s;
@@ -105,7 +110,7 @@ header {
 }
 
 #intro-text {
-  font-size: 2em;
+  font-size: 2rem;
   z-index: 1;
 }
 
@@ -118,7 +123,7 @@ header {
 }
 
 #down-arrow {
-  margin: 15vh auto 10vh 2vw;
+  margin: 8vh auto 8vh 2vw;
   color: var(--main);
 }
 
@@ -208,14 +213,14 @@ form {
 }
 
 label {
-  letter-spacing: 2px;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
-  font-size: .8em;
+  font-size: .8rem;
   color: var(--emphasis);
 }
 
 form [class*='col-'] {
-  margin: 1em 0;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -236,35 +241,28 @@ input[type="submit"] {
 
 /* FOOTER */
 
-footer {
-  height: 50vh;
-  padding: 5vw;
-}
-
-footer h1 {
-  margin: 0;
-}
-
 hr {
+  width: 95%;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-footer ul {
-  color: var(--title);
-  padding: 0;
-  list-style: none;
-  display: flex;
-  text-align: center;
+footer {
+  height: 25vh;
+  padding: 0vh 5vw;
 }
 
-footer .col-6 {
+footer p {
+  margin-bottom: 3vh;
+}
+
+.links {
   display: flex;
 }
 
-footer li {
-  flex: 1;
+.links a {
+  margin-right: 1rem;
 }
 
 .row:before,
@@ -321,33 +319,17 @@ footer li {
   }
 }
 
-/* Narrow */
-
-@media only screen and (min-width: 480px) and (max-width: 620px) {
-  header {
-    padding: 5vh 5vw;
-  }
-
-  #down-arrow {
-    margin: 5vh 0;
-  }
-}
-
 /* Phones */
 
 @media only screen and (max-width: 480px) {
 
   header {
-    padding: 12vh 5vw 0 5vw;
+    padding: 8vh 5vw;
   }
 
   #intro-text {
-    font-size: 1.5em;
+    font-size: 1.8rem;
   }
-
-  body {
-      font-size: 1em;
-    }
 
   ul {
     column-count: 1;
@@ -365,7 +347,7 @@ footer li {
   }
 
   #down-arrow {
-    margin: 14vh 0;
+    margin: 5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,7 +363,7 @@ footer li {
     transition: all 0.5s;
     padding: 0 5vw;
     display: block;
-    font-size: 3em;
+    font-size: 3rem;
     z-index: 1;
   }
 
@@ -430,14 +412,17 @@ footer li {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  footer {
+@media only screen and (max-width: 325px) {
+  footer, .links {
+    justify-content: center;
     text-align: center;
   }
 
   header {
-    height:80vh;
+    margin: 15vh 5vw;
+    height: 85vh;
   }
+
   #down-arrow {
     display: none;
   }

@@ -26,6 +26,10 @@ function toggleNavBar() {
   }
 }*/
 
+
+const copyrightYear = document.getElementById('copyright-year');
+const d = new Date();
+copyrightYear.innerHTML = d.getFullYear();
 window.addEventListener('scroll', fixNav);
 nav.addEventListener('click', toggleNavBar);
 window.addEventListener('resize', resizeSocial);

@@ -16,7 +16,7 @@
       <ul class="navigation">
         <li class="logo">
           <a href="#">
-            <div class="main-logo"></div>
+            <img href="../img/1.png">
           </a>
         </li>
         <li><a href="#about">About</a></li>
@@ -24,7 +24,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <!-- HOME -->
+    <!-- HEADER -->
     <header class="row">
       <!-- <h1>Corrina Chow - Developer and Designer</h1> -->
       <div class="title-text">
@@ -38,7 +38,6 @@
           <span> illustrator</span>
         </h2>
       </div>
-
       <div class="line md-hide"></div>
       <div class="description-text">
         <h2>
@@ -48,40 +47,48 @@
             <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
           <span>
         </h2>
-        <p class="">Nulla finibus odio dolor, ac ornare turpis sollicitudin nec.</p>
+        <p><span>Nulla finibus odio dolor, ac ornare turpis sollicitudin nec.<span></p>
       </div>
-
       <div id="down-arrow">
         <a href="#about"><i class="fas fa-chevron-down fa-2x"></i></a>
       </div>
     </header>
+    <!-- LEFT BAR -->
+    <aside class="sidebar left">
+      <p>Web development and illustration portfolio</p>
+    </aside>
+    <!-- RIGHT BAR -->
+    <aside class="sidebar right">
+      <p>© <span id="copyright-year">date</span>, Corrina Chow</p>
+    </aside>
     <!-- START MAIN CONTAINER -->
     <div class="row container ">
       <!-- ABOUT ME -->
       <section id="about">
         <div class="subheader">
-          <h2>Skills</h2>
+          <h2>About me</h2>
         </div>
         <ul id="skill-1">
-          <li><h3>Front-end:</h3></li>
+          <li><span>Front-end:</span></li>
           <li>HTML &amp; CSS</li>
           <li>JavaScript</li>
           <li>React</li>
           <li>jQuery</li>
         </ul>
         <ul id="skill-2">
-          <li><h3>Back-end:</h3></li>
+          <li><span>Back-end:</span></li>
           <li>Express</li>
           <li>Node.js</li>
           <li>MongoDB</li>
         </ul>
         <ul id="skill-3">
-          <li><h3>Design:</h3></li>
+          <li><span>Design:</span></li>
           <li>Photoshop</li>
           <li>Illustrator</li>
           <li>InDesign</li>
         </ul>
-
+        <div class="about-description"><p>Aenean ac ipsum turpis. Vivamus ultricies purus id cursus tincidunt. Curabitur non venenatis felis. Morbi dapibus mauris vitae sem lobortis, ut scelerisque justo dapibus. Pellentesque pellentesque, sapien at venenatis venenatis, ligula odio placerat risus, non placerat erat velit et tortor. Donec sagittis, lacus vel dapibus sodales, mi justo tempus metus, ultricies interdum ex magna nec sapien.</p>
+        </div>
         <!-- END ROW -->
         <!-- <img id="profile-picture" class="col-6" src="http://via.placeholder.com/375x375"> -->
       </section>
@@ -91,9 +98,9 @@
           <h2>Featured projects</h2>
         </div>
         <div class="row portfolio-subsection">
-          <div class="col-12">
+          <div class="col-8">
             <a href="#">
-              <div class="portfolio-entry-1">
+              <div class="portfolio-entry-1 main-project">
                 <div class="entry-description col-12">
                   <h3>JavaScript Calculator<h3>
                   <p>Description</p>
@@ -104,12 +111,17 @@
                 <p>Description</p>
               </div>
             </a>
+          </div>
+          <div class="col-4 ">
+            <span class="project-number">01<span>
+            <p>Donec non quam velit. Proin ultricies congue felis ac iaculis. Aenean blandit molestie convallis. Quisque consectetur purus vitae feugiat ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<p>
+            <a href="">See live</a>
           </div>
         </div> <!-- END ROW -->
         <div class="row portfolio-subsection">
           <div class="col-8">
             <a href="#">
-              <div class="portfolio-entry-2">
+              <div class="portfolio-entry-2 main-project">
                 <div class="entry-description col-12">
                   <h3>JavaScript Calculator<h3>
                   <p>Description</p>
@@ -121,50 +133,61 @@
               </div>
             </a>
           </div>
-          <div class="col-4">
-            <a href="#">
-              <div class="portfolio-entry-3">
-                <div class="entry-description col-12">
-                  <h3>JavaScript Calculator<h3>
-                  <p>Description</p>
-                </div>
-              </div>
-              <div class="entry-description col-12 sm-show">
-                <h3>JavaScript Calculator<h3>
-                <p>Description</p>
-              </div>
-            </a>
+          <div class="col-4 ">
+            <span class="project-number">02<span>
+            <p>Proin posuere finibus elit quis sagittis. Nunc vehicula ullamcorper gravida. Cras a dolor a orci rutrum egestas. Quisque ac tellus eu tortor fermentum gravida. Donec mattis dictum blandit. Morbi id venenatis risus, sed vehicula massa. <p>
+            <a href="">See live</a>
           </div>
         </div>
         <!-- END ROW -->
         <div class="row portfolio-subsection">
           <div class="col-4">
             <a href="#">
-              <div class="portfolio-entry-4">
+              <div class="portfolio-entry-4 small-project">
                 <div class="entry-description col-12">
                   <h3>JavaScript Calculator<h3>
-                  <p>Description</p>
+                  <p>Click to see full project</p>
                 </div>
               </div>
-              <div class="entry-description col-12 sm-show">
-                <h3>JavaScript Calculator<h3>
-                <p>Description</p>
-              </div>
             </a>
+            <div class="small-project-desc">
+              <span class="project-number">03: <span>
+              <span>Vivamus ultricies purus</span>
+              <p>Ut vitae consectetur augue.</p>
+              <a href="">See live</a>
+            </div>
           </div>
-          <div class="col-8">
+          <div class="col-4">
             <a href="#">
-              <div class="portfolio-entry-5">
+              <div class="portfolio-entry-5 small-project">
                 <div class="entry-description col-12">
                   <h3>JavaScript Calculator<h3>
                   <p>Description</p>
                 </div>
               </div>
-              <div class="entry-description col-12 sm-show">
-                <h3>JavaScript Calculator<h3>
-                <p>Description</p>
+            </a>
+            <div class="small-project-desc">
+              <span class="project-number">04: <span>
+              <span>Vivamus ultricies purus</span>
+              <p>Ut vitae consectetur augue.</p>
+              <a href="">See live</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <a href="#">
+              <div class="portfolio-entry-5 small-project">
+                <div class="entry-description col-12">
+                  <h3>JavaScript Calculator</h3>
+                  <p>Description</p>
+                </div>
               </div>
             </a>
+            <div class="small-project-desc">
+              <span class="project-number">05: <span>
+              <span>Vivamus ultricies purus</span>
+              <p>Ut vitae consectetur augue.</p>
+              <a href="">See live</a>
+            </div>
           </div>
         </div>
         <!-- END ROW -->

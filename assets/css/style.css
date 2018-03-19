@@ -13,11 +13,76 @@
 
 */
 
-html {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter UI', sans-serif;
+  margin: 0.67rem 0;
+  line-height: 1.56rem;
+}
+
+ol, ul, li, p {
+  font-family: 'Source Code Pro', sans-serif;
+  line-height: 1.56rem;
+}
+
+
+html {
   margin: 0 auto;
   font-family: 'Source Code Pro', sans-serif;
   font-size: 16px;
+
+  --sidebarSize: 50px;
   --main: #1e2022; /*dark grey*/
   --subheader: #F7F7F7; /*light grey*/
   --title: black;
@@ -29,10 +94,7 @@ html {
   --hawaiiansurf: #1180ae ;
   --raspberry:#d74061;
 
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+
 }
 
 *, *:after, *:before {
@@ -44,10 +106,10 @@ html {
 body {
   margin: 1px auto;
   width: 100%;
+  color: #636363;
 }
 
 a {
-  text-decoration: none;
   color: var(--emphasis);
 }
 
@@ -61,10 +123,10 @@ img {
 }
 
 h1 {
-    font-size: 2.8rem
-}
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
 h2 {
-  font-family: 'Inter UI', sans-serif;
     font-size: 1.5rem
 }
 h3 {
@@ -81,30 +143,15 @@ h6 {
 }
 
 h3 {
-  font-family: 'Inter UI', sans-serif;
-  color: var(--emphasis);
-  font-size: 1rem;
   text-transform: uppercase;
+  color: var(--emphasis);
   font-weight: normal;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08rem;
   margin: 0;
 }
 
 h4 {
 
-}
-
-span {
-  padding: 0;
-  margin: 0;
-}
-
-.title {
-  color: var(--title);
-  text-transform: uppercase;
-  font-family: 'Inter UI', sans-serif;
-  letter-spacing: 2px;
-  margin: 0vh 0 5vh 0;
 }
 
 /* HEADER */
@@ -113,7 +160,6 @@ span {
   padding-right: 1rem;
   display: flex;
   flex-direction: column;
-  color: white;
   font-weight: 700;
   letter-spacing:0.08rem;
   justify-content: flex-end;
@@ -123,14 +169,17 @@ span {
 
 .description-text {
   padding-left: 1rem;
-
   font-weight: 700;
-  color:white;
   display: flex;
   text-align: right;
   flex-direction: column;
 
   grid-area: description;
+}
+
+header p {
+  font-family: 'Inter UI', sans-serif;
+  letter-spacing: 0.05rem;
 }
 
 .line {
@@ -169,6 +218,7 @@ span {
 
 header {
   font-family: 'Inter UI', sans-serif;
+  color: white;
   display: grid;
   background: #000;
   height:100vh;
@@ -207,6 +257,7 @@ body.fixed-nav nav {
 }
 
 nav ul {
+  height: 50px;
   margin: 0;
   padding:0;
   list-style: none;
@@ -234,10 +285,11 @@ li.logo a:after {
 }
 
 .fixed-nav li.logo {
-  max-width:10%;
+  max-width:25%;
 }
 
 nav a {
+  text-decoration: none;
   display: inline-block;
   color: var(--title);
   font-family: 'Source Code Pro', sans-serif;
@@ -263,8 +315,47 @@ nav .hamburger {
   display: none;
 }
 
+/* SIDE BARS */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  width: var(--sidebarSize);
+  background: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sidebar.right {
+  right: 0;
+}
+
+.sidebar p {
+  font-size: 0.75rem;
+  position: absolute;
+  width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.sidebar.left p {
+  transform: rotate(270deg);
+}
+
+
+.sidebar.right p {
+  transform: rotate(90deg);
+}
+
+
+/* MAIN */
 
 .container {
+  padding: 0 var(--sidebarSize);
   margin: auto;
   font-family: 'Source Code Pro', monospace;
 }
@@ -272,9 +363,10 @@ nav .hamburger {
 /* ABOUT */
 
 .subheader {
+  padding-top: 1.5rem;
   grid-area: title;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 #about ul {
   list-style: none;
@@ -282,12 +374,19 @@ nav .hamburger {
   flex-direction: column;
   margin: 0;
   padding: 0 0 1em 0;
+}
 
+#about li {
+  line-height: 1.56rem;
+}
+
+#about li > span{
+  color: #000;
+  font-weight: 600;
 }
 
 #skill-1 {
   grid-area: colone;
-
 }
 
 #skill-2 {
@@ -298,14 +397,21 @@ nav .hamburger {
   grid-area: colthree;
 }
 
+.about-description {
+  color: #000;
+
+  grid-area: desc;
+}
+
 #about {
   display: grid;
 
   grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
   grid-template-areas:
     ". title . . . ."
     ". . colone coltwo colthree colfour"
+    ". . desc desc desc ."
 }
 
 /* PORTFOLIO */
@@ -323,19 +429,19 @@ label {
 }
 
 form [class*='col-'] {
-  margin: 1rem 0;
+  /*margin: 1rem 0;*/
   display: flex;
   flex-direction: column;
 }
 
 form [class*='col-']:nth-child(2) {
-  padding-right: 10px;
+  /*padding-right: 10px;*/
 }
 
 input, textarea, select {
   border: 1px solid var(--title);
   padding: 10px;
-  margin: 5px;
+  /*margin: 5px;*/
 }
 
 input[type="submit"] {
@@ -425,6 +531,10 @@ footer p {
 /* Tablet */
 @media screen and (max-width: 40.0625em) {
 
+  .md-hide, .sidebar {
+    display: none;
+  }
+
   .description-text {
     padding: 0;
     margin: 0;
@@ -436,7 +546,13 @@ footer p {
   }
 
   .title-text {
+    padding: 0;
     border-bottom: solid 1px white;
+  }
+
+  .about-description p {
+    margin: 0;
+    padding:0;
   }
 
   #about {
@@ -446,10 +562,10 @@ footer p {
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-areas:
       "title ."
-      ". colone"
-      ". coltwo"
-      ". colthree"
-      ". colfour"
+      "colone desc"
+      "coltwo desc"
+      "colthree desc"
+      "colfour desc"
   }
 
 body > header {
@@ -459,9 +575,7 @@ body > header {
     padding: 20vw;
   }
 
-  .md-hide {
-    display: none;
-  }
+
   .col-1{ width: 8.33%; }
   .col-2{ width: 16.66%; }
   .col-3{ width: 50%; }
@@ -486,6 +600,16 @@ body > header {
 /* Phones */
 
 @media only screen and (max-width: 480px) {
+
+  #about ul:nth-child(even) {
+
+  }
+
+  #about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    }
 
   .sm-hide {
     display: none;
@@ -584,6 +708,7 @@ body > header {
 }
 
 @media only screen and (max-width: 325px) {
+
   footer, .links {
     justify-content: center;
     text-align: center;

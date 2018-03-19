@@ -1,9 +1,24 @@
 /*@import url('https://fonts.googleapis.com/css?family=Nixie+One|Open+Sans: 400, 600, 800');*/
 
-@import url('https://fonts.googleapis.com/css?family=Karla|Oswald');
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro');
+/*@import url('https://fonts.googleapis.com/css?family=Karla|Oswald');*/
+
+/*
+
+    font-family: 'Source Code Pro', monospace;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Inter UI', sans-serif;
+
+
+*/
 
 html {
-  font-family: 'Karla', sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  font-family: 'Source Code Pro', sans-serif;
   --main: #1e2022; /*dark grey*/
   --subheader: #F7F7F7; /*light grey*/
   --title: black;
@@ -14,7 +29,10 @@ html {
   --citrus: #fcb239;
   --hawaiiansurf: #1180ae ;
   --raspberry:#d74061;
-  font-size: 1em;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 *, *:after, *:before {
@@ -24,7 +42,8 @@ html {
 }
 
 body {
-  margin: 0.1vw;
+  margin: 1px auto;
+  max-width: 1366px;
 }
 
 a {
@@ -47,7 +66,7 @@ img {
 }
 
 h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inter UI', sans-serif;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: normal;
@@ -61,7 +80,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inter UI', sans-serif;
   color: var(--emphasis);
   font-size: 1rem;
   text-transform: uppercase;
@@ -75,13 +94,14 @@ h4 {
 }
 
 span {
-  color: var(--emphasis);
+  padding: 0;
+  margin: 0;
 }
 
 .title {
   color: var(--title);
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Inter UI', sans-serif;
   letter-spacing: 2px;
   margin: 0vh 0 5vh 0;
 }
@@ -92,59 +112,118 @@ span {
 
 /* HEADER */
 
+
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  letter-spacing:0.08rem;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+
+
+  grid-area: left;
+}
+
+.description-text {
+  padding-top: 1rem;
+  padding-left: 1rem;
+
+  font-weight: 700;
+  font-size: 1.2rem;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+
+
+  grid-area: right;
+}
+
+.title-text span:nth-child(3) {
+  padding-top: 1rem;
+}
+.title-text span:last-child, .title-text span:nth-child(3) {
+  font-size: 1.2rem;
+}
+
+#social-links {
+  grid-area: social;
+  padding-top: 1rem;
+  display: flex;
+}
+
+#social-links a {
+  flex:1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#down-arrow {
+  grid-area: arrow;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+
+  color: var(--main);
+}
+
+.line {
+  grid-area: lines;
+  border-left: solid 1px white;
+}
+
 header {
-  background: url(../img/goat.jpg);
-  margin: 10vh 5vw;
-  padding: 5vh 0;
-  height:80vh;
-  text-align: left;
-  transition: all .5s;
+  font-family: 'Inter UI', sans-serif;
+  display: grid;
+  background: #000;
+  height:100vh;
+  transition: all 0.5s;
+
+  grid-template-columns: 33.33% 16.66% 16.66% 33.33%;
+  grid-template-rows: 50% 10% 10% 10% 10% 10%;
+  grid-template-areas:
+    ". left . ."
+    ". . lines ."
+    ". . right ."
+    ". . social ."
+    ". arrow arrow ."
+    ". . . ."
 }
 
 .main-logo {
   background: url('../img/1.png');
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin: 1vh 1vw;
+  height: 30px;
+  width: 30px;
+  margin: 1vh;
 }
 
-#intro-text {
-  font-size: 2rem;
-  z-index: 1;
-}
-
-#social-links {
-  margin-top: 8px; /* Visual weight */
-  display: flex;
-  flex-direction: column;
-  align-items: right;
-  justify-content: space-between;
-}
-
-#down-arrow {
-  margin: 8vh auto 8vh 2vw;
-  color: var(--main);
-}
 
 nav {
+  background: white;
   top:0;
   width: 100%;
-  /*transition: all 0.5s;*/
+  max-width: 1366px;
+  transition: all 0.5s;
   position: relative;
   z-index: 1;
 }
 
 body.fixed-nav nav {
   position: fixed;
-  box-shadow:0 2px 0 rgba(0,0,0,0.1);
 }
 
 nav ul {
   margin: 0;
   padding:0;
   list-style: none;
-  display:flex;
+  display: flex;
+
 }
 
 nav li {
@@ -156,6 +235,7 @@ nav li {
 }
 
 li.logo {
+  transform: translateY(0.2vh);
   max-width:0;
   overflow: hidden;
   transition: all 0.5s;
@@ -166,13 +246,13 @@ li.logo a:after {
 }
 
 .fixed-nav li.logo {
-  max-width:500px;
+  max-width:10%;
 }
 
 nav a {
   display: inline-block;
   color: var(--title);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   text-transform: uppercase;
 }
 
@@ -199,7 +279,7 @@ nav .hamburger {
 .container {
   max-width: 1366px;
   margin: auto;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   padding: 0 5vw;
 }
 
@@ -276,6 +356,7 @@ footer p {
     float: left;
     min-height: 1px;
     /*Gutter*/
+
     background-color: transparent;
 }
 
@@ -293,11 +374,37 @@ footer p {
 .col-12{ width: 100%; }
 
 .outline, .outline *{
-    outline: 1px dashed #000;
+    outline: 1px dashed #fff;
 }
 
 /* Tablet */
 @media only screen and (min-width: 480px) and (max-width: 768px) {
+
+  .title-text {
+    text-align: center;
+  }
+
+  header {
+  font-family: 'Inter UI', sans-serif;
+  display: grid;
+  background: #000;
+  height:100vh;
+  transition: all 0.5s;
+
+  grid-template-columns: 33.33% 16.66% 16.66% 33.33%;
+  grid-template-rows: 50% 10% 10% 10% 10% 10%;
+  grid-template-areas:
+    ". left left ."
+    ". left left ."
+    ". . . ."
+    ". . social ."
+    ". arrow arrow ."
+    ". . . ."
+}
+
+  .md-hide {
+    display: none;
+  }
   .col-1{ width: 8.33%; }
   .col-2{ width: 16.66%; }
   .col-3{ width: 50%; }
@@ -323,12 +430,25 @@ footer p {
 
 @media only screen and (max-width: 480px) {
 
-  header {
-    padding: 8vh 5vw;
+  .sm-hide {
+    display: none;
+  }
+
+  body > header {
+    display: flex;
+    flex-direction: column;
+    padding: 20vw;
+  }
+
+  header > #social-links > a{
+    justify-content: center;
+    padding: 0;
+    margin: 0;
   }
 
   #intro-text {
     font-size: 1.8rem;
+    z-index: -1
   }
 
   ul {
@@ -358,6 +478,7 @@ footer p {
   }
 
   nav a.hamburger {
+    color: white;
     position: fixed;
     right: 0;
     transition: all 0.5s;
@@ -365,6 +486,10 @@ footer p {
     display: block;
     font-size: 3rem;
     z-index: 1;
+  }
+
+  .fixed-nav nav a.hamburger {
+    color: var(--citrus);
   }
 
   body.fixed-nav nav {

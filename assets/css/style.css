@@ -1,5 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Nixie+One|Open+Sans: 400, 600, 800');*/
-
 @import url('https://rsms.me/inter/inter-ui.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro');
 /*@import url('https://fonts.googleapis.com/css?family=Karla|Oswald');*/
@@ -19,6 +17,7 @@ html {
   padding: 0;
   margin: 0 auto;
   font-family: 'Source Code Pro', sans-serif;
+  font-size: 16px;
   --main: #1e2022; /*dark grey*/
   --subheader: #F7F7F7; /*light grey*/
   --title: black;
@@ -29,6 +28,7 @@ html {
   --citrus: #fcb239;
   --hawaiiansurf: #1180ae ;
   --raspberry:#d74061;
+
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -43,17 +43,12 @@ html {
 
 body {
   margin: 1px auto;
-  max-width: 1366px;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
   color: var(--emphasis);
-}
-
-p {
-  font-size: 0.9rem;
-  margin: 0 0 1em 0;
 }
 
 ul {
@@ -66,17 +61,23 @@ img {
 }
 
 h1 {
-  font-family: 'Inter UI', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: normal;
-  color: var(--title);
-  letter-spacing: 5px;
-  margin: 5vh 0 3vh 0;
+    font-size: 2.8rem
 }
-
 h2 {
-
+  font-family: 'Inter UI', sans-serif;
+    font-size: 1.5rem
+}
+h3 {
+    font-size: 1.9375rem
+}
+h4 {
+    font-size: 1.5625rem
+}
+h5 {
+    font-size: 1.25rem
+}
+h6 {
+    font-size: 1rem
 }
 
 h3 {
@@ -106,57 +107,50 @@ span {
   margin: 0vh 0 5vh 0;
 }
 
-.subheader {
-  padding-top: 10vh;
-}
-
 /* HEADER */
 
-
-
 .title-text {
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
-  font-size: 2.5rem;
   color: white;
   font-weight: 700;
   letter-spacing:0.08rem;
   justify-content: flex-end;
-  padding-bottom: 1rem;
 
-
-  grid-area: left;
+  grid-area: title;
 }
 
 .description-text {
-  padding-top: 1rem;
   padding-left: 1rem;
 
   font-weight: 700;
-  font-size: 1.2rem;
   color:white;
   display: flex;
-  flex-direction: column;
   text-align: right;
+  flex-direction: column;
 
-
-  grid-area: right;
+  grid-area: description;
 }
 
-.title-text span:nth-child(3) {
-  padding-top: 1rem;
+.line {
+  grid-area: lines;
 }
-.title-text span:last-child, .title-text span:nth-child(3) {
-  font-size: 1.2rem;
+
+.line:before {
+    content: "";
+    position: absolute;
+    transform: translateY(-38.33%);
+    border-left: solid 1px white;
+    height: 43.33%;
 }
 
 #social-links {
-  grid-area: social;
-  padding-top: 1rem;
   display: flex;
 }
 
 #social-links a {
+  color: white;
   flex:1;
   display: flex;
   justify-content: flex-end;
@@ -173,11 +167,6 @@ span {
   color: var(--main);
 }
 
-.line {
-  grid-area: lines;
-  border-left: solid 1px white;
-}
-
 header {
   font-family: 'Inter UI', sans-serif;
   display: grid;
@@ -185,15 +174,15 @@ header {
   height:100vh;
   transition: all 0.5s;
 
-  grid-template-columns: 33.33% 16.66% 16.66% 33.33%;
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
   grid-template-rows: 50% 10% 10% 10% 10% 10%;
   grid-template-areas:
-    ". left . ."
-    ". . lines ."
-    ". . right ."
-    ". . social ."
-    ". arrow arrow ."
-    ". . . ."
+    ". title title  . . ."
+    ". title title lines . ."
+    ". . . description description ."
+    ". . . social . ."
+    ". . arrow arrow . ."
+    ". . . . . ."
 }
 
 .main-logo {
@@ -208,7 +197,6 @@ nav {
   background: white;
   top:0;
   width: 100%;
-  max-width: 1366px;
   transition: all 0.5s;
   position: relative;
   z-index: 1;
@@ -277,13 +265,48 @@ nav .hamburger {
 
 
 .container {
-  max-width: 1366px;
   margin: auto;
   font-family: 'Source Code Pro', monospace;
-  padding: 0 5vw;
 }
 
 /* ABOUT */
+
+.subheader {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+}
+#about ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 1em 0;
+
+}
+
+#skill-1 {
+  grid-area: colone;
+
+}
+
+#skill-2 {
+  grid-area: coltwo;
+}
+
+#skill-3 {
+  grid-area: colthree;
+}
+
+#about {
+  display: grid;
+
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    ". title . . . ."
+    ". . colone coltwo colthree colfour"
+}
 
 /* PORTFOLIO */
 
@@ -374,33 +397,67 @@ footer p {
 .col-12{ width: 100%; }
 
 .outline, .outline *{
-    outline: 1px dashed #fff;
+    outline: 1px dashed pink;
 }
 
-/* Tablet */
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 55.5em) {
+  h1 {
+      font-size: 3rem
+  }
+  h2 {
+      font-size: 1.5rem
+  }
+  h3 {
+      font-size: 1.9375rem
+  }
+  h4 {
+      font-size: 1.5625rem
+  }
+  h5 {
+      font-size: 1.25rem
+  }
+  h6 {
+      font-size: 1rem
+  }
+}
 
-  .title-text {
+
+/* Tablet */
+@media screen and (max-width: 40.0625em) {
+
+  .description-text {
+    padding: 0;
+    margin: 0;
     text-align: center;
   }
 
-  header {
-  font-family: 'Inter UI', sans-serif;
-  display: grid;
-  background: #000;
-  height:100vh;
-  transition: all 0.5s;
+  #social-links a {
+    justify-content: center;
+  }
 
-  grid-template-columns: 33.33% 16.66% 16.66% 33.33%;
-  grid-template-rows: 50% 10% 10% 10% 10% 10%;
-  grid-template-areas:
-    ". left left ."
-    ". left left ."
-    ". . . ."
-    ". . social ."
-    ". arrow arrow ."
-    ". . . ."
-}
+  .title-text {
+    border-bottom: solid 1px white;
+  }
+
+  #about {
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+      "title ."
+      ". colone"
+      ". coltwo"
+      ". colthree"
+      ". colfour"
+  }
+
+body > header {
+  text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20vw;
+  }
 
   .md-hide {
     display: none;
@@ -438,17 +495,6 @@ footer p {
     display: flex;
     flex-direction: column;
     padding: 20vw;
-  }
-
-  header > #social-links > a{
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  #intro-text {
-    font-size: 1.8rem;
-    z-index: -1
   }
 
   ul {
@@ -542,17 +588,29 @@ footer p {
     justify-content: center;
     text-align: center;
   }
-
-  header {
-    margin: 15vh 5vw;
-    height: 85vh;
-  }
-
   #down-arrow {
     display: none;
   }
 }
 
+
+@media screen and (min-width: 117em) {
+  html{
+    font-size: 22px;
+  }
+
+
+  body {
+    max-width: 100%
+  }
+
+  }  /* 1872px */
+@media screen and (min-width: 130em) {
+  html{
+    font-size: 32px;
+  }
+
+  }  /* 2080px */
 
 
 

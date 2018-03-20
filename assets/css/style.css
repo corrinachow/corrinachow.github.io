@@ -18,6 +18,17 @@
    License: none (public domain)
 */
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 html, body, div, span, applet, object, iframe, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -82,11 +93,10 @@ html {
   font-family: 'Source Code Pro', sans-serif;
   font-size: 16px;
 
-  --sidebarSize: 50px;
-  --main: #1e2022; /*dark grey*/
-  --subheader: #F7F7F7; /*light grey*/
-  --title: black;
-  --emphasis: #FC4E4C; /*red*/
+  --sidebarSize: 45px;
+  --ghost: #ffffff;
+  --blueScreen: #053bc4;
+  --pink: #e20f66;
 
   /* PANETONE */
   --ultraviolet: #6d5b97;
@@ -108,12 +118,12 @@ body {
 }
 
 a {
-  color: var(--emphasis);
+  color: var(--blueScreen);
   text-decoration: none;
 }
 
 .container a, footer a > span {
-  border-bottom: 1px solid var(--emphasis);
+  border-bottom: 1px solid var(--pink);
 }
 
 ul {
@@ -147,7 +157,7 @@ h6 {
 
 h3 {
   text-transform: uppercase;
-  color: var(--emphasis);
+  color: var(--pink);
   font-weight: normal;
   letter-spacing: 0.08rem;
   margin: 0;
@@ -193,7 +203,7 @@ header a {
     content: "";
     position: absolute;
     transform: translateY(-38.33%);
-    border-left: solid 1px white;
+    border-left: solid 1px var(--pink);
     height: 43.33%;
 }
 
@@ -202,7 +212,7 @@ header a {
 }
 
 #social-links a {
-  color: white;
+  color: var(--ghost);
   flex:1;
   display: flex;
   justify-content: flex-end;
@@ -215,16 +225,17 @@ header a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
 
-
-  color: var(--main);
+#down-arrow a {
+  color: var(--pink);
 }
 
 header {
   font-family: 'Inter UI', sans-serif;
-  color: white;
+  color: var(--ghost);
   display: grid;
-  background: #000;
+  background: #0f34b6;
   height:100vh;
   transition: all 0.5s;
 
@@ -240,7 +251,7 @@ header {
 }
 
 nav {
-  background: white;
+  background: var(--ghost);
   top:0;
   width: 100%;
   transition: all 0.5s;
@@ -288,7 +299,7 @@ li.logo a:after {
 nav a {
   text-decoration: none;
   display: inline-block;
-  color: var(--title);
+  color: var(--blueScreen);
   font-family: 'Source Code Pro', sans-serif;
   text-transform: uppercase;
 }
@@ -297,7 +308,7 @@ nav a:after {
   content: "";
   display: block;
   width: 100%;
-  border-bottom: solid 5px var(--emphasis);
+  border-bottom: solid 5px var(--pink);
   transition: all 0.5s ease;
 }
 
@@ -318,7 +329,7 @@ nav .hamburger {
   position: fixed;
   top: 0;
   width: var(--sidebarSize);
-  background: white;
+  background: var(--ghost);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -445,7 +456,7 @@ label {
   text-transform: uppercase;
   font-size: .8rem;
   margin-bottom: 0.5rem;
-  color: var(--emphasis);
+  color: var(--pink);
 }
 
 input, textarea, select {
@@ -555,7 +566,7 @@ footer {
 
   .title-text {
     padding-bottom: 1.2rem;
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px var(--ghost);
   }
 
   .about-description p {
@@ -650,7 +661,7 @@ footer {
     display: block;
     font-size: 2rem;
     text-align: right;
-    background: white;
+    background: var(--ghost);
     transition: all 0.5s;
     z-index: 1;
   }
@@ -679,7 +690,7 @@ footer {
   }
 
   .topnav ul {
-    background: white;
+    background: var(--ghost);
     transform: translateY(0vh);
     height: 100vh;
     transition: all 0.3s linear;

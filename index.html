@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="outline">
+<html lang="en" class="">
    <head>
       <meta charset="UTF-8">
       <title>Corrina Chow | Developer and Designer</title>
@@ -15,15 +15,15 @@
          <a class="hamburger">&#9776;</a>
          <ul class="navigation">
             <li class="logo">
-               <a href="#">
-                <img src="assets/img/1.png">
+               <a aria-label="return to home" href="#">
+                <img src="assets/img/1.png" alt="corrina chow's logo">
                </a>
             </li>
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="logo">
-               <a href="#"></a>
+               <a aria-label="return to home"  href="#"></a>
             </li>
          </ul>
       </nav>
@@ -45,15 +45,15 @@
          <div class="description-text">
             <h2>
                <span id="social-links">
-               <a href="https://github.com/corrinachow/"><i class="fab fa-github"></i></a>
-               <a href="#"><i class="fab fa-linkedin"></i></a>
-               <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen"></i></a>
+                <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github"></i></a>
+                <a aria-label="linkedin" href="#"><i aria-hidden class="fab fa-linkedin"></i></a>
+                <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen"></i></a>
                <span>
             </h2>
             <p><span>Nulla finibus odio dolor, ac ornare turpis sollicitudin nec.<span></p>
          </div>
          <div id="down-arrow">
-            <a href="#about"><i class="fas fa-chevron-down fa-2x"></i></a>
+            <a aria-label="scroll down" href="#about"><i aria-hidden class="fas fa-chevron-down fa-2x"></i></a>
          </div>
       </header>
       <!-- LEFT BAR -->
@@ -106,9 +106,7 @@
                   <a href="#">
                      <div class="portfolio-entry-1 main-project">
                         <div class="entry-description col-12">
-                           <h3>
-                           JavaScript Calculator
-                           </h3>
+                           <h3>JavaScript Calculator</h3>
                            <p>Description</p>
                         </div>
                      </div>
@@ -148,10 +146,8 @@
                   <a href="#">
                      <div class="portfolio-entry-4 small-project">
                         <div class="entry-description col-12">
-                           <h3>
-                           JavaScript Calculator
-                           </h3>
-                           <p>Click to see full project</p>
+                           <h3>JavaScript Calculator</h3>
+                           <p>Description</p>
                         </div>
                      </div>
                   </a>
@@ -166,9 +162,7 @@
                   <a href="#">
                      <div class="portfolio-entry-5 small-project">
                         <div class="entry-description col-12">
-                           <h3>
-                           JavaScript Calculator
-                           </h3>
+                           <h3>JavaScript Calculator</h3>
                            <p>Description</p>
                         </div>
                      </div>
@@ -193,7 +187,7 @@
                      <span class="project-number small-project">05</span>
                      <span>Vivamus ultricies purus</span>
                      <p>Ut vitae consectetur augue.</p>
-                     <a href="">See live</a>
+                     <a href="#">See live</a>
                   </div>
                </div>
             </div>
@@ -209,24 +203,27 @@
             </div>
             <form class="row" method="POST" action="https://formspree.io/hello@corrinachow.com">
                <div class="col-12 name-form">
-                  <label>First &amp; Last Name*</label>
+                  <label for="name">First &amp; Last Name*</label>
                   <input type="text" id="name" required>
                </div>
                <div class="col-6 email-form">
-                  <label>Email Address*</label>
+                  <label for="email">Email Address*</label>
                   <input type="text" id="email" required>
                </div>
                <div class="col-6 timeline-form">
-                  <label>Timeline</label>
-                  <select name="timeline" optional>
+                  <label for="timeline">Timeline</label>
+                  <select id="timeline" optional>
                      <option value="">---</option>
+                     <label for="days" class="sr-only">Days</label>
                      <option value="days">Days</option>
+                     <label for="Weeks" class="sr-only">Weeks</label>
                      <option value="weeks">Weeks</option>
+                     <label for="Months" class="sr-only">Months</label>
                      <option value="months">Months</option>
                   </select>
                </div>
                <div class="col-12 message-form">
-                  <label>Message</label>
+                  <label for="message">Message</label>
                   <textarea id="message" required></textarea>
                </div>
                <div class="col-3">
@@ -245,9 +242,9 @@
                 </a>
               </div>
             <div class="master-social-links col-6">
-               <a href="https://github.com/corrinachow/"><i class="fab fa-github fa-2x"></i></a>
-               <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-               <a href="https://codepen.io/corrinachow/"><i class="fab fa-codepen fa-2x"></i></a>
+               <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github fa-2x"></i></a>
+               <a aria-label="linkedin" href="#"><i aria-hidden class="fab fa-linkedin fa-2x"></i></a>
+               <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen fa-2x"></i></a>
             </div>
          </div>
       </footer>

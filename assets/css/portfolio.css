@@ -1,5 +1,11 @@
-.sm-show {
-  display: none;
+.project-number.main-project {
+  font-size: 3rem;
+  color: #d7d7d7;
+}
+
+.project-number.small-project {
+  font-size: 2rem;
+  color: #d7d7d7;
 }
 
 .portfolio-entry-1 {
@@ -28,7 +34,7 @@
 
 [class*='portfolio-entry-'].main-project {
   background-size: cover;
-  height: 40vh;
+  height: 60vh;
   overflow: hidden;
   transition: all 0.5s;
   display: flex;

@@ -153,10 +153,6 @@ h3 {
   margin: 0;
 }
 
-h4 {
-
-}
-
 /* HEADER */
 
 .title-text {
@@ -214,6 +210,7 @@ header a {
 
 #down-arrow {
   grid-area: arrow;
+
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -232,7 +229,7 @@ header {
   transition: all 0.5s;
 
   grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-  grid-template-rows: 50% 10% 10% 10% 10% 10%;
+  grid-template-rows: 40% 12% 12% 12% 12% 12%;
   grid-template-areas:
     ". title title  . . ."
     ". title title lines . ."
@@ -366,9 +363,13 @@ nav .hamburger {
   font-family: 'Source Code Pro', monospace;
 }
 
+.container span {
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 /* ABOUT */
-
-
 
 #about > .subheader {
   grid-area: aboutTitle;
@@ -386,11 +387,6 @@ nav .hamburger {
   line-height: 1.56rem;
 }
 
-#about li > span{
-  color: #000;
-  font-weight: 600;
-}
-
 #skill-1 {
   grid-area: colone;
 }
@@ -405,7 +401,6 @@ nav .hamburger {
 
 .about-description {
   color: #000;
-
   grid-area: desc;
 }
 
@@ -554,15 +549,12 @@ footer {
   }
 
   .description-text {
-    padding: 2rem 0;
+    padding: 1.2rem 0;
     margin: 0;
   }
 
-  #social-links a {
-  }
-
   .title-text {
-    padding-bottom: 2rem;
+    padding-bottom: 1.2rem;
     border-bottom: solid 1px white;
   }
 
@@ -618,24 +610,19 @@ footer {
 /* Phones */
 
 @media only screen and (max-width: 30em) { /* 480 px*/
-
   h1 {
-    font-size: 4rem;
-    line-height: 5rem;
-  }
+    font-size: 3.55rem;
+    line-height: 4.5rem  }
 
   header > div *, .title-text {
     padding-right: 0;
-    margin: 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
+
   body > header {
     display: flex;
     flex-direction: column;
-    padding: 20vw;
+    padding: 3.5rem 3rem 0 3rem;
   }
 
   #about {
@@ -644,14 +631,13 @@ footer {
     flex-direction: column;
     }
 
-  #social-links {
-    margin: 5vh 0;
-    display: flex;
-    flex-direction: row;
+  #social-links a {
+    margin: 1rem 0;
+    justify-content: center;
   }
 
   #down-arrow {
-    margin: 5rem 0;
+    position: relative;
   }
 
   .logo {
@@ -716,9 +702,10 @@ footer {
   [class*='col-'] { width: 100%; }
 }
 
-@media only screen and (max-width: 325px) {
-  #down-arrow {
-    display: none;
+@media only screen and (max-width: 320px) {
+  header.row {
+    padding: 5vh 5vw;
+    margin: 0;
   }
 }
 

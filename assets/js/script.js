@@ -1,40 +1,53 @@
-const nav = document.querySelector('.topnav');
-const hamburger = document.querySelector('.hamburger');
+function animate(elem, style, unit, from, to, time, prop) {
+    if (!elem) {
+        return;
+    }
+    const start = new Date().getTime(),
+        timer = setInterval(function () {
+            const step = Math.min(1, (new Date().getTime() - start) / time);
+            if (prop) {
+                elem[style] = (from + step * (to - from))+unit;
+            } else {
+                elem.style[style] = (from + step * (to - from))+unit;
+            }
+            if (step === 1) {
+                clearInterval(timer);
+            }
+        }, 25);
+    prop ? elem[style] = from+unit : elem.style[style] = from+unit;
+}
+
+window.addEventListener('click', function (e) {
+  if (e.target.nodeName == "A") {
+    console.log(e.target)
+    var target = document.querySelector(e.target.hash);
+    animate(document.documentElement, "scrollTop", "", e.pageY, target.offsetTop - 20, 250, true);
+  }
+});
+
+const nav = document.querySelector('.topnav')
 let topOfNav = nav.offsetTop;
 
-function fixNav() {
+window.addEventListener('scroll', function fixNav() {
   if(window.scrollY >= topOfNav) {
     document.body.style.paddingTop = nav.offsetHeight + 'px';
-    /*nav.style.opacity = 1;*/
     document.body.classList.add('fixed-nav');
   } else {
     document.body.classList.remove('fixed-nav');
-    /*nav.style.opacity = 0;*/
   }
   document.body.style.padding = 0;
-}
+});
 
 function toggleNavBar() {
   nav.classList.toggle('collapse');
 }
 
-/*function resizeSocial() {
-  if (window.innerWidth >= 480) {
-    document.getElementById('social-links').style.height = document.getElementById('intro-text').clientHeight + 'px';
-    } else if (window.innerWidth < 480) {
-    document.getElementById('social-links').style.height = 1.5 + 'rem'
-  }
-}*/
+window.onload = function() {
+  const copyrightYear = document.getElementById('copyright-year');
+  const d = new Date();
+  copyrightYear.innerHTML = d.getFullYear();
+}
 
-
-const copyrightYear = document.getElementById('copyright-year');
-const d = new Date();
-copyrightYear.innerHTML = d.getFullYear();
-window.addEventListener('scroll', fixNav);
 nav.addEventListener('click', toggleNavBar);
-window.addEventListener('resize', resizeSocial);
-document.addEventListener("DOMContentLoaded", resizeSocial);
-
-
 
 

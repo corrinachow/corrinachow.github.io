@@ -115,6 +115,9 @@ body {
   margin: 1px auto;
   width: 100%;
   color: #636363;
+  &.in-transition {
+    transition: transform 900ms ease;
+  }
 }
 
 a {
@@ -344,7 +347,7 @@ nav .hamburger {
 .sidebar p {
   font-size: 0.75rem;
   position: absolute;
-  width: 500px;
+  width: 1000px;
   text-align: center;
   text-transform: uppercase;
   margin: 0.5rem 0;
@@ -359,17 +362,14 @@ nav .hamburger {
   transform: rotate(90deg);
 }
 
-.subheader {
-  padding-top: 1.5rem;
-  display: flex;
-  justify-content: flex-start;
+section, footer {
+  padding-top:45px;
 }
-
 
 /* MAIN */
 
 .container {
-  padding: 0 var(--sidebarSize);
+  padding: 3vh var(--sidebarSize);
   margin: auto;
   font-family: 'Source Code Pro', monospace;
 }
@@ -378,6 +378,17 @@ nav .hamburger {
   color: #000;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+span.project-subheader {
+  color: #636363;
+  font-weight: normal;
+}
+
+.subheader {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* ABOUT */
@@ -477,6 +488,10 @@ form textarea {
 }
 
 input[type="submit"] {
+  letter-spacing: 0.1rem;
+  border-color: var(--pink);
+  color: var(--pink);
+  text-transform: uppercase;
 }
 
 #contact {
@@ -566,7 +581,7 @@ footer {
 
   .title-text {
     padding-bottom: 1.2rem;
-    border-bottom: solid 1px var(--ghost);
+    border-bottom: solid 1px var(--pink);
   }
 
   .about-description p {

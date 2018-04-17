@@ -8,52 +8,61 @@
   color: #d7d7d7;
 }
 
-.portfolio-entry-1 {
-  background: url(../img/desk.jpg) center no-repeat;
-}
-
-.portfolio-entry-2 {
-  background: url(../img/desk.jpg) top center no-repeat;
-}
-.portfolio-entry-3 {
-  background: url(../img/1.png) center;
-
-}
-.portfolio-entry-4 {
-  background: url(../img/3.gif) center;
-
-}
-.portfolio-entry-5 {
-  background: url(../img/2.png) center;
-}
-
 #portfolio p {
   color: black;
 }
 
+.gallery {
+  display: flex;
+}
+
+[class*='portfolio-entry-'] {
+  position: relative;
+}
 
 [class*='portfolio-entry-'].main-project {
-  background-size: cover;
   height: 60vh;
-  overflow: hidden;
   transition: all 0.5s;
   display: flex;
   margin-bottom: 2vw;
 }
 
 [class*='portfolio-entry-'].small-project {
-  height: 30vh;
-  background-size: cover;
+    height: 40vh;
+  }
+
+#portfolio img {
+  height: 100%;
 }
 
 .small-project-desc {
   padding: 1em 0;
 }
 
-[class*='portfolio-entry-'] div {
-    visibility: hidden;
-    opacity: 0;
+.img-description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s, visibility .2s;
   }
+
+  .img-wrap:hover .img-description {
+  visibility: visible;
+  opacity: 1;
+  color: var(--blueScreen);
+  text-transform: none;
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: normal;
+}
+
 @media screen and (min-width: 40em) { /* 640 px */
   .portfolio-subsection [class*='col-']:not(:last-child) {
     padding-right: 2vw;
@@ -61,17 +70,9 @@
 }
 
 @media only screen and (min-width: 55.5em) {
-  [class*='portfolio-entry-'].small-project {
-    height: 40vh;
-    background-size: cover;
-  }
-
   [class*='col-'] [class*='portfolio-entry-']:hover > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
+    position: relative;
+    z-index: 999;
     background:  linear-gradient(to right,
         rgba(255, 255, 255, 0.9),
         rgba(255, 255, 255, 0.9)

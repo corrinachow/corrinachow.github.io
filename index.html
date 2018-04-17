@@ -16,7 +16,7 @@
          <ul class="navigation">
             <li class="logo">
                <a aria-label="return to home" href="#">
-                <img src="assets/img/1.png" alt="corrina chow's logo">
+                <img src="assets/img/corrina-chow-logo.svg" alt="corrina chow's logo" height="100">
                </a>
             </li>
             <li><a href="#about">About</a></li>
@@ -28,44 +28,36 @@
          </ul>
       </nav>
       <!-- HEADER -->
-      <header class="row">
-         <!-- <h1>Corrina Chow - Developer and Designer</h1> -->
+      <header>
          <div class="title-text">
             <h1>
-               <span>corrina</span>
-               <span>chow</span>
+               <span>Corrina Chow</span>
             </h1>
             <h2>
-               <span>full-stack web developer </span>
-               <span>&amp;</span>
-               <span> illustrator</span>
+               <span>Full Stack Web Developer &amp; Designer</span>
             </h2>
          </div>
-         <div class="line md-hide"></div>
          <div class="description-text">
             <h2>
-               <span id="social-links">
-                <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github"></i></a>
-                <a aria-label="linkedin" href="#"><i aria-hidden class="fab fa-linkedin"></i></a>
-                <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen"></i></a>
-               <span>
+               <div id="social-links">
+                <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github"></i><span></span></a>
+                <!-- <a aria-label="linkedin" href="#"><i aria-hidden class="fab fa-linkedin"></i></a>
+                <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen"></i></a> -->
+               </div>
             </h2>
-            <p><span>Nulla finibus odio dolor, ac ornare turpis sollicitudin nec.<span></p>
-         </div>
-         <div id="down-arrow">
-            <a aria-label="scroll down" href="#about"><i class="fas fa-chevron-down fa-2x"></i></a>
+            <p><span><span></p>
          </div>
       </header>
       <!-- LEFT BAR -->
       <aside class="sidebar left">
-         <p>Web development and illustration portfolio</p>
+         <p>Web development and design portfolio</p>
       </aside>
       <!-- RIGHT BAR -->
       <aside class="sidebar right">
          <p>© <span id="copyright-year">date</span>, Corrina Chow</p>
       </aside>
       <!-- START MAIN CONTAINER -->
-      <div class="row container ">
+      <div class="container ">
          <!-- ABOUT ME -->
          <section id="about">
             <div class="subheader">
@@ -80,8 +72,8 @@
             </ul>
             <ul id="skill-2">
                <li><span>Back-end:</span></li>
-               <li>Express</li>
                <li>Node.js</li>
+               <li>Express</li>
                <li>MongoDB</li>
             </ul>
             <ul id="skill-3">
@@ -89,9 +81,11 @@
                <li>Photoshop</li>
                <li>Illustrator</li>
                <li>InDesign</li>
+               <li>Affinity Suite</li>
             </ul>
             <div class="about-description">
-               <p>Aenean ac ipsum turpis. Vivamus ultricies purus id cursus tincidunt. Curabitur non venenatis felis. Morbi dapibus mauris vitae sem lobortis, ut scelerisque justo dapibus. Pellentesque pellentesque, sapien at venenatis venenatis, ligula odio placerat risus, non placerat erat velit et tortor. Donec sagittis, lacus vel dapibus sodales, mi justo tempus metus, ultricies interdum ex magna nec sapien.</p>
+               <p>Hi, I'm a full stack developer &amp; designer based in Montreal.  I'm currently available for small freelance projects!</p>
+               <p id='about-contact'><a href="#contact">Contact me</a></p>
             </div>
             <!-- END ROW -->
          </section>
@@ -102,26 +96,23 @@
             </div>
             <div class="row portfolio-subsection">
                <div class="col-8">
-                  <a href="#">
-                     <div class="portfolio-entry-1 main-project">
-                        <div class="entry-description col-12">
-                           <h3>JavaScript Calculator</h3>
-                           <p>Description</p>
-                        </div>
+                  <a href="./projects/personal-branding/personal-branding.html">
+                     <div class="img-wrap portfolio-entry-1 main-project">
+                        <img src="assets/img/corrina-chow-branding.jpg" alt="corrina chow visual identity">
+                        <span class="img-description">See case study</span>
                      </div>
                   </a>
                </div>
                <div class="project-desc col-4">
-                  <span class="project-number main-project">01</span>
-                  <p><span>Title</span></p>
-                  <p><span class="project-subheader">Tech:</span></p>
-                  <p>Donec non quam velit. Proin ultricies congue felis ac iaculis. Aenean blandit molestie convallis. Quisque consectetur purus vitae feugiat ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                  <p><span>Corrina Chow | Visual Identity</span></p>
+                  <p><span class="project-subheader">Branding, Graphic Design, Art Direction</span></p>
+                  <p>Personal branding project.
                   <p>
-                    <a href="">See live</a>
+                    <a href="./projects/personal-branding/personal-branding.html">See case study</a>
                </div>
             </div>
             <!-- END ROW -->
-            <div class="row portfolio-subsection">
+            <!-- <div class="row portfolio-subsection">
                <div class="col-8">
                   <a href="#">
                      <div class="portfolio-entry-2 main-project">
@@ -136,58 +127,53 @@
                   <span class="project-number main-project">02</span>
                   <p><span>Title</span></p>
                   <p><span class="project-subheader">Tech:</span></p>
+                  <details>
+                     <summary>Copyright 1999-2014.</summary>
                   <p>Proin posuere finibus elit quis sagittis. Nunc vehicula ullamcorper gravida. Cras a dolor a orci rutrum egestas. Quisque ac tellus eu tortor fermentum gravida. Donec mattis dictum blandit. Morbi id venenatis risus, sed vehicula massa.
-                  <p>
+                  </p>
+               </details>
                   <a href="">See live</a>
                </div>
-            </div>
+            </div> -->
             <!-- END ROW -->
-            <div class="row portfolio-subsection">
+            <div class="row portfolio-subsection gallery">
                <div class="col-4">
-                  <a href="#">
-                     <div class="portfolio-entry-3 small-project">
-                        <div class="entry-description col-12">
-                           <h3>JavaScript Calculator</h3>
-                           <p>Description</p>
-                        </div>
+                  <a href="http://corrinachow.com/freeCodeCamp/Projects/javascript-calculator/build/">
+                     <div class="img-wrap portfolio-entry-3 small-project">
+                        <img src="assets/img/javascript-calculator.png" alt="javascript calculator">
+                        <span class="img-description">See JavaScript Calculator live</span>
                      </div>
                   </a>
                   <div class="small-project-desc">
-                     <span class="project-number small-project">03</span>
                      <span>Javascript Calculator</span>
                      <p>Calculator made using <span class="project-subheader">React, HTML &amp; CSS</span>.</p>
-                     <a href="http://corrinachow.com/freeCodeCamp/Projects/javascript-calculator/build/">See JavaScript Caclulator live</a>
+                     <a href="http://corrinachow.com/freeCodeCamp/Projects/javascript-calculator/build/" class="lg-hide">See JavaScript Caclulator live</a>
                   </div>
                </div>
                <div class="col-4">
-                  <a href="#">
-                     <div class="portfolio-entry-4 small-project">
-                        <div class="entry-description col-12">
-                           <p>Wikipedia Viewer</p>
-                        </div>
+                  <a href="http://corrinachow.com/freeCodeCamp/Projects/wiki-viewer/">
+                     <div class="img-wrap  portfolio-entry-4 small-project">
+                        <img src="assets/img/wikipedia-viewer-api.gif" alt="wikipedia viewer">
+                        <span class="img-description">See Wikipedia Viewer Live</span>
                      </div>
                   </a>
                   <div class="small-project-desc">
-                     <span class="project-number small-project">04</span>
                      <span>Wikipedia viewer</span>
                      <p>Front-end app  that can search Wikipedia made using the <span class="project-subheader">Wikipedia API, jQuery, HTML &amp; CSS</span>.</p>
-                     <a href="http://corrinachow.com/freeCodeCamp/Projects/wiki-viewer/">See Wikipedia Viewer live</a>
+                     <a href="http://corrinachow.com/freeCodeCamp/Projects/wiki-viewer/" class="lg-hide">See Wikipedia Viewer live</a>
                   </div>
                </div>
                <div class="col-4">
-                  <a href="#">
-                     <div class="portfolio-entry-5 small-project">
-                        <div class="entry-description col-12">
-                           <h3>JavaScript Calculator</h3>
-                           <p>Description</p>
-                        </div>
+                  <a href="http://corrinachow.com/freeCodeCamp/Projects/pomodoro-clock/build/">
+                     <div class="img-wrap portfolio-entry-5 small-project">
+                        <img src="assets/img/pomodoro-timer.png" alt="wikipedia viewer">
+                        <span class="img-description">See Pomodoro Clock live</span>
                      </div>
                   </a>
                   <div class="small-project-desc">
-                     <span class="project-number small-project">05</span>
                      <span>Pomodoro Clock</span>
                      <p>A customisable pomodoro timer made with <span class="project-subheader">React, HTML &amp; CSS</span>.</p>
-                     <a href="http://corrinachow.com/freeCodeCamp/Projects/pomodoro-clock/build/">See Pomodoro Clock live</a>
+                     <a href="http://corrinachow.com/freeCodeCamp/Projects/pomodoro-clock/build/" class="lg-hide">See Pomodoro Clock live</a>
                   </div>
                </div>
             </div>
@@ -199,7 +185,7 @@
                <h2>Contact me</h2>
             </div>
             <div class="contact-text">
-               <p>Have a cool project you'd like to discuss?</p>
+               <p>Have a project you'd like to discuss?  I'm a full stack web developer &amp; designer meaning I can help you build your vision from conception to deployment.  If you're an artist and would like to collaborate, feel free to send me a message as well.</p>
             </div>
             <form class="row" method="POST" action="https://formspree.io/hello@corrinachow.com">
                <div class="col-12 name-form">
@@ -240,11 +226,15 @@
               <h2>Find me online</h2>
                 <a href="mailto:hello@corrinachow.com"><span>hello@corrinachow.com</span>
                 </a>
+                <br>
+                <br>
+
+                <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github fa-2x"></i></a>
               </div>
             <div class="master-social-links col-6">
-               <a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github fa-2x"></i></a>
+               <!--<a aria-label="github" href="https://github.com/corrinachow/"><i aria-hidden class="fab fa-github fa-2x"></i></a>
                <a aria-label="linkedin" href="#"><i aria-hidden class="fab fa-linkedin fa-2x"></i></a>
-               <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen fa-2x"></i></a>
+               <a aria-label="codepen" href="https://codepen.io/corrinachow/"><i aria-hidden class="fab fa-codepen fa-2x"></i></a> -->
             </div>
          </div>
       </footer>

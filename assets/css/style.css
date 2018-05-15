@@ -345,7 +345,6 @@ section, footer {
 .container span {
   color: #333;
   font-weight: 600;
-  /*text-transform: uppercase;*/
   letter-spacing: 0.03rem;
   font-family: 'Lato', sans-serif;
 }

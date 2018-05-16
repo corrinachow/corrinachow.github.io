@@ -39,7 +39,13 @@
   padding: 1em 0;
 }
 
-.img-description {
+
+
+span.img-description {
+  text-transform: none;
+  font-family: 'Source Code Pro', sans-serif;
+  font-weight: normal;
+  color: var(--blueScreen);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -57,10 +63,6 @@
   .img-wrap:hover .img-description {
   visibility: visible;
   opacity: 1;
-  color: var(--blueScreen);
-  text-transform: none;
-  font-family: 'Source Code Pro', sans-serif;
-  font-weight: normal;
 }
 
 @media screen and (min-width: 40em) { /* 640 px */

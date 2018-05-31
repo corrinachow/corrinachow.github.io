@@ -390,6 +390,10 @@ span.project-subheader {
   grid-area: colthree;
 }
 
+#skill-4 {
+  grid-area: colfour;
+}
+
 .about-description {
   color: #333;
   grid-area: desc;
@@ -403,7 +407,7 @@ span.project-subheader {
   grid-template-areas:
     ". aboutTitle . . . ."
     ". . colone coltwo colthree colfour"
-    ". . desc desc desc ."
+    ". . desc desc desc desc"
 }
 
 /* PORTFOLIO */

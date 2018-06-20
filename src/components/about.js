@@ -15,10 +15,14 @@ const frameworks = [
 const systems = ['Git', 'SQL', 'MongoDB', 'PostgreSQL']
 const design = ['Photoshop', 'Illustrator', 'InDesign', 'Sketch']
 
-const languageList = languages.map(language => <li>{language}</li>)
-const frameworksList = frameworks.map(framework => <li>{framework}</li>)
-const systemsList = systems.map(system => <li>{system}</li>)
-const designList = design.map(program => <li>{program}</li>)
+const createList = skills => {
+  return skills.map(skill => <li>{skill}</li>)
+}
+
+const languageList = createList(languages)
+const frameworksList = createList(frameworks)
+const systemsList = createList(systems)
+const designList = createList(design)
 
 const About = () => (
   <section id="about">

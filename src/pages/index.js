@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import About from '../components/about.js'
+import About from '../layouts/about.js'
+import Portfolio from '../layouts/portfolio.js'
 
 const IndexPage = () => (
   <div>
@@ -26,6 +27,7 @@ const IndexPage = () => (
     </header>
     <div className="container">
       <About />
+      <Portfolio />
     </div>
   </div>
 )

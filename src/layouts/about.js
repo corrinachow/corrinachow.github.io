@@ -53,7 +53,7 @@ const About = () => (
       </li>
       {designList}
     </ul>
-    <div class="about-description" style={{gridArea: "desc"}}>
+    <div class="about-description" style={{gridArea: "desc", color: "#333"}}>
       <p>
         Hi, I'm a full stack developer &amp; designer based in Montreal. I'm
         currently available for small freelance projects!

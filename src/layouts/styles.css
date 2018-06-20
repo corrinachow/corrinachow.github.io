@@ -402,7 +402,7 @@ span.project-subheader {
   grid-template-areas:
     ". aboutTitle . . . ."
     ". . colone coltwo colthree colfour"
-    ". . desc desc desc ."
+    ". . desc desc desc desc"
 }
 
 /* PORTFOLIO */

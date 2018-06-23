@@ -11,9 +11,8 @@ import './portfolio.css'
 
 const Index = ({ children, data }) => (
   <div>
-    <Helmet
-      title={config.siteTitle}
-    />
+    <Helmet />
+  {/* ad favicon, apple-touch-icon*/}
     <Navbar />
     <Sidebar text="Web development and design portfolio" alignment="sidebar left"/>
     <Sidebar text={`© ${new Date().getFullYear()}, Corrina Chow`} alignment="sidebar right"/>

@@ -1,13 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
+import config from '../../config/SiteConfig'
 
 const IndexPage = props => {
   console.log(props)
-  // const projectEdges = props.data.allMarkdownRemark.edges;
+  const projectEdges = props.data.allMarkdownRemark.edges;
   return (
     <div>
+      <Helmet>
+        <title>{config.siteTitle}</title>
+      </Helmet>
       <header>
         <div className="title-text">
           <h1>
@@ -50,10 +55,7 @@ export const pageQuery = graphql`
           frontmatter {
             cover {
               childImageSharp {
-                sizes(
-                  maxWidth: 850
-                  quality: 90
-                ) {
+                sizes(maxWidth: 850, quality: 90) {
                   ...GatsbyImageSharpSizes_tracedSVG
                 }
               }

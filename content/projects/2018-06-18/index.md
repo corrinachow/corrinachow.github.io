@@ -1,11 +1,11 @@
 ---
-title: "Personal Branding"
-cover: "./corrina-chow-branding.jpg"
-date: "2018-05-10"
-service: "Personal Branding Project"
-tech: "Photoshop, Illustrator"
-repo: ""
-snippet: "Personal branding project "
+title: "Sága"
+cover: "./wiki-maps.png"
+date: "2018-06-18"
+service: "Full Stack Web Application"
+tech: "PostgreSQL, Rails API, React.JS, React Router, OAuth2, Canvas.JS, Kairos API, YouTubeAPI, Ziggeo API, IFrame Player API"
+repo: "https://github.com/kaanyalti/Saga"
+snippet: "An in-depth reporting tool for YouTubers. Sága captures the emotional response of the audience to specified content and provides visual representations of the audience's reactions to the creator."
 ---
 
 # Description

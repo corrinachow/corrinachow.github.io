@@ -51,7 +51,7 @@ class Portfolio extends React.Component {
             <div className="small-project-desc">
               <span>{project.title}</span>
               <p>
-                {project.snippet}{' '}
+                {project.snippet}{' Made using '}
                 <span className="project-subheader">
                   {project.tech}
                 </span>.

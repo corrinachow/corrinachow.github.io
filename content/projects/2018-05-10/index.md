@@ -5,7 +5,7 @@ date: "2018-05-10"
 service: "Full Stack Web Application"
 tech: "PostgreSQL, Node.JS, Express, jQuery, Bootstrap 4, Google Maps API, Google Geocode API"
 repo: "https://github.com/corrinachow/wiki-maps"
-snippet: "Full-stack web app that allows users to create themed maps made using "
+snippet: "Full-stack web app that allows users to create themed maps."
 ---
 
 # Description

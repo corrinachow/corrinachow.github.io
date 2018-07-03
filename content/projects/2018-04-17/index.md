@@ -1,11 +1,11 @@
 ---
 title: "Personal Branding"
 cover: "./corrina-chow-branding.jpg"
-date: "2018-05-10"
+date: "2018-02-18"
 service: "Personal Branding Project"
 tech: "Photoshop, Illustrator"
 repo: ""
-snippet: "Personal branding project "
+snippet: "Personal branding project."
 ---
 
 # Description

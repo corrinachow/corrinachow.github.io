@@ -1,6 +1,6 @@
 ---
 title: "Sága"
-cover: "./wiki-maps.png"
+cover: "./saga.png"
 date: "2018-06-18"
 service: "Full Stack Web Application"
 tech: "PostgreSQL, Rails API, React.JS, React Router, OAuth2, Canvas.JS, Kairos API, YouTubeAPI, Ziggeo API, IFrame Player API"

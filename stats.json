@@ -13,20 +13,12 @@
       "path---pomodoro-timer-6dd674d99c121fc3498c.js.map"
     ],
     "component---src-layouts-index-jsx": [
-      "component---src-layouts-index-jsx-a4a4e049a3ad23fbaa7a.js",
-      "component---src-layouts-index-jsx-a4a4e049a3ad23fbaa7a.js.map"
-    ],
-    "path---personal-branding": [
-      "path---personal-branding-aa0aa424ce03f7b86a1e.js",
-      "path---personal-branding-aa0aa424ce03f7b86a1e.js.map"
-    ],
-    "path---page-2": [
-      "path---page-2-a0e39f21c11f6a62c5ab.js",
-      "path---page-2-a0e39f21c11f6a62c5ab.js.map"
+      "component---src-layouts-index-jsx-68935199bfda60105d4f.js",
+      "component---src-layouts-index-jsx-68935199bfda60105d4f.js.map"
     ],
     "path---index": [
-      "path---index-822a3eee61f3149d44fc.js",
-      "path---index-822a3eee61f3149d44fc.js.map"
+      "path---index-b1f330d032848890dd1d.js",
+      "path---index-b1f330d032848890dd1d.js.map"
     ],
     "path---wiki-maps": [
       "path---wiki-maps-824fad4b10fa867178d0.js",
@@ -49,21 +41,17 @@
       "path---saga-f88de4e0e5295bcc69d3.js.map"
     ],
     "component---src-pages-index-jsx": [
-      "component---src-pages-index-jsx-3d1c7656c0f942e15f36.js",
-      "component---src-pages-index-jsx-3d1c7656c0f942e15f36.js.map"
-    ],
-    "component---src-pages-page-2-js": [
-      "component---src-pages-page-2-js-1d4f0f19c1c44398ab65.js",
-      "component---src-pages-page-2-js-1d4f0f19c1c44398ab65.js.map"
+      "component---src-pages-index-jsx-8e527d6e2a9fb070af5f.js",
+      "component---src-pages-index-jsx-8e527d6e2a9fb070af5f.js.map"
     ],
     "path---java-script-calculator": [
       "path---java-script-calculator-fb73ee542a61dde9e839.js",
       "path---java-script-calculator-fb73ee542a61dde9e839.js.map"
     ],
     "app": [
-      "app-d4c80d7213faf8445fc9.js",
+      "app-de75b1a6e808f719be19.js",
       "build-js-styles.css",
-      "app-d4c80d7213faf8445fc9.js.map",
+      "app-de75b1a6e808f719be19.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [

@@ -38,8 +38,8 @@ const IndexPage = props => {
       <div className="container">
         <About />
         <Portfolio projectEdges={projectEdges} />
+        <Contact />
       </div>
-      <Contact />
       <Footer />
     </div>
   )

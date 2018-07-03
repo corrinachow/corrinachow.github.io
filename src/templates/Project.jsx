@@ -1,21 +1,18 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
 
 const Project = props => {
-  const { slug } = props.pathContext;
-  const postNode = props.data.markdownRemark;
-  const project = postNode.frontmatter;
-  const imageURL = project.cover.childImageSharp.resize.src;
+  const { slug } = props.pathContext
+  const postNode = props.data.markdownRemark
+  const project = postNode.frontmatter
+  const imageURL = project.cover.childImageSharp.resize.src
   if (!project.id) {
-    project.id = slug;
+    project.id = slug
   }
-  return (
-    <div className="container project-container">
-    </div>
-  );
-};
+  return <div className="container project-container" />
+}
 
-export default Project;
+export default Project
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -39,4 +36,4 @@ export const pageQuery = graphql`
       excerpt
     }
   }
-`;
+`

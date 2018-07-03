@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import config from '../../config/SiteConfig';
+import config from '../../config/SiteConfig'
 
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/sidebar'
@@ -12,13 +12,17 @@ import './portfolio.css'
 const Index = ({ children, data }) => (
   <div>
     <Helmet />
-  {/* ad favicon, apple-touch-icon*/}
+    {/* ad favicon, apple-touch-icon*/}
     <Navbar />
-    <Sidebar text="Web development and design portfolio" alignment="sidebar left"/>
-    <Sidebar text={`© ${new Date().getFullYear()}, Corrina Chow`} alignment="sidebar right"/>
-    <div>
-      {children()}
-    </div>
+    <Sidebar
+      text="Web development and design portfolio"
+      alignment="sidebar left"
+    />
+    <Sidebar
+      text={`© ${new Date().getFullYear()}, Corrina Chow`}
+      alignment="sidebar right"
+    />
+    <div>{children()}</div>
   </div>
 )
 

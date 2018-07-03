@@ -9,7 +9,7 @@ import config from '../../config/SiteConfig'
 
 const IndexPage = props => {
   console.log(props)
-  const projectEdges = props.data.allMarkdownRemark.edges;
+  const projectEdges = props.data.allMarkdownRemark.edges
   return (
     <div>
       <Helmet>
@@ -37,9 +37,9 @@ const IndexPage = props => {
       </header>
       <div className="container">
         <About />
-        <Portfolio projectEdges={projectEdges}/>
+        <Portfolio projectEdges={projectEdges} />
       </div>
-      <Contact/>
+      <Contact />
       <Footer />
     </div>
   )

@@ -26,7 +26,7 @@ const designList = createList(design)
 
 const About = () => (
   <section id="about">
-    <div className="subheader" style={{gridArea: "aboutTitle"}}>
+    <div className="subheader" style={{ gridArea: 'aboutTitle' }}>
       <h2>About me</h2>
     </div>
     <ul id="skill-1">
@@ -53,7 +53,10 @@ const About = () => (
       </li>
       {designList}
     </ul>
-    <div className="about-description" style={{gridArea: "desc", color: "#333"}}>
+    <div
+      className="about-description"
+      style={{ gridArea: 'desc', color: '#333' }}
+    >
       <p>
         Hi, I'm a full stack developer &amp; designer based in Montreal. I'm
         currently available for small freelance projects!

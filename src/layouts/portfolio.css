@@ -60,7 +60,7 @@ span.img-description {
   transition: opacity .2s, visibility .2s;
   }
 
-  .img-wrap:hover .img-description {
+.img-wrap:hover .img-description {
   visibility: visible;
   opacity: 1;
 }

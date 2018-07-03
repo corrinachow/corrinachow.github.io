@@ -54,13 +54,14 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            service
             tech
             snippet
             repo
             cover {
               childImageSharp {
                 sizes(maxWidth: 850, quality: 90) {
-                  ...GatsbyImageSharpSizes_tracedSVG
+                  ...GatsbyImageSharpSizes_noBase64
                 }
               }
             }

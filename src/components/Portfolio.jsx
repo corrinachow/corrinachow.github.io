@@ -8,16 +8,15 @@ class Portfolio extends React.Component {
     console.log(this.props.projectEdges)
     const List = []
     this.props.projectEdges.forEach(projectEdge => {
-      console.log(projectEdge.node)
       List.push({
         path: projectEdge.node.fields.slug,
         title: projectEdge.node.frontmatter.title,
         cover: projectEdge.node.frontmatter.cover.childImageSharp.sizes,
         repo: projectEdge.node.frontmatter.repo,
+        live: projectEdge.node.frontmatter.live,
         service: projectEdge.node.frontmatter.service,
         snippet: projectEdge.node.frontmatter.snippet,
         tech: projectEdge.node.frontmatter.tech,
-        imageURL: projectEdge.node.frontmatter.cover.childImageSharp.sizes.src,
       })
     })
     return List
@@ -39,11 +38,11 @@ class Portfolio extends React.Component {
         <div className="subheader">
           <h2>Featured projects</h2>
         </div>
-        <div className="row portfolio-subsection gallery" />
+        <div className="row portfolio-subsection gallery">
         {List.map(project => (
-          <div className="col-4">
+          <div key={project.path} className="col-4">
             <a href={project.repo}>
-              <div className="img-wrap portfolio-entry-4 small-project" >
+              <div className="img-wrap portfolio-entry-4 small-project">
                 <Img sizes={project.cover} style={imgStyle} />
                 <span className="img-description">See GitHub repo</span>
               </div>
@@ -51,20 +50,24 @@ class Portfolio extends React.Component {
             <div className="small-project-desc">
               <span>{project.title}</span>
               <p>
-                {project.snippet}{' Made using '}
-                <span className="project-subheader">
-                  {project.tech}
-                </span>.
+                {project.snippet}
+                {' Made using '}
+                <span className="project-subheader">{project.tech}</span>
+                {project.live && (
+                  <p>
+                    <a href={project.live}>
+                      See {project.title} live
+                    </a>
+                  </p>
+                )}
               </p>
-              <a
-                href="https://github.com/corrinachow/wiki-maps"
-                className="lg-hide"
-              >
-                See Wiki-Map's Github Repo
+              <a href={project.repo} className="lg-hide">
+                See {project.title}'s Github Repo
               </a>
             </div>
           </div>
         ))}
+        </div>
       </section>
     )
   }

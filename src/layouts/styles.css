@@ -600,10 +600,6 @@ footer > div {
     column-count: 1;
   }
 
-  #portfolio > .gallery {
-  display: block;
-}
-
   #portfolio [class*='portfolio-entry-'].small-project {
     height: 60vh;
   }

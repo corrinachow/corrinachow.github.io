@@ -58,6 +58,7 @@ export const pageQuery = graphql`
             tech
             snippet
             repo
+            live
             cover {
               childImageSharp {
                 sizes(maxWidth: 850, quality: 90) {

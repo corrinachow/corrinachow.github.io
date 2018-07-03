@@ -14,6 +14,7 @@
 
 .gallery {
   display: flex;
+  flex-wrap: wrap;
 }
 
 [class*='portfolio-entry-'] {
@@ -29,6 +30,7 @@
 
 [class*='portfolio-entry-'].small-project {
     height: 40vh;
+
   }
 
 #portfolio img {

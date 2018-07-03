@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 class Portfolio extends React.Component {
   getList() {
-    console.log(this.props.projectEdges)
     const List = []
     this.props.projectEdges.forEach(projectEdge => {
       List.push({

@@ -9,7 +9,6 @@ import Footer from '../components/Footer'
 import config from '../../config/SiteConfig'
 
 const IndexPage = props => {
-  console.log(props)
   const projectEdges = props.data.allMarkdownRemark.edges
   return (
     <div>

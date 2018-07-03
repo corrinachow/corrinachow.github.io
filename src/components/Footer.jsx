@@ -9,15 +9,16 @@ const Footer = () => (
           <span>hello@corrinachow.com</span>
         </a>
       </div>
-      <div className="master-social-links col-6" />
-      <h2>
-        <a href="https://github.com/corrinachow/">
-          <i title="Github" aria-hidden className="fab fa-github" />
-        </a>{' '}
-        <a href="https://www.linkedin.com/in/corrina-chow/">
-          <i title="LinkedIn" aria-hidden className="fab fa-linkedin-in" />
-        </a>
-      </h2>
+      <div className="master-social-links col-6">
+        <h2>
+          <a href="https://github.com/corrinachow/">
+            <i title="Github" aria-hidden className="fab fa-github" />
+          </a>{' '}
+          <a href="https://www.linkedin.com/in/corrina-chow/">
+            <i title="LinkedIn" aria-hidden className="fab fa-linkedin-in" />
+          </a>
+        </h2>
+      </div>
     </div>
   </footer>
 )

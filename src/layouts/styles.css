@@ -487,12 +487,6 @@ footer > div {
   margin-top: 1em;
 }
 
-.master-social-links {
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-around;
-}
-
 .row:before,
 .row:after {
     content:"";

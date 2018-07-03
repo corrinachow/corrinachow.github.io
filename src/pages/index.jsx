@@ -35,7 +35,7 @@ const IndexPage = props => {
       </header>
       <div className="container">
         <About />
-        <Portfolio />
+        <Portfolio projectEdges={projectEdges}/>
       </div>
     </div>
   )
@@ -53,6 +53,10 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            title
+            tech
+            snippet
+            repo
             cover {
               childImageSharp {
                 sizes(maxWidth: 850, quality: 90) {

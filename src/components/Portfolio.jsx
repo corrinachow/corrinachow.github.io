@@ -39,34 +39,33 @@ class Portfolio extends React.Component {
           <h2>Featured projects</h2>
         </div>
         <div className="row portfolio-subsection gallery">
-        {List.map(project => (
-          <div key={project.path} className="col-4">
-            <a href={project.repo}>
-              <div className="img-wrap portfolio-entry-4 small-project">
-                <Img sizes={project.cover} style={imgStyle} />
-                <span className="img-description">See GitHub repo</span>
-              </div>
-            </a>
-            <div className="small-project-desc">
-              <span>{project.title}</span>
-              <p>
-                {project.snippet}
-                {' Made using '}
-                <span className="project-subheader">{project.tech}</span>
-                {project.live && (
-                  <p>
-                    <a href={project.live}>
-                      See {project.title} live
-                    </a>
-                  </p>
-                )}
-              </p>
-              <a href={project.repo} className="lg-hide">
-                See {project.title}'s Github Repo
+          {List.map(project => (
+            <div key={project.path} className="col-4">
+              <a href={project.repo}>
+                <div className="img-wrap portfolio-entry-4 small-project">
+                  <Img sizes={project.cover} style={imgStyle} />
+                  <span className="img-description">See GitHub repo</span>
+                </div>
               </a>
+              <div className="small-project-desc">
+                <span>{project.title}</span>
+                <p>
+                  {project.snippet}
+                  {' Made using '}
+                  <span className="project-subheader">{project.tech}</span>
+                  {project.live && (
+                    <p>
+                      <br />
+                      <a href={project.live}>See {project.title} live</a>
+                    </p>
+                  )}
+                </p>
+                <a href={project.repo} className="lg-hide">
+                  See {project.title}'s Github Repo
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
       </section>
     )

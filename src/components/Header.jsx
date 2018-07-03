@@ -1,15 +1,14 @@
 import React from 'react'
 
-const Footer = () => (
-  <footer className="row">
-    <div className="col-12">
-      <h2>Find me online</h2>
-      <div className="col-6">
-        <a href="mailto:hello@corrinachow.com">
-          <span>hello@corrinachow.com</span>
-        </a>
-      </div>
-      <div className="master-social-links col-6" />
+const Header = () => (
+  <header>
+    <div className="title-text">
+      <h1>
+        <span>Corrina Chow</span>
+      </h1>
+      <h2>
+        <span>Web Developer &amp; Designer</span>
+      </h2>
       <h2>
         <a href="https://github.com/corrinachow/">
           <i title="Github" aria-hidden className="fab fa-github" />
@@ -19,7 +18,12 @@ const Footer = () => (
         </a>
       </h2>
     </div>
-  </footer>
+    <div className="description-text">
+      <h2>
+        <div id="social-links" />
+      </h2>
+    </div>
+  </header>
 )
 
-export default Footer
+export default Header

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import Header from '../components/Header'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Contact from '../components/Contact'
@@ -14,27 +15,14 @@ const IndexPage = props => {
     <div>
       <Helmet>
         <title>{config.siteTitle}</title>
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous"
+        />
       </Helmet>
-      <header>
-        <div className="title-text">
-          <h1>
-            <span>Corrina Chow</span>
-          </h1>
-          <h2>
-            <span>Web Developer &amp; Designer</span>
-            <p>
-              <a href="https://github.com/corrinachow/">
-                <i title="github" aria-hidden className="fab fa-github" />
-              </a>
-            </p>
-          </h2>
-        </div>
-        <div className="description-text">
-          <h2>
-            <div id="social-links" />
-          </h2>
-        </div>
-      </header>
+      <Header />
       <div className="container">
         <About />
         <Portfolio projectEdges={projectEdges} />

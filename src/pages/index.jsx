@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 import config from '../../config/SiteConfig'
 
 const IndexPage = props => {
@@ -37,6 +39,8 @@ const IndexPage = props => {
         <About />
         <Portfolio projectEdges={projectEdges}/>
       </div>
+      <Contact/>
+      <Footer />
     </div>
   )
 }

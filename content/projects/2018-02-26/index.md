@@ -1,5 +1,5 @@
 ---
-title: "JavaScrip Calculator"
+title: "JavaScript Calculator"
 cover: "./javascript-calculator.png"
 date: "2018-02-26"
 service: "Front-end Application"

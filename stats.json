@@ -1,0 +1,74 @@
+{
+  "assetsByChunkName": {
+    "component---src-templates-project-jsx": [
+      "component---src-templates-project-jsx-97816a660d8c0876c2c0.js",
+      "component---src-templates-project-jsx-97816a660d8c0876c2c0.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "path---pomodoro-timer": [
+      "path---pomodoro-timer-6dd674d99c121fc3498c.js",
+      "path---pomodoro-timer-6dd674d99c121fc3498c.js.map"
+    ],
+    "component---src-layouts-index-jsx": [
+      "component---src-layouts-index-jsx-a4a4e049a3ad23fbaa7a.js",
+      "component---src-layouts-index-jsx-a4a4e049a3ad23fbaa7a.js.map"
+    ],
+    "path---personal-branding": [
+      "path---personal-branding-aa0aa424ce03f7b86a1e.js",
+      "path---personal-branding-aa0aa424ce03f7b86a1e.js.map"
+    ],
+    "path---page-2": [
+      "path---page-2-a0e39f21c11f6a62c5ab.js",
+      "path---page-2-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---index": [
+      "path---index-822a3eee61f3149d44fc.js",
+      "path---index-822a3eee61f3149d44fc.js.map"
+    ],
+    "path---wiki-maps": [
+      "path---wiki-maps-824fad4b10fa867178d0.js",
+      "path---wiki-maps-824fad4b10fa867178d0.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "commons": [
+      "commons-512ca5ce87838b4470c0.js",
+      "commons-512ca5ce87838b4470c0.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---saga": [
+      "path---saga-f88de4e0e5295bcc69d3.js",
+      "path---saga-f88de4e0e5295bcc69d3.js.map"
+    ],
+    "component---src-pages-index-jsx": [
+      "component---src-pages-index-jsx-3d1c7656c0f942e15f36.js",
+      "component---src-pages-index-jsx-3d1c7656c0f942e15f36.js.map"
+    ],
+    "component---src-pages-page-2-js": [
+      "component---src-pages-page-2-js-1d4f0f19c1c44398ab65.js",
+      "component---src-pages-page-2-js-1d4f0f19c1c44398ab65.js.map"
+    ],
+    "path---java-script-calculator": [
+      "path---java-script-calculator-fb73ee542a61dde9e839.js",
+      "path---java-script-calculator-fb73ee542a61dde9e839.js.map"
+    ],
+    "app": [
+      "app-d4c80d7213faf8445fc9.js",
+      "build-js-styles.css",
+      "app-d4c80d7213faf8445fc9.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---404": [
+      "path---404-a0e39f21c11f6a62c5ab.js",
+      "path---404-a0e39f21c11f6a62c5ab.js.map"
+    ]
+  }
+}

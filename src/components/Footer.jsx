@@ -5,11 +5,6 @@ const Footer = () => (
     <div className="col-12">
       <h2>Find me online</h2>
       <div className="col-6">
-        <a href="mailto:hello@corrinachow.com">
-          <span>hello@corrinachow.com</span>
-        </a>
-      </div>
-      <div className="master-social-links col-6">
         <h2>
           <a href="https://github.com/corrinachow/">
             <i title="Github" aria-hidden className="fab fa-github" />
@@ -18,6 +13,24 @@ const Footer = () => (
             <i title="LinkedIn" aria-hidden className="fab fa-linkedin-in" />
           </a>
         </h2>
+      </div>
+      <div
+        className="col-12"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+        }}
+      >
+        <a href="mailto:hello@corrinachow.com">
+          <span>hello@corrinachow.com</span>
+        </a>
+        <span>
+          Made with <i className="fas fa-coffee" /> and{' '}
+          <a href="https://www.gatsbyjs.com/">
+            <span>Gatsby</span>
+          </a>
+        </span>
       </div>
     </div>
   </footer>

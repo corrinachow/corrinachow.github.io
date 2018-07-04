@@ -6,7 +6,7 @@ service: "Front-end Application"
 tech: "React.JS, HTML5 & CSS3"
 repo: "https://github.com/corrinachow/freeCodeCamp/tree/master/Projects/javascript-calculator"
 live: "http://corrinachow.com/freeCodeCamp/Projects/javascript-calculator/build/"
-snippet: "JavaScript calculator."
+snippet: "JavaScript calculator that can perform basic arithmetic."
 ---
 
 # Description

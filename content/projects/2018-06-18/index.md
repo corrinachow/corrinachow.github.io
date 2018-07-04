@@ -5,7 +5,7 @@ date: "2018-06-18"
 service: "Full Stack Web Application"
 tech: "PostgreSQL, Rails API, React.JS, React Router, OAuth2, Canvas.JS, Kairos API, YouTubeAPI, Ziggeo API, IFrame Player API"
 repo: "https://github.com/kaanyalti/Saga"
-snippet: "An in-depth reporting tool for YouTubers. Sága captures the emotional response of the audience to specified content and provides visual representations of the audience's reactions to the creator."
+snippet: "An in-depth reporting tool which captures the emotional response of an audience to specific YouTube videos and provides various graphs of the reactions to the creator."
 ---
 
 # Description

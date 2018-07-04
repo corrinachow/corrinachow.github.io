@@ -6,4 +6,4 @@ TODO:
 - Case studies for Sága, Wiki-Maps, Jungle Rails
 - SEO
 - Google Analytics
-
+- CSS overhaul

@@ -7,3 +7,4 @@ TODO:
 - SEO
 - Google Analytics
 - CSS overhaul
+- Optimise mobile

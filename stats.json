@@ -16,9 +16,13 @@
       "component---src-layouts-index-jsx-85f3473d7f88d4cbafa1.js",
       "component---src-layouts-index-jsx-85f3473d7f88d4cbafa1.js.map"
     ],
+    "path---jungle-rails": [
+      "path---jungle-rails-09faf5a9ef587c23814f.js",
+      "path---jungle-rails-09faf5a9ef587c23814f.js.map"
+    ],
     "path---index": [
-      "path---index-cd2695bad01bd0a0aec4.js",
-      "path---index-cd2695bad01bd0a0aec4.js.map"
+      "path---index-776c5237bbc82c35f679.js",
+      "path---index-776c5237bbc82c35f679.js.map"
     ],
     "path---wiki-maps": [
       "path---wiki-maps-824fad4b10fa867178d0.js",
@@ -49,9 +53,9 @@
       "path---java-script-calculator-fb73ee542a61dde9e839.js.map"
     ],
     "app": [
-      "app-ecd4d492fa19fc870fa2.js",
+      "app-2818c0bf0de900de2c31.js",
       "build-js-styles.css",
-      "app-ecd4d492fa19fc870fa2.js.map",
+      "app-2818c0bf0de900de2c31.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [

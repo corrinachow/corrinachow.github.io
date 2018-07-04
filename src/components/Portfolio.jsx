@@ -46,21 +46,28 @@ class Portfolio extends React.Component {
                 </div>
               </a>
               <div className="small-project-desc">
-                <span>{project.title}</span>
+                <div
+                  style={{ display: 'flex', justifyContent: 'space-between' }}
+                >
+                  <span>{project.title}</span>
+                  <span>
+                    {project.live && (
+                      <a href={project.live}>
+                        <i title={`Click to see ${project.title} live`} className="fas fa-seedling" /> Live
+                      </a>
+                    )}
+                  </span>
+                </div>
                 <p>
                   {project.snippet}
                   {' Made using '}
                   <span className="project-subheader">{project.tech}</span>
-                  {project.live && (
-                    <p>
-                      <br />
-                      <a href={project.live}>See {project.title} live</a>
-                    </p>
-                  )}
                 </p>
-                <a href={project.repo} className="lg-hide">
-                  See {project.title}'s Github Repo
-                </a>
+                <p>
+                  <a href={project.repo} className="lg-hide">
+                    {project.title}'s GitHub Repo
+                  </a>
+                </p>
               </div>
             </div>
           ))}

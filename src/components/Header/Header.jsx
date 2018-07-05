@@ -21,11 +21,6 @@ const Header = () => (
           </a>
         </h2>
       </div>
-      <div className="description-text">
-        <h2>
-          <div id="social-links" />
-        </h2>
-      </div>
     </header>
   </Fade>
 )

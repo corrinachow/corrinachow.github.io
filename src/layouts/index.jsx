@@ -5,7 +5,7 @@ import config from '../../config/SiteConfig'
 
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/sidebar'
-import './index.css'
+// import './index.css'
 import './styles.css'
 import './portfolio.css'
 

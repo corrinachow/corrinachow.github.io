@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import Header from '../components/Header/Header'
-import About from '../components/About'
-import Portfolio from '../components/Portfolio'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 import config from '../../config/SiteConfig'
+import Header from '../components/Header/Header'
+import About from '../components/About/About'
+import Portfolio from '../components/Portfolio/Portfolio'
+import Contact from '../components/Contact/Contact'
+import Footer from '../components/Footer/Footer'
 
 const IndexPage = props => {
   const projectEdges = props.data.allMarkdownRemark.edges

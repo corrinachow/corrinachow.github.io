@@ -367,7 +367,7 @@ label {
 }
 
 input, textarea, select {
-  padding: 0 0.67rem;
+  padding: 0.67rem;
   border: 1px solid black;
   border-radius: 0;
   -webkit-appearance: none;

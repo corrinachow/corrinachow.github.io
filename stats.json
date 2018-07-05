@@ -13,8 +13,8 @@
       "path---pomodoro-timer-6dd674d99c121fc3498c.js.map"
     ],
     "component---src-layouts-index-jsx": [
-      "component---src-layouts-index-jsx-85f3473d7f88d4cbafa1.js",
-      "component---src-layouts-index-jsx-85f3473d7f88d4cbafa1.js.map"
+      "component---src-layouts-index-jsx-81d515bbeb9be7029068.js",
+      "component---src-layouts-index-jsx-81d515bbeb9be7029068.js.map"
     ],
     "path---jungle-rails": [
       "path---jungle-rails-09faf5a9ef587c23814f.js",
@@ -34,7 +34,9 @@
     ],
     "commons": [
       "commons-512ca5ce87838b4470c0.js",
-      "commons-512ca5ce87838b4470c0.js.map"
+      "build-js-styles.css",
+      "commons-512ca5ce87838b4470c0.js.map",
+      "build-js-styles.css.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
@@ -45,17 +47,17 @@
       "path---saga-f88de4e0e5295bcc69d3.js.map"
     ],
     "component---src-pages-index-jsx": [
-      "component---src-pages-index-jsx-a38a90d24b6df9e3b05e.js",
-      "component---src-pages-index-jsx-a38a90d24b6df9e3b05e.js.map"
+      "component---src-pages-index-jsx-284d59230af0c911561f.js",
+      "component---src-pages-index-jsx-284d59230af0c911561f.js.map"
     ],
     "path---java-script-calculator": [
       "path---java-script-calculator-fb73ee542a61dde9e839.js",
       "path---java-script-calculator-fb73ee542a61dde9e839.js.map"
     ],
     "app": [
-      "app-2818c0bf0de900de2c31.js",
+      "app-8cd7ef4b54bdfce159f5.js",
       "build-js-styles.css",
-      "app-2818c0bf0de900de2c31.js.map",
+      "app-8cd7ef4b54bdfce159f5.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [

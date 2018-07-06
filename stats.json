@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-templates-project-jsx": [
-      "component---src-templates-project-jsx-97816a660d8c0876c2c0.js",
-      "component---src-templates-project-jsx-97816a660d8c0876c2c0.js.map"
+      "component---src-templates-project-jsx-ab402e35b946fafb0872.js",
+      "component---src-templates-project-jsx-ab402e35b946fafb0872.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -13,8 +13,8 @@
       "path---pomodoro-timer-6dd674d99c121fc3498c.js.map"
     ],
     "component---src-layouts-index-jsx": [
-      "component---src-layouts-index-jsx-145d3f67771162b9352e.js",
-      "component---src-layouts-index-jsx-145d3f67771162b9352e.js.map"
+      "component---src-layouts-index-jsx-215eaa39b37047333c05.js",
+      "component---src-layouts-index-jsx-215eaa39b37047333c05.js.map"
     ],
     "path---jungle-rails": [
       "path---jungle-rails-09faf5a9ef587c23814f.js",
@@ -29,13 +29,13 @@
       "path---wiki-maps-824fad4b10fa867178d0.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-70144153783a9c83c42d.js",
-      "component---src-pages-404-js-70144153783a9c83c42d.js.map"
+      "component---src-pages-404-js-f4c58bf91786cd3a563a.js",
+      "component---src-pages-404-js-f4c58bf91786cd3a563a.js.map"
     ],
     "commons": [
-      "commons-512ca5ce87838b4470c0.js",
+      "commons-8ff9a3492f0a21dc10e2.js",
       "build-js-styles.css",
-      "commons-512ca5ce87838b4470c0.js.map",
+      "commons-8ff9a3492f0a21dc10e2.js.map",
       "build-js-styles.css.map"
     ],
     "path---404-html": [
@@ -47,17 +47,17 @@
       "path---saga-f88de4e0e5295bcc69d3.js.map"
     ],
     "component---src-pages-index-jsx": [
-      "component---src-pages-index-jsx-c9d163586fe2be6c64ce.js",
-      "component---src-pages-index-jsx-c9d163586fe2be6c64ce.js.map"
+      "component---src-pages-index-jsx-90028bd5eac93d4d94ae.js",
+      "component---src-pages-index-jsx-90028bd5eac93d4d94ae.js.map"
     ],
     "path---java-script-calculator": [
       "path---java-script-calculator-fb73ee542a61dde9e839.js",
       "path---java-script-calculator-fb73ee542a61dde9e839.js.map"
     ],
     "app": [
-      "app-562c05e15a242fdd8173.js",
+      "app-0593c8b15d725b160786.js",
       "build-js-styles.css",
-      "app-562c05e15a242fdd8173.js.map",
+      "app-0593c8b15d725b160786.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [

@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 
-import Navbar from '../components/Navbar'
-import Sidebar from '../components/sidebar'
-import './index.css'
+import Navbar from '../components/Navbar/Navbar'
+import Sidebar from '../components/Sidebar/Sidebar'
 import './styles.css'
 import './portfolio.css'
 

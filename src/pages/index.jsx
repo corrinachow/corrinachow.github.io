@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import Header from '../components/Header'
-import About from '../components/About'
-import Portfolio from '../components/Portfolio'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 import config from '../../config/SiteConfig'
+import Header from '../components/Header/Header'
+import About from '../components/About/About'
+import Portfolio from '../components/Portfolio/Portfolio'
+import Contact from '../components/Contact/Contact'
+import Footer from '../components/Footer/Footer'
 
 const IndexPage = props => {
   const projectEdges = props.data.allMarkdownRemark.edges
@@ -18,8 +18,10 @@ const IndexPage = props => {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Source+Code+Pro" rel="stylesheet"/ >
+
       </Helmet>
       <Header />
       <div className="container">

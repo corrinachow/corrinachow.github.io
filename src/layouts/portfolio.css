@@ -1,3 +1,7 @@
+span.project-subheader {
+  font-weight: bold;
+}
+
 .project-number.main-project {
   font-size: 3rem;
   color: #d7d7d7;

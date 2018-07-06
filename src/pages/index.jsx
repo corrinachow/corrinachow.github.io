@@ -20,6 +20,8 @@ const IndexPage = props => {
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
           crossOrigin="anonymous"
         />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Source+Code+Pro" rel="stylesheet"/ >
+
       </Helmet>
       <Header />
       <div className="container">

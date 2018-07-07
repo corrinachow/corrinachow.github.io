@@ -4,7 +4,6 @@ import Header from '../components/Header/Header'
 import About from '../components/About/About'
 import Portfolio from '../components/Portfolio/Portfolio'
 import Contact from '../components/Contact/Contact'
-import Footer from '../components/Footer/Footer'
 
 const IndexPage = props => {
   const projectEdges = props.data.allMarkdownRemark.edges
@@ -16,7 +15,6 @@ const IndexPage = props => {
         <Portfolio projectEdges={projectEdges} />
         <Contact />
       </div>
-      <Footer />
     </div>
   )
 }

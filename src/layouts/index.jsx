@@ -6,9 +6,9 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import './styles.css'
 import './portfolio.css'
 
-const Index = ({ children, data }) => (
+const Index = ({ children }) => (
   <div>
-    <SEO />
+  <SEO />
     <Navbar />
     <Sidebar
       text="Web development and design portfolio"

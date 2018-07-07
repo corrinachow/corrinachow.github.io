@@ -1,7 +1,6 @@
-const config = require('./config/SiteConfig');
+const config = require('./config/SiteConfig')
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -17,6 +16,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-lodash`,
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: config.googleAnalyticsID,
+        head: false,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `projects`,
@@ -24,22 +30,22 @@ module.exports = {
       },
     },
     {
-    resolve: `gatsby-plugin-favicon`,
-    options: {
-      logo: "./src/favicon.png",
-      injectHTML: true,
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }
-  }
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: './src/favicon.png',
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false,
+        },
+      },
+    },
   ],
 }

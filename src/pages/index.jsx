@@ -1,7 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import config from '../../config/SiteConfig'
 import Header from '../components/Header/Header'
 import About from '../components/About/About'
 import Portfolio from '../components/Portfolio/Portfolio'
@@ -12,17 +10,6 @@ const IndexPage = props => {
   const projectEdges = props.data.allMarkdownRemark.edges
   return (
     <div>
-      <Helmet>
-        <title>{config.siteTitle}</title>
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
-          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-          crossOrigin="anonymous"
-        />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Source+Code+Pro" rel="stylesheet"/ >
-
-      </Helmet>
       <Header />
       <div className="container">
         <About />

@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import config from '../../config/SiteConfig'
-
+import SEO from '../components/SEO/SEO'
 import Navbar from '../components/Navbar/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import './styles.css'
@@ -10,8 +8,7 @@ import './portfolio.css'
 
 const Index = ({ children, data }) => (
   <div>
-    <Helmet />
-    {/* ad favicon, apple-touch-icon*/}
+    <SEO />
     <Navbar />
     <Sidebar
       text="Web development and design portfolio"

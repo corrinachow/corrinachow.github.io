@@ -1,17 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import config from '../../config/SiteConfig'
-
+import SEO from '../components/SEO/SEO'
 import Navbar from '../components/Navbar/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import './styles.css'
 import './portfolio.css'
 
-const Index = ({ children, data }) => (
+const Index = ({ children }) => (
   <div>
-    <Helmet />
-    {/* ad favicon, apple-touch-icon*/}
+  <SEO />
     <Navbar />
     <Sidebar
       text="Web development and design portfolio"
@@ -21,7 +18,7 @@ const Index = ({ children, data }) => (
       text={`© ${new Date().getFullYear()}, Corrina Chow`}
       alignment="sidebar right"
     />
-    <div>{children()}</div>
+    {children()}
   </div>
 )
 

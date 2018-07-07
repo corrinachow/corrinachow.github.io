@@ -18,7 +18,7 @@ const Index = ({ children, data }) => (
       text={`© ${new Date().getFullYear()}, Corrina Chow`}
       alignment="sidebar right"
     />
-    <div>{children()}</div>
+    {children()}
   </div>
 )
 

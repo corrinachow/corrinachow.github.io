@@ -67,6 +67,16 @@ ol, ul, li, p {
   line-height: 1.56rem;
 }
 
+code,
+kbd,
+pre,
+samp {
+  color: #e20f66;
+  /*background-color: #e4e4e4;*/
+  border: solid 1px #e20f66;
+  padding: 0 0.3rem;
+}
+
 
 html {
   margin: 0 auto;
@@ -373,6 +383,7 @@ input, textarea, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   font-family: 'Source Code Pro', monospace;
+  background-color: #fff;
 }
 
 .email-form {
@@ -387,6 +398,7 @@ input[type="submit"] {
   letter-spacing: calc(1.5/1000 * 200rem);
   border-color: #e20f66;
   color: #e20f66;
+  background-color: #fff;
   text-transform: uppercase;
 }
 

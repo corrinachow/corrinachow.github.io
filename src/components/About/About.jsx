@@ -58,9 +58,9 @@ const About = () => (
       style={{ gridArea: 'desc', color: '#333' }}
     >
       <p>
-        Hi, I'm a full stack developer &amp; designer based in Montreal. I'm
-        currently available for small freelance projects!
+        Hi, I'm a full stack developer &amp; designer based in Montreal.
       </p>
+      <p>Currently: Software Engineer &#64; Plusgrade, <code>unavailable</code> for freelance, &amp; open to coffee/side projects involving <code>React.JS, Vue.JS, and Laravel</code>.</p>
       <p id="about-contact">
         <a href="#contact">Contact me</a>
       </p>

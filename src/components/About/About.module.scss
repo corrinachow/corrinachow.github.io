@@ -1,0 +1,47 @@
+.subheader {
+  grid-area: aboutTitle;
+}
+
+.about.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
+.about.li {
+  line-height: 1.56rem;
+}
+
+.skill1 {
+  grid-area: colone;
+}
+
+.skill2 {
+  grid-area: coltwo;
+}
+
+.skill3 {
+  grid-area: colthree;
+}
+
+.skill4 {
+  grid-area: colfour;
+}
+
+.aboutDescription {
+  color: #333;
+  grid-area: desc;
+}
+
+.about {
+  display: grid;
+
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+  grid-template-areas:
+    '. aboutTitle . . . .'
+    '. . colone coltwo colthree colfour'
+    '. . desc desc desc desc';
+}

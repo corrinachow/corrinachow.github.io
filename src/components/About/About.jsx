@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import styles from './About.module.scss'
 
 const languages = ['JavaScript', 'HTML5 & CSS3', 'Ruby', 'R']
 const frameworks = [
@@ -25,42 +25,41 @@ const systemsList = createList(systems)
 const designList = createList(design)
 
 const About = () => (
-  <section id="about">
-    <div className="subheader" style={{ gridArea: 'aboutTitle' }}>
+  <section className={styles.about}>
+    <div className={styles.subheader}>
       <h2>About me</h2>
     </div>
-    <ul id="skill-1">
+    <ul className={styles.skill1}>
       <li>
         <span>Languages:</span>
       </li>
       {languageList}
     </ul>
-    <ul id="skill-2">
+    <ul className={styles.skill2}>
       <li>
         <span>Libraries &amp; Frameworks:</span>
       </li>
       {frameworksList}
     </ul>
-    <ul id="skill-3">
+    <ul className={styles.skill3}>
       <li>
         <span>Systems &amp; Databases:</span>
       </li>
       {systemsList}
     </ul>
-    <ul id="skill-4" style={{ gridArea: 'colfour' }}>
+    <ul className={styles.skill4}>
       <li>
         <span>Prototyping &amp; Design:</span>
       </li>
       {designList}
     </ul>
-    <div
-      className="about-description"
-      style={{ gridArea: 'desc', color: '#333' }}
-    >
+    <div className={styles.aboutDescription}>
+      <p>Hi, I'm a full stack developer &amp; designer based in Montreal.</p>
       <p>
-        Hi, I'm a full stack developer &amp; designer based in Montreal.
+        Currently: Software Engineer &#64; Plusgrade, <code>unavailable</code>{' '}
+        for freelance, &amp; open to coffee/side projects involving{' '}
+        <code>React.JS, Vue.JS, and Laravel</code>.
       </p>
-      <p>Currently: Software Engineer &#64; Plusgrade, <code>unavailable</code> for freelance, &amp; open to coffee/side projects involving <code>React.JS, Vue.JS, and Laravel</code>.</p>
       <p id="about-contact">
         <a href="#contact">Contact me</a>
       </p>

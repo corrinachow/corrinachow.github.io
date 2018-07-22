@@ -449,17 +449,6 @@ input[type='submit'] {
 
 /* FOOTER */
 
-footer {
-  border-top: solid 1px;
-  height: 25vh;
-  margin-top: 1em;
-  padding: 0 45px;
-}
-
-footer > div {
-  margin-top: 1em;
-}
-
 .row:before,
 .row:after {
   content: '';

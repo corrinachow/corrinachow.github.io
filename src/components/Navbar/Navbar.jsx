@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import logo from '../../favicon.png' // Tell Webpack this JS file uses this image
+import styles from './Navbar.module.scss'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -42,8 +44,10 @@ class Navbar extends React.Component {
           &#9776;
         </Link>
         <ul className="navigation">
-          <li className="logo">
-            <Link to="#" aria-label="return to home" />
+          <li className="logo" className={styles.fixedNavLogo}>
+            <Link to="#" aria-label="return to home">
+              <img src={logo} alt="corrina chow's logo" />
+            </Link>
           </li>
           <li>
             <Link to="#about">About</Link>

@@ -12,6 +12,21 @@ class Navbar extends React.Component {
     this.toggleNavbar = this.toggleNavbar.bind(this)
   }
 
+  componentDidMount = () => {
+    const nav = document.querySelector('.topnav')
+    let topOfNav = nav.offsetTop
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + 'px'
+        document.body.classList.add('fixed-nav')
+      } else {
+        document.body.classList.remove('fixed-nav')
+      }
+      document.body.style.padding = 0
+    })
+  }
+
   toggleNavbar() {
     const { isCollapsed } = this.state
     this.setState({ isCollapsed: !isCollapsed })

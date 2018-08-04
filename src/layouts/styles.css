@@ -552,7 +552,7 @@ input[type='submit'] {
     padding: 0;
   }
 
-  #about {
+  .about {
     display: grid;
 
     grid-template-columns: 50% 50%;
@@ -748,6 +748,6 @@ input[type='submit'] {
 @media screen and (min-width: 130em) {
   /* 2080px */
   html {
-    font-size: 32px;
+    font-size: 14px;
   }
 }

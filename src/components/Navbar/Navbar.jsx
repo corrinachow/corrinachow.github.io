@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import logo from '../../logo.svg'
+import styles from './Navbar.module.scss'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -43,7 +45,9 @@ class Navbar extends React.Component {
         </Link>
         <ul className="navigation">
           <li className="logo">
-            <Link to="#" aria-label="return to home" />
+            <Link to="#" aria-label="return to home">
+              <img src={logo} alt="corrina chow logo" />
+            </Link>
           </li>
           <li>
             <Link to="#about">About</Link>

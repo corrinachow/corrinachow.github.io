@@ -438,9 +438,6 @@ input[type='submit'] {
 
 #contact {
   display: grid;
-
-  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-  grid-template-rows: 33.33% 33.33% 33.33%;
   grid-template-areas:
     '. contactTitle . . . .'
     '. contactdesc form form form .'
@@ -459,8 +456,6 @@ input[type='submit'] {
 [class*='col-'] {
   float: left;
   min-height: 1px;
-  /*Gutter*/
-
   background-color: transparent;
 }
 
@@ -522,7 +517,6 @@ input[type='submit'] {
     display: grid;
 
     grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-    grid-template-rows: 33.33% 33.33% 33.33%;
     grid-template-areas:
       'contactTitle contactTitle . . . .'
       'contactdesc contactdesc form form form .'
@@ -547,29 +541,10 @@ input[type='submit'] {
     margin: 0;
   }
 
-  .about-description p {
-    margin: 0;
-    padding: 0;
-  }
-
-  #about {
-    display: grid;
-
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-areas:
-      'aboutTitle .'
-      'colone desc'
-      'coltwo desc'
-      'colthree desc'
-      'colfour desc';
-  }
-
   #contact {
     display: grid;
 
     grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-template-rows: 33.33% 66.66%;
     grid-template-areas:
       'contactTitle . . .'
       'contactdesc form form form';
@@ -681,9 +656,6 @@ input[type='submit'] {
     border: none;
   }
 
-  .fixed-nav nav a.hamburger {
-  }
-
   .topnav.collapse ul {
     overflow: hidden;
     height: 0;
@@ -734,20 +706,13 @@ input[type='submit'] {
 
 @media screen and (min-width: 117em) {
   /* 1872px */
-  /*.portfolio-entry-4 img {
-    object-position: 0 0;
-  }*/
   html {
     font-size: 22px;
-    /*--sidebarSize: 2.5rem;*/
-  }
-
-  .fixed-nav li.logo {
   }
 }
 @media screen and (min-width: 130em) {
   /* 2080px */
   html {
-    font-size: 32px;
+    font-size: 14px;
   }
 }

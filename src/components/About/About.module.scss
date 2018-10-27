@@ -2,12 +2,11 @@
   grid-area: aboutTitle;
 }
 
-.about.ul {
+.ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0 0 1em 0;
+  margin-bottom: 1rem;
 }
 
 .about.li {
@@ -37,19 +36,17 @@
 
 .about {
   display: grid;
-
   grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-  grid-template-rows: 33.33% 33.33% 33.33%;
+  row-gap: 1rem;
+  column-gap: 1rem;
   grid-template-areas:
     '. aboutTitle . . . .'
-    '. . colone coltwo colthree colfour'
-    '. . desc desc desc desc';
+    '. colone coltwo colthree colfour .'
+    '. desc desc desc desc .';
 
-    @media screen and (max-width: 40rem) {
-      display: grid;
-
+  @media screen and (max-width: 40rem) {
+    display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 25% 25% 25%;
     grid-template-areas:
       'aboutTitle .'
       'colone desc'
@@ -57,7 +54,6 @@
       'colthree desc'
       'colfour desc';
   }
-
 
   @media screen and (max-width: 30rem) {
     display: flex;

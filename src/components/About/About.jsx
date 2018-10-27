@@ -1,14 +1,22 @@
 import React from 'react'
 import styles from './About.module.scss'
+import classNames from 'classnames'
 
-const languages = ['JavaScript', 'HTML5 & CSS3', 'Ruby', 'R']
+const languages = [
+  'JavaScript',
+  'TypeScript',
+  'Java',
+  'HTML5 & CSS3',
+  'Ruby',
+  'R',
+]
 const frameworks = [
-  'Node.JS',
   'React.JS',
+  'MobX',
+  'GraphQL',
+  'Node.JS',
+  'Jest',
   'jQuery',
-  'SASS/SCSS',
-  'Bootstrap 4',
-  'Mocha & Chai',
   'Ruby on Rails',
   'RSpec',
 ]
@@ -29,25 +37,25 @@ const About = () => (
     <div className={styles.subheader}>
       <h2>About me</h2>
     </div>
-    <ul className={styles.skill1}>
+    <ul className={classNames(styles.skill1, styles.ul)}>
       <li>
         <span>Languages:</span>
       </li>
       {languageList}
     </ul>
-    <ul className={styles.skill2}>
+    <ul className={classNames(styles.ul, styles.skill2)}>
       <li>
         <span>Libraries &amp; Frameworks:</span>
       </li>
       {frameworksList}
     </ul>
-    <ul className={styles.skill3}>
+    <ul className={classNames(styles.ul, styles.skill3)}>
       <li>
         <span>Systems &amp; Databases:</span>
       </li>
       {systemsList}
     </ul>
-    <ul className={styles.skill4}>
+    <ul className={classNames(styles.ul, styles.skill4)}>
       <li>
         <span>Prototyping &amp; Design:</span>
       </li>

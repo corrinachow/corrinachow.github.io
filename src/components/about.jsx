@@ -1,26 +1,24 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-
 const About = () => (
   <StaticQuery
     query={graphql`
-      query aboutMeQuery {
-        allContentfulAbout {
-          edges {
-            node {
-              id
-              name
-              aboutMe {
-                id
-                aboutMe
-              }
-            }
+      query getAboutMe {
+        contentfulAboutAboutMeTextNode {
+          childMarkdownRemark {
+            html
           }
         }
       }
     `}
-    render={data => <p>{data.allContentfulAbout.edges[0].node.aboutMe.aboutMe}</p>}
+    render={data => (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.contentfulAboutAboutMeTextNode.childMarkdownRemark.html,
+        }}
+      />
+    )}
   />
 )
 

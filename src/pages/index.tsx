@@ -3,7 +3,7 @@ import React from "react"
 
 import About from "../components/about"
 import Layout from "../components/layout"
-import Projects from "../components/project"
+import Projects from "../components/projects"
 
 const IndexPage = () => (
   <Layout>

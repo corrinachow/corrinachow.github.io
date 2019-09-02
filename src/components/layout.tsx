@@ -11,6 +11,8 @@ type Props = {
 
 const mainContainer = css({
   maxWidth: "1024px",
+  padding: "0 2rem",
+  margin: "auto",
 })
 
 const Layout = ({ children }: Props) => (

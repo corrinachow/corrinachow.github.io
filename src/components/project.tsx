@@ -6,7 +6,8 @@ const image = css({
 })
 
 const projectContainer = css({
-  width: "100px",
+  display: "flex",
+  maxWidth: "512px",
 })
 
 interface IProjectProps {
@@ -37,10 +38,21 @@ export const Project = (props: IProjectProps) => {
 
   return (
     <div className="col-xs">
-      <img className={image} src={logo.sizes.src} />
-      <p>{type}</p>
-      <h3>{name}</h3>
-      <p>{description}</p>
+      <div className={projectContainer}>
+        <div className="highlight">
+          {prependZeroToProjectNumber(props.index + 1)}
+        </div>
+        <div>
+          <img className={image} src={logo.sizes.src} />
+          <p>{type}</p>
+          <h3>{name}</h3>
+          <p>{description}</p>
+        </div>
+      </div>
     </div>
   )
+}
+
+function prependZeroToProjectNumber(index: number): string {
+  return index < 10 ? `0${index}` : index.toString()
 }

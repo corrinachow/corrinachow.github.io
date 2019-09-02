@@ -1,5 +1,5 @@
-if (process.env.ENVIROMENT !== 'production') {
-  require('dotenv').config()
+if (process.env.ENVIROMENT !== "production") {
+  require("dotenv").config()
 }
 
 const contentfulConfig = {
@@ -9,32 +9,34 @@ const contentfulConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful TypeScript starter',
+    title: "Gatsby Contentful TypeScript starter",
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: 'gatsby-starter-contentful-typescript',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        name: "gatsby-starter-contentful-typescript",
+        short_name: "starter",
+        start_url: "/",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
-    `gatsby-plugin-typescript`,
-    'gatsby-transformer-remark',
-    'gatsby-plugin-sharp',
+    "gatsby-plugin-offline",
+    "gatsby-plugin-typescript",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-transition-link",
+
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: "gatsby-plugin-emotion",
     },
   ],
 }

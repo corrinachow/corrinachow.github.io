@@ -26,25 +26,44 @@ const Projects = () => (
         }
       }
     `}
-    render={data => (
-      <div className="row">
-        {data.allContentfulProject.edges.map((project: { node: any }) => (
-          <Project project={project.node} />
-        ))}
-      </div>
-    )}
+    render={data => {
+      return (
+        <div className="row">
+          {data.allContentfulProject.edges.map(
+            (project: { node: IProject }, index: number) => (
+              <Project project={project.node} index={index} />
+            )
+          )}
+        </div>
+      )
+    }}
   />
 )
 
 const image = css({
-  width: "50px",
+  width: "250px",
 })
 
 const projectContainer = css({
   width: "100px",
 })
 
-const Project = ({ project }: any) => {
+interface IProjectProps {
+  project: IProject
+  index: number
+}
+
+interface IProject {
+  name: string
+  description: string
+  projectUrl: string
+  repositoryUrl: string
+  techStack: string
+  type: string
+  logo: any
+}
+
+const Project = (props: IProjectProps) => {
   const {
     name,
     description,
@@ -53,10 +72,10 @@ const Project = ({ project }: any) => {
     techStack,
     type,
     logo,
-  } = project
+  } = props.project
 
   return (
-    <div className={classNames(projectContainer, "col-xs")}>
+    <div className="col-xs">
       <img className={image} src={logo.sizes.src} />
       <p>{type}</p>
       <h3>{name}</h3>

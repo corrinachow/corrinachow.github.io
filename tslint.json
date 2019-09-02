@@ -28,7 +28,7 @@
     ],
     "interface-name": [
       true,
-      "never-prefix"
+      "never"
     ],
     "jsdoc-format": true,
     "jsx-boolean-value": [

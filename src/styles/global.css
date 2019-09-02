@@ -1,0 +1,42 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-width: 325px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: "Source Sans Pro", sans-serif;
+  --pink: #e20f66;
+  --reflexBlueC: #001489;
+}
+
+highlight,
+code {
+  font-family: "Source Code Pro", monospace;
+  color: var(--pink);
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}

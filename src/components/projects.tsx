@@ -5,6 +5,11 @@ import React from "react"
 
 import { IProject, Project } from "./project"
 
+const projectsContainer = css({
+  // ?? Y/N
+  margin: "auto",
+})
+
 const Projects = () => (
   <StaticQuery
     query={graphql`
@@ -30,7 +35,7 @@ const Projects = () => (
     `}
     render={data => {
       return (
-        <div className="row">
+        <div className={classNames(projectsContainer, "row")}>
           {data.allContentfulProject.edges.map(
             (project: { node: IProject }, index: number) => (
               <Project project={project.node} index={index} />

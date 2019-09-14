@@ -1,20 +1,20 @@
-import classNames from "classnames"
-import { css } from "emotion"
-import { graphql, StaticQuery } from "gatsby"
-import React from "react"
+import classNames from "classnames";
+import { css } from "emotion";
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
 
-import { IProject, Project } from "./project"
+import { IProject, Project } from "./project";
 
 const projectsContainer = css({
   // ?? Y/N
   margin: "auto",
-})
+});
 
 const Projects = () => (
   <StaticQuery
     query={graphql`
       query getProjects {
-        allContentfulProject {
+        allContentfulProject(sort: { fields: createdAt, order: DESC }) {
           edges {
             node {
               name
@@ -42,9 +42,9 @@ const Projects = () => (
             )
           )}
         </div>
-      )
+      );
     }}
   />
-)
+);
 
-export default Projects
+export default Projects;

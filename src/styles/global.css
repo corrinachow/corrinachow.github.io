@@ -1,33 +1,51 @@
+@import url("https://rsms.me/inter/inter.css");
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 html {
-  min-width: 325px;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Inter", sans-serif;
   --pink: #e20f66;
   --reflexBlueC: #001489;
+  color: #78797d;
+  line-height: 1.4rem;
+  letter-spacing: -0.0006875px;
+}
+
+a {
+  font-family: "Source Code Pro", monospace;
+  color: var(--reflexBlueC);
+  font-size: 0.8rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #21262d;
 }
 
 .highlight,
 code {
   font-family: "Source Code Pro", monospace;
-  line-height: 1.25rem;
   color: var(--pink);
 }
 
 @media (max-width: 767px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media (min-width: 992px) {

@@ -12,6 +12,7 @@ type Props = {
 }
 
 const mainContainer = css({
+  backgroundColor: "rgb(250,228, 216)",
   perspective: "1px",
   transformStyle: "preserve-3d",
   height: "100vh",
@@ -20,23 +21,19 @@ const mainContainer = css({
 })
 
 const parallaxContainer = css({
-  display: "flex",
-  flex: "1 0 auto",
-  position: "relative",
-  zIndex: -1,
-  height: "100vh",
-  justifyContent: "center",
-  alignItems: "center",
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
   transform: "translateZ(-1px) scale(2)",
-  backgroundColor: "rgb(250,228, 216)",
+  zIndex: -1,
+  backgroundColor: "#FFF",
 })
 
 const contentContainer = css({
   position: "relative",
-  display: "block",
-  // backgroundColor: "white",
-  zIndex: 1,
-  // maxWidth: "1024px",
+  height: "100vh",
   padding: "0 2rem",
   margin: "auto",
 })

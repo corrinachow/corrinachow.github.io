@@ -6,12 +6,15 @@
 }
 
 html {
+  --pink: #e20f66;
+  --reflexBlueC: #001489;
+  --palePink: rgb(250, 228, 216);
+
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
-  --pink: #e20f66;
-  --reflexBlueC: #001489;
+
   color: #78797d;
   line-height: 1.4rem;
   letter-spacing: -0.0006875px;
@@ -32,7 +35,22 @@ h6 {
   color: #21262d;
 }
 
-.highlight,
+.highlight {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 50%,
+    var(--palePink) 50%
+  );
+  background-position: -0% 0;
+  background-size: 200% auto;
+  text-decoration: none;
+  transition: background-position 0.3s ease-out;
+}
+
+.highlight:hover {
+  background-position: -99.99% 0;
+}
+
 code {
   font-family: "Source Code Pro", monospace;
   color: var(--pink);

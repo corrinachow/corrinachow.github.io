@@ -1,14 +1,8 @@
 import classNames from "classnames";
-import { css } from "emotion";
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
 import { IProject, Project } from "./project";
-
-const projectsContainer = css({
-  // ?? Y/N
-  margin: "auto",
-});
 
 const Projects = () => (
   <StaticQuery
@@ -35,12 +29,14 @@ const Projects = () => (
     `}
     render={data => {
       return (
-        <div className={classNames(projectsContainer, "row")}>
-          {data.allContentfulProject.edges.map(
-            (project: { node: IProject }, index: number) => (
-              <Project project={project.node} index={index} />
-            )
-          )}
+        <div className="row">
+          <div className={classNames("col-xs-12")}>
+            {data.allContentfulProject.edges.map(
+              (project: { node: IProject }, index: number) => (
+                <Project project={project.node} index={index} />
+              )
+            )}
+          </div>
         </div>
       );
     }}

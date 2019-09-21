@@ -1,15 +1,11 @@
-import classNames from "classnames"
-import { css } from "emotion"
-import { graphql, StaticQuery } from "gatsby"
-import { url } from "inspector"
-import React from "react"
-import Helmet from "react-helmet"
-
-import Header from "./header"
+import { css } from "emotion";
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import Helmet from "react-helmet";
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const mainContainer = css({
   backgroundColor: "rgb(250,228, 216)",
@@ -18,7 +14,7 @@ const mainContainer = css({
   height: "100vh",
   overflowX: "hidden",
   overflowY: "scroll",
-})
+});
 
 const parallaxContainer = css({
   position: "absolute",
@@ -26,23 +22,23 @@ const parallaxContainer = css({
   right: 0,
   bottom: 0,
   left: 0,
-  transform: "translateZ(-1px) scale(2)",
+  transform: "translateZ(-1px) scale(2.5)",
   zIndex: -1,
   backgroundColor: "#FFF",
-})
+});
 
 const contentContainer = css({
   position: "relative",
   height: "100vh",
   padding: "0 2rem",
   margin: "auto",
-})
+});
 
 const content = css({
   maxWidth: "1024px",
   margin: "0 auto",
   padding: "75px 0",
-})
+});
 
 const Layout = ({ children }: Props) => (
   <StaticQuery
@@ -77,6 +73,6 @@ const Layout = ({ children }: Props) => (
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;

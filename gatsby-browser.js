@@ -1,2 +1,4 @@
-import "./src/styles/flexboxgrid.css"
-import "./src/styles/global.css"
+import "normalize.css/normalize.css";
+
+import "./src/styles/flexboxgrid.css";
+import "./src/styles/global.css";

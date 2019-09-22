@@ -5,7 +5,7 @@
   box-sizing: border-box;
 
   /*  */
-  border: 1px dashed rgb(250, 228, 216);
+  /* border: 1px dashed rgb(250, 228, 216); */
 }
 
 html {
@@ -16,6 +16,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+
   font-family: "Inter", sans-serif;
 
   color: rgb(51, 51, 51);
@@ -32,15 +33,6 @@ a {
   color: var(--reflexBlueC);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #21262d;
-}
-
 .highlight {
   background-image: linear-gradient(
     to right,
@@ -55,6 +47,18 @@ h6 {
 
 .highlight:hover {
   background-position: -99.99% 0;
+}
+
+.label {
+  background: #dceff7;
+  border-radius: 2px;
+  padding: 0.2rem;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-decoration: none;
 }
 
 code {
@@ -80,6 +84,10 @@ code {
 
 .margin-5 {
   margin-bottom: 5rem;
+}
+
+.margin-10 {
+  margin-bottom: 10rem;
 }
 
 @media (max-width: 767px) {
@@ -115,6 +123,20 @@ code {
   letter-spacing: -0.022em;
   line-height: 56px;
   font-weight: 300;
+}
+
+h2 {
+  font-size: 1rem;
+  opacity: 0.55;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0px;
+  text-transform: uppercase;
+}
+
+.large-text {
+  font-size: 23px;
+  line-height: 1.2;
 }
 
 body {

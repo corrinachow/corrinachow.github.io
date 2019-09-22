@@ -3,120 +3,52 @@ import classNames from "classnames";
 import { css } from "emotion";
 import React from "react";
 
-import {
-  useWindowDimensions,
-  mobileWidth,
-} from "./WindowDimensionsProvider/WindowsDimensionsProvider";
+import { ResponsiveImage } from "./responsiveImage";
+import { ContentfulProject } from "../graphqlTypes";
 
 interface IProjectProps {
-  project: IProject;
+  project: ContentfulProject;
   index: number;
 }
-
-export interface IProject {
-  name: string;
-  description: string;
-  projectUrl: string;
-  repositoryUrl: string;
-  techStack: string;
-  type: string;
-  logo: any;
-}
-
-const projectContainer = css({
-  display: "flex",
-  marginBottom: "12rem",
-  maxHeight: "400px",
-});
-
-const imageContainer = css({
-  display: "flex",
-  position: "relative",
-  overflow: "hidden",
-  alignItems: "center",
-  justifyContent: "center",
-  maxHeight: "350px",
-});
-
-const image = css({
-  width: "100%",
-  transition: "all 0.5s",
-});
-
-const projectDescriptionTitle = css({
-  fontSize: "1.5rem",
-  marginBottom: "1rem",
-  display: "block",
-  fontWeight: 600,
-});
 
 const projectType = css({
   fontSize: "0.8rem",
   color: "#e20f66",
+  textTransform: "uppercase",
   fontFamily: "Source Code Pro, monospace",
 });
 
 export const Project = (props: IProjectProps) => {
-  const { width } = useWindowDimensions();
+  const {
+    name,
+    description,
+    projectUrl,
+    repositoryUrl,
+    type,
+    logo,
+  } = props.project;
 
-  return width > mobileWidth ? renderDesktop(props) : renderMobile(props);
+  return (
+    <div className={classnames("row", "middle-sm", "margin-10")}>
+      <div className={classNames("col-sm-6", "col-xs-12")}>
+        <ResponsiveImage imageSource={logo!.sizes!.src!} maxHeight="350px" />
+      </div>
+      <div className="col-sm-6 col-xs-12">
+        <h2>{name}</h2>
+        <span className={classNames(projectType)}>{type}</span>
+        <p className="large-text">{description}</p>
+        <div>
+          <a className="label" href={repositoryUrl!}>
+            Github
+          </a>
+          <span>&nbsp;</span>
+          {projectUrl && (
+            <a className="label" href={projectUrl}>
+              Live
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
-
-function renderDesktop(props: IProjectProps) {
-  const {
-    name,
-    description,
-    projectUrl,
-    repositoryUrl,
-    techStack,
-    type,
-    logo,
-  } = props.project;
-  return (
-    <div className={classnames(projectContainer, "col-xs-12")}>
-      <div className={classnames(imageContainer, "col-xs-6")}>
-        <img className={image} src={logo.sizes.src} />
-      </div>
-      <div className="row middle-xs">
-        <div className="col-xs-10">
-          <span className={projectDescriptionTitle}>{name}</span>
-          <span className={classNames(projectType)}>{type}</span>
-          <p>{description}</p>
-          <a href={repositoryUrl}>Github</a>
-          <span>&nbsp;</span>
-          {projectUrl && <a href={projectUrl}>Live</a>}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function renderMobile(props: IProjectProps) {
-  const {
-    name,
-    description,
-    projectUrl,
-    repositoryUrl,
-    type,
-    logo,
-  } = props.project;
-
-  return (
-    <div className="col-xs-12">
-      <div className={classnames(imageContainer)}>
-        <img className={image} src={logo.sizes.src} />
-      </div>
-      <br />
-      <div className={projectContainer}>
-        <div className={classNames("start-xs")}>
-          <span className={projectDescriptionTitle}>{name}</span>
-          <span className={classNames(projectType)}>{type}</span>
-          <p>{description}</p>
-          <a href={repositoryUrl}>Github</a>
-          <span>&nbsp;</span>
-          {projectUrl && <a href={projectUrl}>Live</a>}
-        </div>
-      </div>
-    </div>
-  );
-}

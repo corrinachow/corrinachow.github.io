@@ -4,14 +4,6 @@ import { ContentfulAbout } from "../graphqlTypes";
 import classNames from "classnames";
 import { css } from "emotion";
 
-const aboutContainer = css({
-  marginBottom: "12rem",
-});
-
-const bioContainer = css({
-  alignSelf: "center",
-});
-
 const title = css({
   fontWeight: 700,
 });
@@ -34,8 +26,8 @@ const About = () => (
     `}
     render={data => {
       return (
-        <div className={classNames("row", aboutContainer)}>
-          <div className={classNames(bioContainer, "col-xs-12 col-sm-12")}>
+        <div className={classNames("row", "margin-10")}>
+          <div className={classNames("col-xs-12")}>
             {renderShortBio(data.contentfulAbout)}
             {renderLongBio(
               data.contentfulAbout.aboutMe.childMarkdownRemark.html
@@ -49,18 +41,20 @@ const About = () => (
 
 function renderShortBio({ name, shortBio }: ContentfulAbout) {
   return (
-    <div className={classNames("margin-3", "col-sm-10", "large-font")}>
-      <span className={classNames(title)}>{name}</span>
-      <span className={classNames()}>{shortBio}</span>
+    <div className={classNames("row", "margin-3", "large-font")}>
+      <div className="col-xs-12">
+        <span className={classNames(title)}>{name}</span>
+        <span>{shortBio}</span>
+      </div>
     </div>
   );
 }
 
 function renderLongBio(html: string): JSX.Element {
   return (
-    <div>
+    <div className="row">
       <div
-        className={classNames("col-sm-6")}
+        className={classNames("col-xs-12 col-sm-6")}
         dangerouslySetInnerHTML={{
           __html: html,
         }}

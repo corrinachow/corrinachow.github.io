@@ -17,10 +17,14 @@ const image = css({
 
 interface IResponseImageProps {
   imageSource: string;
+  maxHeight: string;
 }
 
-export const ResponsiveImage = ({ imageSource }: IResponseImageProps) => (
-  <div className={classNames(imageContainer)}>
+export const ResponsiveImage = ({
+  imageSource,
+  maxHeight,
+}: IResponseImageProps) => (
+  <div className={classNames(imageContainer, css({ maxHeight: maxHeight }))}>
     <img className={image} src={imageSource} />
   </div>
 );

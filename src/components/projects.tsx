@@ -1,8 +1,8 @@
-import classNames from "classnames";
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
-import { IProject, Project } from "./project";
+import { Project } from "./project";
+import { ContentfulProject } from "../graphqlTypes";
 
 const Projects = () => (
   <StaticQuery
@@ -14,8 +14,8 @@ const Projects = () => (
               name
               projectUrl
               repositoryUrl
-              techStack
               type
+              techStack
               description
               logo {
                 sizes {
@@ -30,9 +30,9 @@ const Projects = () => (
     render={data => {
       return (
         <div className="row">
-          <div className={classNames("col-xs-12")}>
+          <div className="col-xs-12">
             {data.allContentfulProject.edges.map(
-              (project: { node: IProject }, index: number) => (
+              (project: { node: ContentfulProject }, index: number) => (
                 <Project project={project.node} index={index} />
               )
             )}

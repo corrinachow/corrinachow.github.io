@@ -1,6 +1,6 @@
-import { css } from "emotion";
 import classNames from "classnames";
 import React from "react";
+import { css } from "@emotion/core";
 
 const imageContainer = css({
   display: "flex",
@@ -8,11 +8,6 @@ const imageContainer = css({
   overflow: "hidden",
   alignItems: "center",
   justifyContent: "center",
-});
-
-const image = css({
-  width: "100%",
-  transition: "all 0.5s",
 });
 
 interface IResponseImageProps {
@@ -25,6 +20,6 @@ export const ResponsiveImage = ({
   maxHeight,
 }: IResponseImageProps) => (
   <div className={classNames(imageContainer, css({ maxHeight: maxHeight }))}>
-    <img className={image} src={imageSource} />
+    <img css={{ width: "100%", transition: "all 0.5s" }} src={imageSource} />
   </div>
 );

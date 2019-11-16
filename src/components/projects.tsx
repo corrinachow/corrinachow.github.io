@@ -3,6 +3,12 @@ import React from "react";
 
 import { Project } from "./project";
 import { ContentfulProject } from "../graphqlTypes";
+import styled from "@emotion/styled";
+
+const H2 = styled.h2({
+  marginBottom: "5rem",
+  visibility: "hidden",
+});
 
 const Projects = () => (
   <StaticQuery
@@ -29,15 +35,18 @@ const Projects = () => (
     `}
     render={data => {
       return (
-        <div className="row">
-          <div className="col-xs-12">
-            {data.allContentfulProject.edges.map(
-              (project: { node: ContentfulProject }, index: number) => (
-                <Project project={project.node} index={index} />
-              )
-            )}
+        <>
+          <H2 id="projects" />
+          <div className="row">
+            <div className="col-xs-12">
+              {data.allContentfulProject.edges.map(
+                (project: { node: ContentfulProject }, index: number) => (
+                  <Project project={project.node} index={index} />
+                )
+              )}
+            </div>
           </div>
-        </div>
+        </>
       );
     }}
   />

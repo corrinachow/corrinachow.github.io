@@ -1,15 +1,29 @@
 if (process.env.ENVIROMENT !== "production") {
-  require("dotenv").config()
+  require("dotenv").config();
 }
 
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
   accessToken: process.env.ACCESS_TOKEN,
-}
+};
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful TypeScript starter",
+    title: "Corrina Chow | Web Developer and Multidisciplinary Designer",
+    menuLinks: [
+      {
+        name: "About",
+        link: "/#about",
+      },
+      {
+        name: "Projects",
+        link: "/#projects",
+      },
+      {
+        name: "Resume",
+        link: "https://resume.creddle.io/resume/6yh14k1iek3",
+      },
+    ],
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -29,8 +43,6 @@ module.exports = {
     "gatsby-plugin-typescript",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-transition-link",
-
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
@@ -38,5 +50,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-emotion",
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
   ],
-}
+};

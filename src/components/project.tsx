@@ -1,6 +1,6 @@
 import classnames from "classnames";
 import classNames from "classnames";
-import { css } from "emotion";
+import { css } from "@emotion/core";
 import React from "react";
 
 import { ResponsiveImage } from "./responsiveImage";

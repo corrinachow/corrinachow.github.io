@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { SiteSiteMetadataMenuLinks } from "../graphqlTypes";
+import React from "react";
 import styled from "@emotion/styled";
+import { SiteSiteMetadataMenuLinks } from "../graphqlTypes";
 
-interface INavbarProps {
+interface NavbarProps {
   menuLinks: Array<SiteSiteMetadataMenuLinks>;
 }
 
@@ -43,7 +43,7 @@ const NavItem = styled.li({
 //   ":hover": { backgroundSize: "100% 100%" },
 // });
 
-const Navbar = ({ menuLinks }: INavbarProps) => {
+const Navbar = ({ menuLinks }: NavbarProps) => {
   // const [isHidden, setIsHidden] = useState<boolean>(false);
   // const [position, setPosition] = useState<number>();
   // const { width } = useWindowDimensions();

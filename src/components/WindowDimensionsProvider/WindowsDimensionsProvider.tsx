@@ -8,11 +8,11 @@ import React, {
 
 type WindowDimensions = { height: number; width: number };
 
-interface IProps {
+interface Props {
   children: ReactNode;
 }
 
-export const mobileWidth: number = 768;
+export const mobileWidth = 768;
 
 export const WindowDimensionsContext = createContext({
   height: window.innerHeight,
@@ -23,7 +23,7 @@ const windowDimensions = (): WindowDimensions => ({
   width: window.innerWidth,
 });
 
-const WindowDimensionsProvider = ({ children }: IProps) => {
+const WindowDimensionsProvider = ({ children }: Props) => {
   const [dimensions, setDimensions] = useState(windowDimensions());
   useEffect(() => {
     const handleResize = () => {

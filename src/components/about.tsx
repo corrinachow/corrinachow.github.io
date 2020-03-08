@@ -1,8 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
-import { ContentfulAbout } from "../graphqlTypes";
 import classNames from "classnames";
 import styled from "@emotion/styled";
+import { ContentfulAbout } from "../graphqlTypes";
 
 const Title = styled.span({
   fontWeight: 700,
@@ -12,6 +12,30 @@ const H2 = styled.h2({
   marginBottom: "5rem",
   visibility: "hidden",
 });
+
+function renderShortBio({ name, shortBio }: ContentfulAbout): JSX.Element {
+  return (
+    <div className={classNames("row", "margin-3", "large-font")}>
+      <div className="col-xs-12">
+        <Title>{name}</Title>
+        <span>{shortBio}</span>
+      </div>
+    </div>
+  );
+}
+
+function renderLongBio(html: string): JSX.Element {
+  return (
+    <div className="row">
+      <div
+        className={classNames("col-xs-12 col-sm-6")}
+        dangerouslySetInnerHTML={{
+          __html: html,
+        }}
+      />
+    </div>
+  );
+}
 
 const About = () => (
   <StaticQuery
@@ -46,29 +70,5 @@ const About = () => (
     }}
   />
 );
-
-function renderShortBio({ name, shortBio }: ContentfulAbout) {
-  return (
-    <div className={classNames("row", "margin-3", "large-font")}>
-      <div className="col-xs-12">
-        <Title>{name}</Title>
-        <span>{shortBio}</span>
-      </div>
-    </div>
-  );
-}
-
-function renderLongBio(html: string): JSX.Element {
-  return (
-    <div className="row">
-      <div
-        className={classNames("col-xs-12 col-sm-6")}
-        dangerouslySetInnerHTML={{
-          __html: html,
-        }}
-      />
-    </div>
-  );
-}
 
 export default About;

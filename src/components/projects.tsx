@@ -1,9 +1,9 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
+import styled from "@emotion/styled";
 import { Project } from "./project";
 import { ContentfulProject } from "../graphqlTypes";
-import styled from "@emotion/styled";
 
 const H2 = styled.h2({
   marginBottom: "5rem",

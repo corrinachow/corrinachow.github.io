@@ -1,8 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
-import Navbar from "./navbar";
 import styled from "@emotion/styled";
+import Navbar from "./navbar";
 
 type Props = {
   children: React.ReactNode;

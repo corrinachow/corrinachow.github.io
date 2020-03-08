@@ -3,11 +3,11 @@ import classNames from "classnames";
 import { css } from "@emotion/core";
 import React from "react";
 
+import styled from "@emotion/styled";
 import { ResponsiveImage } from "./responsiveImage";
 import { ContentfulProject } from "../graphqlTypes";
-import styled from "@emotion/styled";
 
-interface IProjectProps {
+interface ProjectProps {
   project: ContentfulProject;
   index: number;
 }
@@ -26,7 +26,7 @@ const ProjectTitle = styled.h3({
   textTransform: "uppercase",
 });
 
-export const Project = (props: IProjectProps) => {
+export const Project = (props: ProjectProps) => {
   const {
     name,
     description,

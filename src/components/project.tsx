@@ -5,6 +5,7 @@ import React from "react";
 
 import { ResponsiveImage } from "./responsiveImage";
 import { ContentfulProject } from "../graphqlTypes";
+import styled from "@emotion/styled";
 
 interface IProjectProps {
   project: ContentfulProject;
@@ -16,6 +17,13 @@ const projectType = css({
   color: "#e20f66",
   textTransform: "uppercase",
   fontFamily: "Source Code Pro, monospace",
+});
+
+const ProjectTitle = styled.h3({
+  fontSize: "1rem",
+  opacity: "0.55",
+  fontWeight: "700",
+  textTransform: "uppercase",
 });
 
 export const Project = (props: IProjectProps) => {
@@ -34,7 +42,7 @@ export const Project = (props: IProjectProps) => {
         <ResponsiveImage imageSource={logo!.sizes!.src!} maxHeight="350px" />
       </div>
       <div className="col-sm-6 col-xs-12">
-        <h2>{name}</h2>
+        <ProjectTitle>{name}</ProjectTitle>
         <span className={classNames(projectType)}>{type}</span>
         <p className="large-text">{description}</p>
         <div>

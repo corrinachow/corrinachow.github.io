@@ -1,5 +1,5 @@
 @import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap");
 
 * {
   -webkit-box-sizing: border-box;
@@ -128,16 +128,7 @@ code {
   font-size: 40px;
   letter-spacing: -0.022em;
   line-height: 56px;
-  font-weight: 300;
-}
-
-h2 {
-  font-size: 1rem;
-  opacity: 0.55;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0px;
-  text-transform: uppercase;
+  /* font-weight: 300; */
 }
 
 .large-text {

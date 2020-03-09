@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
 import styled from "@emotion/styled";
+
 import { Project } from "./project";
 import { ContentfulProject } from "../graphqlTypes";
 

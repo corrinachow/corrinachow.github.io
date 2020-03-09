@@ -2,6 +2,7 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import Navbar from "./navbar";
 
 type Props = {
@@ -45,8 +46,7 @@ const ContentContainer = styled.div({
 
 const Content = styled.div({
   maxWidth: "1024px",
-  margin: "0 auto",
-  padding: "75px 0",
+  margin: "8rem auto 0 auto",
 });
 
 const Layout = ({ children }: Props) => (

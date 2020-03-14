@@ -9,11 +9,17 @@
   "editor.formatOnPaste": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll": true
+    "source.fixAll": false
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript, typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.options": {
+    "parserOptions": {
+      "createDefaultProgram": true,
+      "project": ["./tsconfig.json"]
+    }
+  }
 }

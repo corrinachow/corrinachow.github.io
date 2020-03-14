@@ -37,7 +37,7 @@ function renderLongBio(html: string): JSX.Element {
   );
 }
 
-const About = () => (
+const About = (): JSX.Element => (
   <StaticQuery
     query={graphql`
       query aboutMeQuery {

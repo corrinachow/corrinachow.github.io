@@ -2,89 +2,72 @@ import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
+
+import useWindowDimensions, {
+  DEFAULT_MOBILE_WIDTH,
+} from "./useWindowDimensions/useWindowDimensions";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const MainContainer = styled.div({
-  backgroundColor: "rgb(250,228, 216)",
-  perspective: "1px",
-  transformStyle: "preserve-3d",
-  height: "100vh",
-  width: "100%",
-  overflowX: "hidden",
-  overflowY: "scroll",
-  scrollBehavior: "smooth",
-  scrollbarWidth: "none",
-  "&::-webkit-scrollbar": {
-    width: "0 !important",
-    background: "transparent",
-    display: "none",
-  },
-});
-
-const ParallaxContainer = styled.div({
-  position: "absolute",
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
-  transform: "translateZ(-1px) scale(2.5)",
-  zIndex: -1,
-  backgroundColor: "#FFF",
-});
+type ContentStyleProps = {
+  isVertical: boolean;
+};
 
 const ContentContainer = styled.div({
   position: "relative",
-  height: "100vh",
-  padding: "0 2rem",
+  width: "100%",
   margin: "auto",
 });
 
-const Content = styled.div({
-  maxWidth: "1024px",
-  margin: "8rem auto 0 auto",
-});
+const Content = styled.div<ContentStyleProps>(
+  {
+    maxWidth: "1024px",
+  },
+  (props: ContentStyleProps) => ({
+    margin: props.isVertical ? "0 2rem 0 10rem" : "8rem 2rem 0 2rem",
+  })
+);
 
-const Layout = ({ children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            menuLinks {
-              name
-              link
+const Layout = ({ children }: Props): JSX.Element => {
+  const { width } = useWindowDimensions();
+  const useVerticalNav = width < DEFAULT_MOBILE_WIDTH;
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+              menuLinks {
+                name
+                link
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
-        <MainContainer>
+      `}
+      render={data => (
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: "description", content: "Sample" },
+              { name: "keywords", content: "sample, something" },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
           <ContentContainer>
-            <Content>{children}</Content>
+            <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
+            <Content isVertical={useVerticalNav}>{children}</Content>
           </ContentContainer>
-          <ParallaxContainer />
-        </MainContainer>
-      </>
-    )}
-  />
-);
+        </>
+      )}
+    />
+  );
+};
 
 export default Layout;

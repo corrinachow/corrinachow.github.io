@@ -5,29 +5,29 @@ import styled from "@emotion/styled";
 import Navbar from "./Navbar";
 
 import useWindowDimensions, {
-  DEFAULT_MOBILE_WIDTH,
+  DEFAULT_MOBILE_WIDTH
 } from "./useWindowDimensions/useWindowDimensions";
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
-type ContentStyleProps = {
+interface ContentStyleProps {
   isVertical: boolean;
-};
+}
 
 const ContentContainer = styled.div({
   position: "relative",
   width: "100%",
-  margin: "auto",
+  margin: "auto"
 });
 
 const Content = styled.div<ContentStyleProps>(
   {
-    maxWidth: "1024px",
+    maxWidth: "1024px"
   },
   (props: ContentStyleProps) => ({
-    margin: props.isVertical ? "0 2rem 0 10rem" : "8rem 2rem 0 2rem",
+    margin: props.isVertical ? "0 2rem 0 10rem" : "8rem 2rem 0 2rem"
   })
 );
 
@@ -55,7 +55,7 @@ const Layout = ({ children }: Props): JSX.Element => {
             title={data.site.siteMetadata.title}
             meta={[
               { name: "description", content: "Sample" },
-              { name: "keywords", content: "sample, something" },
+              { name: "keywords", content: "sample, something" }
             ]}
           >
             <html lang="en" />

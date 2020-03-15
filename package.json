@@ -14,10 +14,10 @@
     "normalize.css": "^8.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.0",
-    "react-is": "^16.13.0"
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "react-is": "^16.13.0",
     "@babel/core": "^7.0.0",
     "@graphql-codegen/cli": "^1.8.3",
     "@graphql-codegen/typescript-operations": "^1.8.3",
@@ -72,6 +72,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "resolutions": {
-    "**/serialize-javascript": "^2.1.1"
+    "**/serialize-javascript": "^2.1.1",
+    "**/minimist": "^1.2.2"
   }
 }

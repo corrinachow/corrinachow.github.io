@@ -5,7 +5,7 @@ import { SiteSiteMetadataMenuLinks } from "../graphqlTypes";
 
 import useDocumentScroll from "./useDocumentScroll/useDocumentScroll";
 import useWindowDimensions, {
-  DEFAULT_MOBILE_WIDTH,
+  DEFAULT_MOBILE_WIDTH
 } from "./useWindowDimensions/useWindowDimensions";
 
 interface NavbarProps {
@@ -29,7 +29,7 @@ const Nav = styled.nav<NavStyleProps>(
     backgroundColor: "aliceblue",
     "& ul": {
       display: "flex",
-      alignItems: "center",
+      alignItems: "center"
     },
     "& ul a": {
       display: "inline-block",
@@ -39,8 +39,8 @@ const Nav = styled.nav<NavStyleProps>(
       backgroundRepeat: "no-repeat",
       backgroundSize: "0 100%",
       transition: "background-size .4s ease",
-      ":hover": { backgroundSize: "100% 100%", height: "1.25rem" },
-    },
+      ":hover": { backgroundSize: "100% 100%", height: "1.25rem" }
+    }
   },
   (props: NavStyleProps): {} => {
     const { isHidden, isVertical, hasShadow } = props;
@@ -52,8 +52,8 @@ const Nav = styled.nav<NavStyleProps>(
       "& ul": {
         height: "50%",
         flexDirection: "column",
-        justifyContent: "space-between",
-      },
+        justifyContent: "space-between"
+      }
     };
 
     const horizontalStyles = {
@@ -63,14 +63,14 @@ const Nav = styled.nav<NavStyleProps>(
       "& ul": {
         width: "1024px",
         justifyContent: "flex-end",
-        margin: "0 auto",
-      },
+        margin: "0 auto"
+      }
     };
 
     return {
       transform: isHidden ? "translateY(-110%)" : "translateY(0)",
       boxShadow: hasShadow && "0 9px 9px -9px rgba(0, 0, 0, 0.13)",
-      ...(isVertical ? verticalStyles : horizontalStyles),
+      ...(isVertical ? verticalStyles : horizontalStyles)
     };
   }
 );
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuLinks }) => {
     }, TIMEOUT_DELAY);
   });
 
-  function renderNav() {
+  function renderNav(): JSX.Element {
     return (
       <Nav
         isHidden={!useVerticalNav && shouldHideHeader}

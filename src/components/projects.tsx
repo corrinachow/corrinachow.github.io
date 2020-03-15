@@ -3,15 +3,15 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
-import { Project } from "./project";
+import Project from "./project";
 import { ContentfulProject } from "../graphqlTypes";
 
 const H2 = styled.h2({
   marginBottom: "5rem",
-  visibility: "hidden",
+  visibility: "hidden"
 });
 
-const Projects = () => (
+const Projects: React.FC = () => (
   <StaticQuery
     query={graphql`
       query getProjects {

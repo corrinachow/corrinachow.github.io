@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import classNames from "classnames";
 import { css } from "@emotion/core";
 import React from "react";
@@ -16,28 +15,23 @@ const projectType = css({
   fontSize: "0.8rem",
   color: "#e20f66",
   textTransform: "uppercase",
-  fontFamily: "Source Code Pro, monospace",
+  fontFamily: "Source Code Pro, monospace"
 });
 
 const ProjectTitle = styled.h3({
   fontSize: "1rem",
   opacity: "0.55",
-  fontWeight: "700",
-  textTransform: "uppercase",
+  fontWeight: "bolder",
+  textTransform: "uppercase"
 });
 
-export const Project = (props: ProjectProps) => {
+const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
   const {
-    name,
-    description,
-    projectUrl,
-    repositoryUrl,
-    type,
-    logo,
-  } = props.project;
+    project: { name, description, projectUrl, repositoryUrl, type, logo }
+  } = props;
 
   return (
-    <div className={classnames("row", "middle-sm", "margin-10")}>
+    <div className={classNames("row", "middle-sm", "margin-10")}>
       <div className={classNames("col-sm-6", "col-xs-12")}>
         <ResponsiveImage imageSource={logo!.sizes!.src!} maxHeight="350px" />
       </div>
@@ -60,3 +54,5 @@ export const Project = (props: ProjectProps) => {
     </div>
   );
 };
+
+export default Project;

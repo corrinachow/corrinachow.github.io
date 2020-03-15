@@ -5,13 +5,11 @@
     "**/dist": true,
     "**/.cache": true
   },
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll": false
+    "source.fixAll": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript, typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -21,5 +19,6 @@
       "createDefaultProgram": true,
       "project": ["./tsconfig.json"]
     }
-  }
+  },
+  "editor.formatOnSave": true
 }

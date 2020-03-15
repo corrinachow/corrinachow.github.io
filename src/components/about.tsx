@@ -5,12 +5,12 @@ import styled from "@emotion/styled";
 import { ContentfulAbout } from "../graphqlTypes";
 
 const Title = styled.span({
-  fontWeight: 700,
+  fontWeight: 700
 });
 
 const H2 = styled.h2({
   marginBottom: "5rem",
-  visibility: "hidden",
+  visibility: "hidden"
 });
 
 function renderShortBio({ name, shortBio }: ContentfulAbout): JSX.Element {
@@ -30,7 +30,7 @@ function renderLongBio(html: string): JSX.Element {
       <div
         className={classNames("col-xs-12 col-sm-6")}
         dangerouslySetInnerHTML={{
-          __html: html,
+          __html: html
         }}
       />
     </div>

@@ -5,7 +5,7 @@ if (process.env.ENVIROMENT !== "production") {
 
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
-  accessToken: process.env.ACCESS_TOKEN,
+  accessToken: process.env.ACCESS_TOKEN
 };
 
 module.exports = {
@@ -20,8 +20,8 @@ module.exports = {
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "src/images/gatsby-icon.png",
-      },
+        icon: "src/images/gatsby-icon.png"
+      }
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-typescript",
@@ -30,38 +30,38 @@ module.exports = {
     `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
+      options: contentfulConfig
     },
     {
-      resolve: "gatsby-plugin-emotion",
+      resolve: "gatsby-plugin-emotion"
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-    },
+      resolve: `gatsby-plugin-styled-components`
+    }
   ],
   siteMetadata: {
     title: "Corrina Chow | Web Developer and Multidisciplinary Designer",
     menuLinks: [
       {
         name: "Home",
-        link: "/",
+        link: "/"
       },
       {
         name: "About",
-        link: "/about",
+        link: "/about"
       },
       {
         name: "Projects",
-        link: "/projects",
+        link: "/projects"
       },
       {
         name: "Writing",
-        link: "/writing",
+        link: "/writing"
       },
       {
         name: "Resume",
-        link: "https://resume.creddle.io/resume/6yh14k1iek3",
-      },
-    ],
-  },
+        link: "https://resume.creddle.io/resume/6yh14k1iek3"
+      }
+    ]
+  }
 };

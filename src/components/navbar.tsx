@@ -50,7 +50,7 @@ const Nav = styled.nav<NavStyleProps>(
       width: "8rem",
       height: "100%",
       "& ul": {
-        height: "50%",
+        height: "16rem",
         flexDirection: "column",
         justifyContent: "space-between"
       }

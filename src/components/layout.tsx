@@ -27,13 +27,14 @@ const Content = styled.div<ContentStyleProps>(
     maxWidth: "1024px"
   },
   (props: ContentStyleProps) => ({
-    margin: props.isVertical ? "0 2rem 0 10rem" : "8rem 2rem 0 2rem"
+    margin: props.isVertical ? "3rem 0 0 8rem" : "8rem auto",
+    padding: props.isVertical ? "4rem 2rem 0 2rem" : "0 4rem"
   })
 );
 
 const Layout = ({ children }: Props): JSX.Element => {
   const { width } = useWindowDimensions();
-  const useVerticalNav = width < DEFAULT_MOBILE_WIDTH;
+  const renderVerticalNav = width < DEFAULT_MOBILE_WIDTH;
   return (
     <StaticQuery
       query={graphql`
@@ -62,7 +63,7 @@ const Layout = ({ children }: Props): JSX.Element => {
           </Helmet>
           <ContentContainer>
             <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
-            <Content isVertical={useVerticalNav}>{children}</Content>
+            <Content isVertical={renderVerticalNav}>{children}</Content>
           </ContentContainer>
         </>
       )}

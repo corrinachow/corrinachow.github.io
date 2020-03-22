@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { ResponsiveImage } from "./ResponsiveImage";
 import { ContentfulProject } from "../graphqlTypes";
 
-interface ProjectProps {
+interface Props {
   project: ContentfulProject;
   index: number;
 }
@@ -25,7 +25,7 @@ const ProjectTitle = styled.h3({
   textTransform: "uppercase"
 });
 
-const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
+const Project: React.FC<Props> = (props: Props) => {
   const {
     project: { name, description, projectUrl, repositoryUrl, type, logo }
   } = props;

@@ -1,4 +1,3 @@
-import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
 import styled from "@emotion/styled";
@@ -7,6 +6,7 @@ import Navbar from "./Navbar";
 import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
+import useSiteSettings from "../hooks/useSiteSettings";
 
 interface Props {
   children: React.ReactNode;
@@ -34,40 +34,24 @@ const Content = styled.div<ContentStyleProps>(
 
 const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
   const { width } = useWindowDimensions();
+  const { menuLinks, title } = useSiteSettings();
   const renderVerticalNav = width < DEFAULT_MOBILE_WIDTH;
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-              menuLinks {
-                name
-                link
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <>
-          <Helmet
-            title={data.site.siteMetadata.title}
-            meta={[
-              { name: "description", content: "Sample" },
-              { name: "keywords", content: "sample, something" }
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
-          <ContentContainer>
-            <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
-            <Content isVertical={renderVerticalNav}>{children}</Content>
-          </ContentContainer>
-        </>
-      )}
-    />
+    <>
+      <Helmet
+        title={title}
+        meta={[
+          { name: "description", content: "Sample" },
+          { name: "keywords", content: "sample, something" }
+        ]}
+      >
+        <html lang="en" />
+      </Helmet>
+      <ContentContainer>
+        <Navbar menuLinks={menuLinks} />
+        <Content isVertical={renderVerticalNav}>{children}</Content>
+      </ContentContainer>
+    </>
   );
 };
 

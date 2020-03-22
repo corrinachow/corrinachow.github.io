@@ -1,15 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 
-import styled from "@emotion/styled";
-
 import Project from "./project";
 import { ContentfulProject } from "../graphqlTypes";
-
-const H2 = styled.h2({
-  marginBottom: "5rem",
-  visibility: "hidden"
-});
 
 const Projects: React.FC = () => (
   <StaticQuery
@@ -37,7 +30,6 @@ const Projects: React.FC = () => (
     render={data => {
       return (
         <>
-          <H2 id="projects" />
           <div className="row">
             <div className="col-xs-12">
               {data.allContentfulProject.edges.map(

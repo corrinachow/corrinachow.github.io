@@ -23,20 +23,16 @@ module.exports = {
         icon: "src/images/gatsby-icon.png"
       }
     },
+    "gatsby-plugin-emotion",
     "gatsby-plugin-offline",
+    "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
     "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
-    `gatsby-plugin-transition-link`,
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-transition-link",
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig
-    },
-    {
-      resolve: "gatsby-plugin-emotion"
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`
     }
   ],
   siteMetadata: {
@@ -51,12 +47,8 @@ module.exports = {
         link: "/about"
       },
       {
-        name: "Projects",
-        link: "/projects"
-      },
-      {
-        name: "Writing",
-        link: "/writing"
+        name: "Blog",
+        link: "/blog"
       },
       {
         name: "Resume",

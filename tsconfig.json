@@ -6,13 +6,10 @@
     "lib": ["es6", "es7", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "preserve",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "pretty": true
+    "noUnusedLocals": true
   },
   "types": ["node", "@emotion/core"],
   "include": ["./src/**.ts", "./**.js"],

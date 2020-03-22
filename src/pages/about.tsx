@@ -1,8 +1,8 @@
 import React from "react";
 
 import classNames from "classnames";
-import Layout from "../components/layout";
-import useAboutContent from "../components/hooks/useAboutContent";
+import Layout from "../components/Layout";
+import useAboutContent from "../hooks/useAboutContent";
 
 const About = () => {
   const { aboutPage } = useAboutContent();

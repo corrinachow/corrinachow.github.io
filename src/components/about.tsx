@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import styled from "@emotion/styled";
-import useAboutContent from "./hooks/useAboutContent";
+import useAboutContent from "../hooks/useAboutContent";
 
 const Title = styled.span({
   fontWeight: 700

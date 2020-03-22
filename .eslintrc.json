@@ -1,7 +1,5 @@
 {
   "extends": [
-    "airbnb-typescript",
-    "prettier",
     "prettier/@typescript-eslint",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
@@ -13,7 +11,16 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "only-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
     "import/no-unresolved": 0,
     "@typescript-eslint/explicit-function-return-type": [
       "warn",

@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
-} from "./useWindowDimensions/useWindowDimensions";
+} from "../hooks/useWindowDimensions/useWindowDimensions";
 
 interface Props {
   children: React.ReactNode;
@@ -32,7 +32,7 @@ const Content = styled.div<ContentStyleProps>(
   })
 );
 
-const Layout = ({ children }: Props): JSX.Element => {
+const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
   const { width } = useWindowDimensions();
   const renderVerticalNav = width < DEFAULT_MOBILE_WIDTH;
   return (

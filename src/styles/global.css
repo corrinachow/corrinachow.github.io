@@ -10,6 +10,7 @@ html {
   --pink: #e20f66;
   --reflexBlueC: #001489;
   --palePink: rgb(250, 228, 216);
+  /* -webkit-font-smoothing: antialiased; */
 
   font-family: "Inconsolata", monospace;
   font-size: 16px;
@@ -62,8 +63,10 @@ a {
 }
 
 code {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Inconsolata", monospace;
   color: var(--pink);
+  border: 1px solid #e20f66;
+  padding: 0 0.25rem;
 }
 
 h1,
@@ -73,6 +76,10 @@ h4,
 h5,
 h6 {
   font-family: "Inter", sans-serif;
+}
+
+h1 {
+  line-height: 3.3125rem;
 }
 
 img {

@@ -3,10 +3,10 @@ import styled from "@emotion/styled";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { SiteSiteMetadataMenuLinks } from "../graphqlTypes";
 
-import useDocumentScroll from "./useDocumentScroll/useDocumentScroll";
+import useDocumentScroll from "../hooks/useDocumentScroll/useDocumentScroll";
 import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
-} from "./useWindowDimensions/useWindowDimensions";
+} from "../hooks/useWindowDimensions/useWindowDimensions";
 
 interface NavbarProps {
   menuLinks: Array<SiteSiteMetadataMenuLinks>;
@@ -106,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuLinks }) => {
         <ul>
           {menuLinks.map(menuLink => (
             <li key={menuLink.name!}>
-              <AniLink fade to={menuLink.link!} duration={0.3}>
+              <AniLink fade duration={0.3} to={menuLink.link!}>
                 {menuLink.name}
               </AniLink>
             </li>

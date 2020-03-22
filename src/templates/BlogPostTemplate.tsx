@@ -1,7 +1,7 @@
-import { graphql, PageRendererProps } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 import { ContentfulBlogPost, Query } from "../graphqlTypes";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 interface Props {
   data: Query;

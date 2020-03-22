@@ -3,7 +3,7 @@ import { css } from "@emotion/core";
 import React from "react";
 
 import styled from "@emotion/styled";
-import { ResponsiveImage } from "./responsiveImage";
+import { ResponsiveImage } from "./ResponsiveImage";
 import { ContentfulProject } from "../graphqlTypes";
 
 interface ProjectProps {

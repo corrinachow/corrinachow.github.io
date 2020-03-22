@@ -1,15 +1,21 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "prettier/@typescript-eslint",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugins: react"
   ],
   "plugins": ["@typescript-eslint"],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "createDefaultProgram": true,
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
   },
+
   "rules": {
     "comma-dangle": [
       "error",

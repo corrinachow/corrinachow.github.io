@@ -31,6 +31,9 @@ const Nav = styled.nav<NavStyleProps>(
       display: "flex",
       alignItems: "center"
     },
+    "& ul li": {
+      margin: "1.25rem"
+    },
     "& ul a": {
       display: "inline-block",
       margin: "0 1rem 0 1rem",
@@ -50,6 +53,7 @@ const Nav = styled.nav<NavStyleProps>(
       width: "8rem",
       height: "100%",
       "& ul": {
+        margin: 0,
         height: "16rem",
         flexDirection: "column",
         justifyContent: "space-between"

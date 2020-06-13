@@ -19,7 +19,6 @@ const useSiteSettings = (): SiteSiteMetadata => {
       }
     }
   `);
-  debugger;
   return data.contentfulSiteMetadata.siteMetadata;
 };
 

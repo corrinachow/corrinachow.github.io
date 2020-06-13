@@ -33,27 +33,12 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig
-    }
-  ],
-  siteMetadata: {
-    title: "Corrina Chow | Web Developer and Multidisciplinary Designer",
-    menuLinks: [
-      {
-        name: "Home",
-        link: "/"
-      },
-      {
-        name: "About",
-        link: "/about"
-      },
-      {
-        name: "Blog",
-        link: "/blog"
-      },
-      {
-        name: "Resume",
-        link: "https://resume.creddle.io/resume/6yh14k1iek3"
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
       }
-    ]
-  }
+    }
+  ]
 };

@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
       <div className="row">
         <div className="col-xs-12">
           {edges.map((project: { node: ContentfulProject }, index: number) => (
-            <Project project={project.node} index={index} />
+            <Project project={project.node} index={index} key={index} />
           ))}
         </div>
       </div>

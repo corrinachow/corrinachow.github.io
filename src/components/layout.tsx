@@ -21,7 +21,7 @@ interface ContentStyleProps {
 
 const ContentContainer = styled.div<{
   themeVariation: Theme;
-  isVertical: boolean;
+  isMobile: boolean;
 }>(
   {
     position: "relative",
@@ -30,29 +30,35 @@ const ContentContainer = styled.div<{
     margin: "auto"
   },
   props => ({
-    backgroundColor: themes[props.themeVariation]?.background,
-    color: props.themeVariation === Theme.Dark ? "white" : "inherit",
-    paddingBottom: props.isVertical ? "18rem" : "5rem"
+    backgroundColor: themes[props.themeVariation].background,
+    color: themes[props.themeVariation].fontColor,
+    paddingBottom: props.isMobile ? "18rem" : "10rem",
+    "& a": {
+      color: themes[props.themeVariation].linkColor
+    }
   })
 );
 
 const Content = styled.div<ContentStyleProps>(
   {
-    paddingBottom: "2.5rem",
     maxWidth: "1024px"
   },
   (props: ContentStyleProps) => ({
-    padding: props.isVertical ? "3rem 0 0 8rem" : "8rem 4rem",
-    margin: props.isVertical ? "4rem 2rem 0 2rem" : "0 4rem"
+    padding: props.isVertical ? "3rem 0 0 6rem" : "8rem 2.5rem",
+    margin: props.isVertical ? "0 2rem 0 2rem" : "0 4rem"
   })
 );
 
 const themes = {
   light: {
+    fontColor: "white",
+    linkColor: "#e20f66",
     foreground: "inherit",
-    background: "inherit"
+    background: "#001489"
   },
   dark: {
+    fontColor: "white",
+    linkColor: "#e20f66",
     foreground: "#ffffff",
     background: "#222222"
   }
@@ -72,10 +78,7 @@ const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
 
   return (
     <>
-      <ContentContainer
-        themeVariation={themeType}
-        isVertical={renderVerticalNav}
-      >
+      <ContentContainer themeVariation={themeType} isMobile={renderVerticalNav}>
         <Helmet
           title={title}
           meta={[

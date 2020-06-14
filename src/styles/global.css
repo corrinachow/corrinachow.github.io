@@ -10,9 +10,8 @@
 html {
   --pink: #e20f66;
   --reflexBlueC: #001489;
-  --palePink: rgb(250, 228, 216);
+  --palePink: rgb(8, 7, 6);
 
-  color: rgb(51, 51, 51);
   letter-spacing: 0.005em;
 }
 
@@ -27,7 +26,6 @@ ul {
 }
 
 a {
-  color: var(--reflexBlueC);
   text-decoration: none;
 }
 

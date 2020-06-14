@@ -20,7 +20,6 @@ const Article = styled.article({
   }
 });
 const ArticlePreview: React.FC<Props> = (props: Props) => {
-  debugger;
   const {
     post: { title, slug, description, createdAt }
   } = props;

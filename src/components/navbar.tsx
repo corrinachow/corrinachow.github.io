@@ -25,7 +25,6 @@ const Nav = styled.nav<NavStyleProps>(
     top: "0",
     display: "flex",
     transition: "transform 0.3s ease",
-    backgroundColor: "aliceblue",
     "& ul": {
       display: "flex",
       alignItems: "center"
@@ -35,17 +34,17 @@ const Nav = styled.nav<NavStyleProps>(
     },
     "& ul a": {
       display: "inline-block",
+      width: "100%",
       margin: "0 1rem 0 1rem",
-      backgroundImage:
-        "linear-gradient(180deg, transparent 65%,  rgb(250, 228, 216) 0)",
-      backgroundRepeat: "no-repeat",
       backgroundSize: "0 100%",
-      transition: "background-size .4s ease",
-      ":hover": { backgroundSize: "100% 100%", height: "1.25rem" }
+      transition: "background .4s ease",
+      ":hover": {
+        background: "white"
+      }
     }
   },
   (props: NavStyleProps): {} => {
-    const { isHidden, isVertical, hasShadow } = props;
+    const { isHidden, isVertical } = props;
     const verticalStyles = {
       flexDirection: "column",
       justifyContent: "center",
@@ -72,7 +71,6 @@ const Nav = styled.nav<NavStyleProps>(
 
     return {
       transform: isHidden ? "translateY(-110%)" : "translateY(0)",
-      boxShadow: hasShadow && "0 9px 9px -9px rgba(0, 0, 0, 0.13)",
       ...(isVertical ? verticalStyles : horizontalStyles)
     };
   }

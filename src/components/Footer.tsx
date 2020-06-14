@@ -19,52 +19,48 @@ const StyledFooter = styled.footer<any>(
   {
     position: "absolute",
     bottom: 0,
-    width: "100%",
+    left: 0,
+    right: 0,
     flexWrap: "wrap",
-    backgroundColor: "aliceblue",
     "& p": {
       marginBottom: `${1.5 / 2}rem`
     },
-
     "& ul": {
       display: "flex",
       flexWrap: "wrap",
-
       margin: 0
     },
     "& ul li": {
-      padding: "0 1.25rem 0 0"
+      padding: "0 1.25rem 0 0",
+      ":hover": {
+        background: "white"
+      }
     }
   },
   (props: any): {} => {
-    const { isFullWidth } = props;
+    const { isMobile } = props;
     const fullWidthStyles = {
-      "& ul": {
-        justifyContent: ""
-      }
+      padding: "3rem 0 2.5rem 8rem",
+      margin: "0 2rem 0 2rem"
     };
 
     const mobileWidthStyles = {
-      marginLeft: "8rem"
-      // "& ul": {
-      //   justifyContent: "flex-end",
-      //   margin: "0 auto"
-      // }
+      padding: "2.5rem 2.5rem",
+      margin: "0 4rem"
     };
 
     return {
-      ...(isFullWidth ? fullWidthStyles : mobileWidthStyles),
-      padding: props.isFullWidth ? "3rem 0 0 8rem" : "2.5rem"
+      ...(isMobile ? fullWidthStyles : mobileWidthStyles)
     };
   }
 );
 
 const Footer: React.FC<Props> = ({ socialLinks, resumeLink, emailLink }) => {
   const { width } = useWindowDimensions();
-  const useFullWidthFooter = width > DEFAULT_MOBILE_WIDTH;
+  const useMobileFooter = width < DEFAULT_MOBILE_WIDTH;
 
   return (
-    <StyledFooter isFullWidth={useFullWidthFooter}>
+    <StyledFooter isMobile={useMobileFooter}>
       <div className="margin-2">
         <p>
           <a target="_blank" href={resumeLink.link}>

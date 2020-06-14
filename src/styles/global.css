@@ -4,6 +4,7 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialised;
 }
 
 html {
@@ -12,6 +13,7 @@ html {
   --palePink: rgb(250, 228, 216);
 
   color: rgb(51, 51, 51);
+  letter-spacing: 0.005em;
 }
 
 html::-webkit-scrollbar {

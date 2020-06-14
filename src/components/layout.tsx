@@ -9,6 +9,7 @@ import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
 import useSiteSettings from "../hooks/useSiteSettings";
+import Footer from "./Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -18,20 +19,26 @@ interface ContentStyleProps {
   isVertical: boolean;
 }
 
-const ContentContainer = styled.div<any>(
+const ContentContainer = styled.div<{
+  themeVariation: Theme;
+  isVertical: boolean;
+}>(
   {
     position: "relative",
+    minHeight: "100vh",
     width: "100%",
     margin: "auto"
   },
   props => ({
-    backgroundColor: themes[props.theme]?.background,
-    color: props.theme === Theme.Dark ? "white" : "inherit"
+    backgroundColor: themes[props.themeVariation]?.background,
+    color: props.themeVariation === Theme.Dark ? "white" : "inherit",
+    paddingBottom: props.isVertical ? "18rem" : "5rem"
   })
 );
 
 const Content = styled.div<ContentStyleProps>(
   {
+    paddingBottom: "2.5rem",
     maxWidth: "1024px"
   },
   (props: ContentStyleProps) => ({
@@ -53,13 +60,22 @@ const themes = {
 
 const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
   const { width } = useWindowDimensions();
-  const { menuLinks, title } = useSiteSettings();
+  const {
+    menuLinks,
+    title,
+    socialLinks,
+    email,
+    resumeLink
+  } = useSiteSettings();
   const renderVerticalNav = width < DEFAULT_MOBILE_WIDTH;
   var { themeType } = useContext(ThemeContext);
 
   return (
     <>
-      <ContentContainer theme={themeType}>
+      <ContentContainer
+        themeVariation={themeType}
+        isVertical={renderVerticalNav}
+      >
         <Helmet
           title={title}
           meta={[
@@ -72,6 +88,11 @@ const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
 
         <Navbar menuLinks={menuLinks} />
         <Content isVertical={renderVerticalNav}>{children}</Content>
+        <Footer
+          socialLinks={socialLinks}
+          emailLink={email}
+          resumeLink={resumeLink}
+        />
       </ContentContainer>
     </>
   );

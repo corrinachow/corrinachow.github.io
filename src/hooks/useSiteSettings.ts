@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby";
-import { SiteSiteMetadata } from "../graphqlTypes";
+import { ContentfulSiteMetadataSiteMetadataJsonNode } from "../graphqlTypes";
 
-const useSiteSettings = (): SiteSiteMetadata => {
+const useSiteSettings = (): ContentfulSiteMetadataSiteMetadataJsonNode => {
   const data = useStaticQuery(graphql`
-    query SiteMetalDataQuery {
+    query SiteMetaDataQuery {
       contentfulSiteMetadata {
         siteMetadata {
           menuLinks {
@@ -14,6 +14,13 @@ const useSiteSettings = (): SiteSiteMetadata => {
             icon
             link
             name
+          }
+          resumeLink {
+            link
+            name
+          }
+          email {
+            value
           }
         }
       }

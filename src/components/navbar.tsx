@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { SiteSiteMetadataMenuLinks } from "../graphqlTypes";
+import { ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks } from "../graphqlTypes";
 
 import useDocumentScroll from "../hooks/useDocumentScroll/useDocumentScroll";
 import useWindowDimensions, {
@@ -9,7 +9,7 @@ import useWindowDimensions, {
 } from "../hooks/useWindowDimensions/useWindowDimensions";
 
 interface NavbarProps {
-  menuLinks: Array<SiteSiteMetadataMenuLinks>;
+  menuLinks: Array<ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks>;
 }
 
 interface NavStyleProps {
@@ -24,7 +24,6 @@ const Nav = styled.nav<NavStyleProps>(
     position: "fixed",
     top: "0",
     display: "flex",
-    color: "#333",
     transition: "transform 0.3s ease",
     backgroundColor: "aliceblue",
     "& ul": {

@@ -63,7 +63,10 @@ const Nav = styled.nav<NavStyleProps>(
       },
       "& ul li a": {
         margin: 0,
-        fontSize: "1.5rem"
+        fontSize: "1.5rem",
+        ":hover": {
+          backgroundSize: "100% 100%"
+        }
       }
     };
 

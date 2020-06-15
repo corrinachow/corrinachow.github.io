@@ -54,6 +54,10 @@ const TopBar = styled.div({
   padding: "0.4rem 1rem",
   borderBottom: "1px solid #fff",
   background: themes.light.primaryColor,
+  "> div": {
+    display: "flex",
+    width: "85%"
+  },
   "& span": {
     fontSize: "0.5rem",
     color: themes.light.invertedPrimary,
@@ -175,12 +179,12 @@ const Project: React.FC<Props> = (props: Props) => {
         className={classNames("row", "middle-sm")}
       >
         <TopBar>
-          <Dot backgroundColor={"#FF605C"} />
-          <Dot backgroundColor={"#FFBD44"} />
-          <Dot backgroundColor={"#00CA4E"} />
-          <span>{`${snakeCase(name)}${imageExtension.current}`}</span>
-          <Dot backgroundColor={themes.light.primaryColor} />
-          <Dot backgroundColor={themes.light.primaryColor} />
+          <div>
+            <Dot backgroundColor={"#FF605C"} />
+            <Dot backgroundColor={"#FFBD44"} />
+            <Dot backgroundColor={"#00CA4E"} />
+            <span>{`${snakeCase(name)}${imageExtension.current}`}</span>
+          </div>
         </TopBar>
         <PreviewImage backgroundUrl={logo.sizes.src}></PreviewImage>
       </ProjectWindow>
@@ -192,13 +196,14 @@ const Project: React.FC<Props> = (props: Props) => {
         className={classNames("row", "middle-sm", "margin-8")}
       >
         <TopBar>
-          <Dot backgroundColor={"#FF605C"} />
-          <Dot backgroundColor={"#FFBD44"} />
-          <Dot backgroundColor={"#00CA4E"} />
-          <span>{`~/select-projects/${snakeCase(name)}.md`}</span>
-          <Dot backgroundColor={themes.light.primaryColor} />
-          <Dot backgroundColor={themes.light.primaryColor} />
+          <div>
+            <Dot backgroundColor={"#FF605C"} />
+            <Dot backgroundColor={"#FFBD44"} />
+            <Dot backgroundColor={"#00CA4E"} />
+            <span>{`~/select-projects/${snakeCase(name)}.md`}</span>
+          </div>
         </TopBar>
+
         <ProjectBody backgroundUrl={logo.sizes.src}>
           <ProjectContent>
             <span>{`${type}`}</span>

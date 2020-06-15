@@ -1,6 +1,9 @@
 language: node_js
 before_script:
   - npm install -g gatsby
+cache:
+  directories:
+  - node_modules
 node_js:
   - "10"
 deploy:
@@ -8,4 +11,4 @@ deploy:
   script: yarn install && yarn run deploy
   skip_cleanup: true
   on:
-    branch: master
+    branch: production

@@ -1,0 +1,39 @@
+{
+  "extends": ["airbnb"],
+  "rules": {
+    "array-type": [true, "array"],
+    "arrow-return-shorthand": true,
+    "class-name": true,
+    "label-position": true,
+    "newline-before-return": true,
+    "no-arg": true,
+    "no-console": [
+      true,
+      "log",
+      "error",
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-consecutive-blank-lines": true,
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-trailing-whitespace": false,
+    "no-unnecessary-callback-wrapper": true,
+    "no-unused-expression": true,
+    "prefer-const": true,
+    "quotemark": [true, "double", "jsx-double"],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ]
+  }
+}

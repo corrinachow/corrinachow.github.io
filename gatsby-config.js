@@ -1,38 +1,56 @@
-const config = require('./config/SiteConfig')
+if (process.env.ENVIROMENT !== "production") {
+  // eslint-disable-next-line global-require
+  require("dotenv").config();
+}
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+const contentfulConfig = {
+  spaceId: process.env.SPACE_ID,
+  accessToken: process.env.ACCESS_TOKEN
+};
 
 module.exports = {
-  pathPrefix: config.pathPrefix,
-  siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
-    title: 'Corrina Chow | Web Developer and Designer',
-  },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-lodash`,
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        trackingId: config.googleAnalyticsID,
-        head: false,
-      },
+        name: "gatsby-starter-contentful-typescript",
+        short_name: "starter",
+        start_url: "/",
+        background_color: "#663399",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "src/images/favicon.png"
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        name: `projects`,
-        path: `${__dirname}/content/projects`,
-      },
+        trackingId: "UA-115148956-1",
+        head: false
+      }
+    },
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-typescript",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-transition-link",
+    {
+      resolve: "gatsby-source-contentful",
+      options: contentfulConfig
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
     },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: './src/favicon.png',
+        logo: "./src/images/favicon.png",
         injectHTML: true,
         icons: {
           android: true,
@@ -43,9 +61,9 @@ module.exports = {
           firefox: true,
           twitter: false,
           yandex: false,
-          windows: false,
-        },
-      },
-    },
-  ],
-}
+          windows: false
+        }
+      }
+    }
+  ]
+};

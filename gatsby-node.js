@@ -1,61 +1,35 @@
-const path = require('path');
-const _ = require('lodash');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require("path");
 
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
-  let slug;
-  if (node.internal.type === 'MarkdownRemark') {
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-    }
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    }
-    createNodeField({ node, name: 'slug', value: slug });
-  }
-};
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
-
-  return new Promise((resolve, reject) => {
-    const projectPage = path.resolve('src/templates/Project.jsx');
-    resolve(
-      graphql(`
-        {
-          projects: allMarkdownRemark {
-            edges {
-              node {
-                fields {
-                  slug
-                }
-              }
-            }
+  const result = await graphql(`
+    {
+      allContentfulBlogPost {
+        edges {
+          node {
+            title
+            slug
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          /* eslint no-console: "off" */
-          console.log(result.errors);
-          reject(result.errors);
-        }
+      }
+    }
+  `);
 
-        result.data.projects.edges.forEach(edge => {
-          createPage({
-            path: edge.node.fields.slug,
-            component: projectPage,
-            context: {
-              slug: edge.node.fields.slug,
-            },
-          });
-        });
-      })
-    );
+  if (result.error) {
+    return result.error;
+  }
+
+  const posts = result.data.allContentfulBlogPost.edges;
+  posts.forEach(post => {
+    return createPage({
+      path: `/blog/${post.node.slug}/`,
+      component: path.resolve("./src/templates/BlogPostTemplate.tsx"),
+      context: {
+        slug: post.node.slug
+      }
+    });
   });
+  return null;
 };

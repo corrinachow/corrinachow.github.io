@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 type WindowDimensions = { height: number; width: number };
 
-export const DEFAULT_MOBILE_WIDTH = 768;
+export const DEFAULT_TABLET_WIDTH = 768;
+export const DEFAULT_MOBILE_WIDTH = 450;
 
 const useWindowDimensions = (): WindowDimensions => {
   function getWindowDimensions(): WindowDimensions {

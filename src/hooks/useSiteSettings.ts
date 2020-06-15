@@ -6,6 +6,14 @@ const useSiteSettings = (): ContentfulSiteMetadataSiteMetadataJsonNode => {
     query SiteMetaDataQuery {
       contentfulSiteMetadata {
         siteMetadata {
+          title
+          pathPrefix
+          siteTitle
+          siteTitleAlt
+          siteUrl
+          siteLanguage
+          siteDescription
+          ogLanguage
           menuLinks {
             link
             name

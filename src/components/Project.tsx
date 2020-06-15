@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import styled from "@emotion/styled";
 import { ContentfulProject } from "../graphqlTypes";
-import { themes } from "./layout";
+import { themes } from "./Layout";
 import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
@@ -164,8 +164,6 @@ const Project: React.FC<Props> = (props: Props) => {
     setSecondaryWindowPosition(secondaryWindowPosition);
   }, [isMobile]);
 
-  debugger;
-
   return (
     <ProjectContainer>
       <ProjectWindow
@@ -205,7 +203,7 @@ const Project: React.FC<Props> = (props: Props) => {
           <ProjectContent>
             <span>{`${type}`}</span>
             <ProjectTitle>{name}</ProjectTitle>
-            <div className="">
+            <div>
               <p>{description}</p>
               <TechStack>{techStack && techStack.join(", ")}</TechStack>
               <ProjectLinks>

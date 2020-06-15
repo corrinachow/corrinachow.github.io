@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <Layout>
-      <Window name={`~/about/corrina.md`}>
+      <Window name={`./about/corrina.md`} fullWidth={true}>
         <div className={classNames("row", "padding-10")}>
           <div className={classNames("col-xs-12")}>
             <div className="row">

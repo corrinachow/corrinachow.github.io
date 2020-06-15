@@ -5,6 +5,7 @@ import { ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks } from "../graphqlT
 
 import useDocumentScroll from "../hooks/useDocumentScroll/useDocumentScroll";
 import useWindowDimensions, {
+  DEFAULT_TABLET_WIDTH,
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
 
@@ -15,7 +16,7 @@ interface NavbarProps {
 interface NavStyleProps {
   isHidden: boolean;
   hasShadow: boolean;
-  isVertical: boolean;
+  width: number;
 }
 
 const Nav = styled.nav<NavStyleProps>(
@@ -52,17 +53,32 @@ const Nav = styled.nav<NavStyleProps>(
     }
   },
   (props: NavStyleProps): {} => {
-    const { isHidden, isVertical } = props;
-    const verticalStyles = {
+    const { isHidden, width } = props;
+
+    const narrowStyles = {
       justifyContent: "center",
       "& ul": {
         justifyContent: "center",
         margin: "0 auto"
+      },
+      "& ul li a": {
+        margin: 0,
+        fontSize: "1.5rem"
       }
     };
 
-    const horizontalStyles = {
-      marginTop: "2rem",
+    const mediumStyles = {
+      justifyContent: "center",
+      "& ul": {
+        justifyContent: "center",
+        margin: "0 auto"
+      },
+      "& ul li a": {
+        fontSize: "2.5rem"
+      }
+    };
+
+    const fullWidthStyles = {
       justifyContent: "flex-end",
       "& ul": {
         justifyContent: "flex-end"
@@ -72,12 +88,17 @@ const Nav = styled.nav<NavStyleProps>(
     return {
       width: "100%",
       height: "4rem",
+      marginTop: "2rem",
       transform: isHidden ? "translateY(-120%)" : "translateY(0)",
       "& ul": {
         width: "1024px",
         margin: "0 auto"
       },
-      ...(isVertical ? verticalStyles : horizontalStyles)
+      ...(width < DEFAULT_TABLET_WIDTH && width > DEFAULT_MOBILE_WIDTH
+        ? mediumStyles
+        : width > DEFAULT_TABLET_WIDTH
+        ? fullWidthStyles
+        : narrowStyles)
     };
   }
 );
@@ -86,7 +107,6 @@ const Navbar: React.FC<NavbarProps> = ({ menuLinks }) => {
   const [shouldHideHeader, setShouldHideHeader] = useState(false);
   const [hasShadow, setHasShadow] = useState(false);
   const { width } = useWindowDimensions();
-  const useVerticalNav = width < DEFAULT_MOBILE_WIDTH;
 
   const MINIMUM_SCROLL = 50;
   const TIMEOUT_DELAY = 400;
@@ -105,13 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuLinks }) => {
 
   function renderNav(): JSX.Element {
     return (
-      <Nav
-        // isHidden={!useVerticalNav && shouldHideHeader}
-        // hasShadow={!useVerticalNav && hasShadow}
-        isVertical={useVerticalNav}
-        isHidden={!false && shouldHideHeader}
-        hasShadow={!false && hasShadow}
-      >
+      <Nav width={width} isHidden={shouldHideHeader} hasShadow={hasShadow}>
         <ul>
           {menuLinks.map(menuLink => (
             <li key={menuLink.name!}>

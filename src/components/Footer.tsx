@@ -6,9 +6,9 @@ import {
   ContentfulSiteMetadataSiteMetadataJsonNodeEmail
 } from "../graphqlTypes";
 import useWindowDimensions, {
-  DEFAULT_MOBILE_WIDTH
+  DEFAULT_TABLET_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
-import { themes } from "./layout";
+import { themes } from "./Layout";
 
 interface Props {
   socialLinks: Array<ContentfulSiteMetadataSiteMetadataJsonNodeSocialLinks>;
@@ -30,7 +30,6 @@ const StyledFooter = styled.footer<any>(
       display: "flex",
       justifyContent: "center",
       flexWrap: "wrap"
-      // margin: "0 -1.45rem"
     },
     "& ul li": {
       "& a": {
@@ -72,9 +71,16 @@ const ContactInfo = styled.div({
   fontSize: "3rem"
 });
 
+const SocialInfo = styled.div({
+  "& ul": {
+    padding: 0,
+    margin: 0
+  }
+});
+
 const Footer: React.FC<Props> = ({ socialLinks, resumeLink, emailLink }) => {
   const { width } = useWindowDimensions();
-  const useMobileFooter = width < DEFAULT_MOBILE_WIDTH;
+  const useMobileFooter = width < DEFAULT_TABLET_WIDTH;
 
   return (
     <StyledFooter isMobile={useMobileFooter}>
@@ -88,7 +94,7 @@ const Footer: React.FC<Props> = ({ socialLinks, resumeLink, emailLink }) => {
           {emailLink.value}
         </a>
       </ContactInfo>
-      <div>
+      <SocialInfo>
         <ul>
           {socialLinks.map(socialLink => (
             <li key={socialLink.name}>
@@ -98,7 +104,7 @@ const Footer: React.FC<Props> = ({ socialLinks, resumeLink, emailLink }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </SocialInfo>
     </StyledFooter>
   );
 };

@@ -1,15 +1,16 @@
 import React, { useContext } from "react";
-import Helmet from "react-helmet";
 import styled from "@emotion/styled";
 import Navbar from "./Navbar";
 
 import { ThemeContext, Theme } from "../Context/ThemeContext";
 
 import useWindowDimensions, {
+  DEFAULT_TABLET_WIDTH,
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
 import useSiteSettings from "../hooks/useSiteSettings";
 import Footer from "./Footer";
+import Seo from "./Seo";
 
 interface Props {
   children: React.ReactNode;
@@ -81,16 +82,7 @@ const Layout: React.FC<Props> = ({ children }: Props): JSX.Element => {
   return (
     <>
       <ContentContainer themeVariation={themeType} isMobile={renderVerticalNav}>
-        <Helmet
-          title={title}
-          meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" }
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-
+        <Seo />
         <Navbar menuLinks={menuLinks} />
         <Content isVertical={renderVerticalNav}>{children}</Content>
         <Footer

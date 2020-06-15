@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import classNames from "classnames";
 import React, { useState } from "react";
-import { themes } from "./layout";
+import { themes } from "./Layout";
 
 const ProjectContainer = styled.div({
   position: "relative",
-  padding: "5rem 0"
+  padding: "2rem 0 5rem 0"
 });
 
 const ProjectWindow = styled.div<{

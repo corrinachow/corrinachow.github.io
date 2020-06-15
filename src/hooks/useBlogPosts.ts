@@ -16,7 +16,6 @@ const useBlogPosts = (): Array<ContentfulBlogPostEdge> => {
       }
     }
   `);
-  debugger;
   return data.allContentfulBlogPost.edges;
 };
 

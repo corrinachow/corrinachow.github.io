@@ -3348,6 +3348,14 @@ export enum ContentfulSiteMetadataFieldsEnum {
   SiteMetadataInternalOwner = 'siteMetadata___internal___owner',
   SiteMetadataInternalType = 'siteMetadata___internal___type',
   SiteMetadataTitle = 'siteMetadata___title',
+  SiteMetadataPathPrefix = 'siteMetadata___pathPrefix',
+  SiteMetadataSiteTitle = 'siteMetadata___siteTitle',
+  SiteMetadataSiteTitleAlt = 'siteMetadata___siteTitleAlt',
+  SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
+  SiteMetadataSiteLanguage = 'siteMetadata___siteLanguage',
+  SiteMetadataSiteDescription = 'siteMetadata___siteDescription',
+  SiteMetadataOgLanguage = 'siteMetadata___ogLanguage',
+  SiteMetadataGoogleAnalyticsId = 'siteMetadata___googleAnalyticsID',
   SiteMetadataMenuLinks = 'siteMetadata___menuLinks',
   SiteMetadataMenuLinksLink = 'siteMetadata___menuLinks___link',
   SiteMetadataMenuLinksName = 'siteMetadata___menuLinks___name',
@@ -3408,6 +3416,14 @@ export enum ContentfulSiteMetadataFieldsEnum {
   ChildContentfulSiteMetadataSiteMetadataJsonNodeInternalOwner = 'childContentfulSiteMetadataSiteMetadataJsonNode___internal___owner',
   ChildContentfulSiteMetadataSiteMetadataJsonNodeInternalType = 'childContentfulSiteMetadataSiteMetadataJsonNode___internal___type',
   ChildContentfulSiteMetadataSiteMetadataJsonNodeTitle = 'childContentfulSiteMetadataSiteMetadataJsonNode___title',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodePathPrefix = 'childContentfulSiteMetadataSiteMetadataJsonNode___pathPrefix',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeSiteTitle = 'childContentfulSiteMetadataSiteMetadataJsonNode___siteTitle',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeSiteTitleAlt = 'childContentfulSiteMetadataSiteMetadataJsonNode___siteTitleAlt',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeSiteUrl = 'childContentfulSiteMetadataSiteMetadataJsonNode___siteUrl',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeSiteLanguage = 'childContentfulSiteMetadataSiteMetadataJsonNode___siteLanguage',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeSiteDescription = 'childContentfulSiteMetadataSiteMetadataJsonNode___siteDescription',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeOgLanguage = 'childContentfulSiteMetadataSiteMetadataJsonNode___ogLanguage',
+  ChildContentfulSiteMetadataSiteMetadataJsonNodeGoogleAnalyticsId = 'childContentfulSiteMetadataSiteMetadataJsonNode___googleAnalyticsID',
   ChildContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks = 'childContentfulSiteMetadataSiteMetadataJsonNode___menuLinks',
   ChildContentfulSiteMetadataSiteMetadataJsonNodeMenuLinksLink = 'childContentfulSiteMetadataSiteMetadataJsonNode___menuLinks___link',
   ChildContentfulSiteMetadataSiteMetadataJsonNodeMenuLinksName = 'childContentfulSiteMetadataSiteMetadataJsonNode___menuLinks___name',
@@ -3454,6 +3470,14 @@ export type ContentfulSiteMetadataSiteMetadataJsonNode = Node & {
   children: Array<Node>;
   internal: Internal;
   title?: Maybe<Scalars['String']>;
+  pathPrefix?: Maybe<Scalars['String']>;
+  siteTitle?: Maybe<Scalars['String']>;
+  siteTitleAlt?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
+  siteLanguage?: Maybe<Scalars['String']>;
+  siteDescription?: Maybe<Scalars['String']>;
+  ogLanguage?: Maybe<Scalars['String']>;
+  googleAnalyticsID?: Maybe<Scalars['String']>;
   menuLinks?: Maybe<Array<Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks>>>;
   socialLinks?: Maybe<Array<Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeSocialLinks>>>;
   resumeLink?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeResumeLink>;
@@ -3586,6 +3610,14 @@ export enum ContentfulSiteMetadataSiteMetadataJsonNodeFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   Title = 'title',
+  PathPrefix = 'pathPrefix',
+  SiteTitle = 'siteTitle',
+  SiteTitleAlt = 'siteTitleAlt',
+  SiteUrl = 'siteUrl',
+  SiteLanguage = 'siteLanguage',
+  SiteDescription = 'siteDescription',
+  OgLanguage = 'ogLanguage',
+  GoogleAnalyticsId = 'googleAnalyticsID',
   MenuLinks = 'menuLinks',
   MenuLinksLink = 'menuLinks___link',
   MenuLinksName = 'menuLinks___name',
@@ -3605,6 +3637,14 @@ export type ContentfulSiteMetadataSiteMetadataJsonNodeFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  siteTitle?: Maybe<StringQueryOperatorInput>;
+  siteTitleAlt?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
+  siteLanguage?: Maybe<StringQueryOperatorInput>;
+  siteDescription?: Maybe<StringQueryOperatorInput>;
+  ogLanguage?: Maybe<StringQueryOperatorInput>;
+  googleAnalyticsID?: Maybe<StringQueryOperatorInput>;
   menuLinks?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinksFilterListInput>;
   socialLinks?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeSocialLinksFilterListInput>;
   resumeLink?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeResumeLinkFilterInput>;
@@ -4723,6 +4763,12 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection;
   contentfulSiteMetadataSiteMetadataJsonNode?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNode>;
   allContentfulSiteMetadataSiteMetadataJsonNode: ContentfulSiteMetadataSiteMetadataJsonNodeConnection;
+  contentfulAboutSkillsetJsonNode?: Maybe<ContentfulAboutSkillsetJsonNode>;
+  allContentfulAboutSkillsetJsonNode: ContentfulAboutSkillsetJsonNodeConnection;
+  contentfulAboutAboutPageTextNode?: Maybe<ContentfulAboutAboutPageTextNode>;
+  allContentfulAboutAboutPageTextNode: ContentfulAboutAboutPageTextNodeConnection;
+  contentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNode>;
+  allContentfulAboutAboutMeTextNode: ContentfulAboutAboutMeTextNodeConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
   contentfulBlogPostBodyTextNode?: Maybe<ContentfulBlogPostBodyTextNode>;
@@ -4731,12 +4777,6 @@ export type Query = {
   allContentfulBlogPost: ContentfulBlogPostConnection;
   contentfulSiteMetadata?: Maybe<ContentfulSiteMetadata>;
   allContentfulSiteMetadata: ContentfulSiteMetadataConnection;
-  contentfulAboutSkillsetJsonNode?: Maybe<ContentfulAboutSkillsetJsonNode>;
-  allContentfulAboutSkillsetJsonNode: ContentfulAboutSkillsetJsonNodeConnection;
-  contentfulAboutAboutPageTextNode?: Maybe<ContentfulAboutAboutPageTextNode>;
-  allContentfulAboutAboutPageTextNode: ContentfulAboutAboutPageTextNodeConnection;
-  contentfulAboutAboutMeTextNode?: Maybe<ContentfulAboutAboutMeTextNode>;
-  allContentfulAboutAboutMeTextNode: ContentfulAboutAboutMeTextNodeConnection;
   contentfulAbout?: Maybe<ContentfulAbout>;
   allContentfulAbout: ContentfulAboutConnection;
   contentfulProject?: Maybe<ContentfulProject>;
@@ -4925,6 +4965,14 @@ export type QueryContentfulSiteMetadataSiteMetadataJsonNodeArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  siteTitle?: Maybe<StringQueryOperatorInput>;
+  siteTitleAlt?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
+  siteLanguage?: Maybe<StringQueryOperatorInput>;
+  siteDescription?: Maybe<StringQueryOperatorInput>;
+  ogLanguage?: Maybe<StringQueryOperatorInput>;
+  googleAnalyticsID?: Maybe<StringQueryOperatorInput>;
   menuLinks?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinksFilterListInput>;
   socialLinks?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeSocialLinksFilterListInput>;
   resumeLink?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeResumeLinkFilterInput>;
@@ -4935,6 +4983,59 @@ export type QueryContentfulSiteMetadataSiteMetadataJsonNodeArgs = {
 export type QueryAllContentfulSiteMetadataSiteMetadataJsonNodeArgs = {
   filter?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeFilterInput>;
   sort?: Maybe<ContentfulSiteMetadataSiteMetadataJsonNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulAboutSkillsetJsonNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  Core?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulAboutSkillsetJsonNodeArgs = {
+  filter?: Maybe<ContentfulAboutSkillsetJsonNodeFilterInput>;
+  sort?: Maybe<ContentfulAboutSkillsetJsonNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulAboutAboutPageTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  aboutPage?: Maybe<StringQueryOperatorInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
+};
+
+
+export type QueryAllContentfulAboutAboutPageTextNodeArgs = {
+  filter?: Maybe<ContentfulAboutAboutPageTextNodeFilterInput>;
+  sort?: Maybe<ContentfulAboutAboutPageTextNodeSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulAboutAboutMeTextNodeArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  aboutMe?: Maybe<StringQueryOperatorInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
+};
+
+
+export type QueryAllContentfulAboutAboutMeTextNodeArgs = {
+  filter?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
+  sort?: Maybe<ContentfulAboutAboutMeTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -5032,59 +5133,6 @@ export type QueryContentfulSiteMetadataArgs = {
 export type QueryAllContentfulSiteMetadataArgs = {
   filter?: Maybe<ContentfulSiteMetadataFilterInput>;
   sort?: Maybe<ContentfulSiteMetadataSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulAboutSkillsetJsonNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  Core?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulAboutSkillsetJsonNodeArgs = {
-  filter?: Maybe<ContentfulAboutSkillsetJsonNodeFilterInput>;
-  sort?: Maybe<ContentfulAboutSkillsetJsonNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulAboutAboutPageTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutPage?: Maybe<StringQueryOperatorInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulAboutAboutPageTextNodeArgs = {
-  filter?: Maybe<ContentfulAboutAboutPageTextNodeFilterInput>;
-  sort?: Maybe<ContentfulAboutAboutPageTextNodeSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContentfulAboutAboutMeTextNodeArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  aboutMe?: Maybe<StringQueryOperatorInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
-};
-
-
-export type QueryAllContentfulAboutAboutMeTextNodeArgs = {
-  filter?: Maybe<ContentfulAboutAboutMeTextNodeFilterInput>;
-  sort?: Maybe<ContentfulAboutAboutMeTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -6344,6 +6392,7 @@ export type SiteMetaDataQueryQuery = (
     { __typename?: 'ContentfulSiteMetadata' }
     & { siteMetadata?: Maybe<(
       { __typename?: 'contentfulSiteMetadataSiteMetadataJsonNode' }
+      & Pick<ContentfulSiteMetadataSiteMetadataJsonNode, 'title' | 'pathPrefix' | 'siteTitle' | 'siteTitleAlt' | 'siteUrl' | 'siteLanguage' | 'siteDescription' | 'ogLanguage'>
       & { menuLinks?: Maybe<Array<Maybe<(
         { __typename?: 'contentfulSiteMetadataSiteMetadataJsonNodeMenuLinks' }
         & Pick<ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks, 'link' | 'name'>

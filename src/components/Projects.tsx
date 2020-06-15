@@ -1,7 +1,7 @@
 import React from "react";
 import useProjectsContent from "../hooks/useProjectsContent";
 
-import Project from "./project";
+import Project from "./Project";
 import { ContentfulProject } from "../graphqlTypes";
 
 const Projects: React.FC = () => {

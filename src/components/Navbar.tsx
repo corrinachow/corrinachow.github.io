@@ -20,7 +20,9 @@ interface NavStyleProps {
 
 const Nav = styled.nav<NavStyleProps>(
   {
-    zIndex: 1,
+    fontSize: "3rem",
+    fontWeight: 500,
+    zIndex: 2,
     position: "fixed",
     top: "0",
     display: "flex",
@@ -36,41 +38,45 @@ const Nav = styled.nav<NavStyleProps>(
       display: "inline-block",
       width: "100%",
       margin: "0 1rem 0 1rem",
+      padding: "0 0.5rem",
       backgroundSize: "0 100%",
+      backgroundImage: "linear-gradient(180deg, transparent 65%,  #faed27 0)",
+      backgroundRepeat: "no-repeat",
       transition: "background .4s ease",
+      height: "2rem",
       ":hover": {
-        background: "white"
+        backgroundSize: "77% 100%",
+        height: "2rem",
+        backgroundColor: "transparent"
       }
     }
   },
   (props: NavStyleProps): {} => {
     const { isHidden, isVertical } = props;
     const verticalStyles = {
-      flexDirection: "column",
       justifyContent: "center",
-      width: "8rem",
-      height: "100%",
       "& ul": {
-        margin: 0,
-        height: "16rem",
-        flexDirection: "column",
-        justifyContent: "space-between"
-      }
-    };
-
-    const horizontalStyles = {
-      justifyContent: "flex-end",
-      width: "100%",
-      height: "4rem",
-      "& ul": {
-        width: "1024px",
-        justifyContent: "flex-end",
+        justifyContent: "center",
         margin: "0 auto"
       }
     };
 
+    const horizontalStyles = {
+      marginTop: "2rem",
+      justifyContent: "flex-end",
+      "& ul": {
+        justifyContent: "flex-end"
+      }
+    };
+
     return {
-      transform: isHidden ? "translateY(-110%)" : "translateY(0)",
+      width: "100%",
+      height: "4rem",
+      transform: isHidden ? "translateY(-120%)" : "translateY(0)",
+      "& ul": {
+        width: "1024px",
+        margin: "0 auto"
+      },
       ...(isVertical ? verticalStyles : horizontalStyles)
     };
   }
@@ -100,9 +106,11 @@ const Navbar: React.FC<NavbarProps> = ({ menuLinks }) => {
   function renderNav(): JSX.Element {
     return (
       <Nav
-        isHidden={!useVerticalNav && shouldHideHeader}
-        hasShadow={!useVerticalNav && hasShadow}
+        // isHidden={!useVerticalNav && shouldHideHeader}
+        // hasShadow={!useVerticalNav && hasShadow}
         isVertical={useVerticalNav}
+        isHidden={!false && shouldHideHeader}
+        hasShadow={!false && hasShadow}
       >
         <ul>
           {menuLinks.map(menuLink => (

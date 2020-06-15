@@ -44,17 +44,19 @@ const Content = styled.div<ContentStyleProps>(
     maxWidth: "1024px"
   },
   (props: ContentStyleProps) => ({
-    padding: props.isVertical ? "3rem 0 0 6rem" : "8rem 2.5rem",
-    margin: props.isVertical ? "0 2rem 0 2rem" : "0 4rem"
+    padding: props.isVertical ? "8rem 4rem 0 0rem" : "8rem 2.5rem",
+    margin: props.isVertical ? "0 2rem 5rem 2rem" : "0 4rem"
   })
 );
 
-const themes = {
+export const themes = {
   light: {
     fontColor: "white",
     linkColor: "#e20f66",
     foreground: "inherit",
-    background: "#001489"
+    background: "#001489",
+    primaryColor: "#001489",
+    invertedPrimary: "#FFF"
   },
   dark: {
     fontColor: "white",

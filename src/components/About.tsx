@@ -2,14 +2,16 @@ import React from "react";
 import classNames from "classnames";
 import styled from "@emotion/styled";
 import useAboutContent from "../hooks/useAboutContent";
+import Window from "./Window";
 
 const Title = styled.span({
-  fontWeight: 700
+  fontSize: "2rem",
+  color: "#e20f66"
 });
 
 function renderShortBio(name: string, shortBio: string): JSX.Element {
   return (
-    <div className={classNames("row", "margin-3", "large-font")}>
+    <div className={classNames("row", "margin-2")}>
       <div className="col-xs-12">
         <Title>{name}</Title>
         <span>{shortBio}</span>
@@ -22,7 +24,7 @@ function renderLongBio(html: string): JSX.Element {
   return (
     <div className="row">
       <div
-        className={classNames("col-xs-12 col-sm-6")}
+        className={classNames("col-xs-12")}
         dangerouslySetInnerHTML={{
           __html: html
         }}
@@ -37,8 +39,10 @@ const About = (): JSX.Element => {
     <>
       <div className={classNames("row", "padding-10")}>
         <div className={classNames("col-xs-12")}>
-          {renderShortBio(name, shortBio)}
-          {renderLongBio(aboutMe.childMarkdownRemark.html)}
+          <Window name={`~/home/corrina.md`} fullWidth={true}>
+            {renderShortBio(name, shortBio)}
+            {renderLongBio(aboutMe.childMarkdownRemark.html)}
+          </Window>
         </div>
       </div>
     </>

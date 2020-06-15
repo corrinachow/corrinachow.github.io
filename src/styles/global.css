@@ -4,7 +4,7 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialised;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -12,7 +12,7 @@ html {
   --reflexBlueC: #001489;
   --palePink: rgb(8, 7, 6);
 
-  letter-spacing: 0.005em;
+  letter-spacing: 0.007em;
 }
 
 html::-webkit-scrollbar {
@@ -27,39 +27,25 @@ ul {
 
 a {
   text-decoration: none;
+  transition: background 0.4s ease;
+}
+
+a:hover {
+  background: #fff;
 }
 
 .highlight {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 50%,
-    var(--palePink) 50%
-  );
-  background-position: -0% 0;
-  background-size: 200% auto;
-  text-decoration: none;
-  transition: background-position 0.3s ease-out;
-}
-
-.highlight:hover {
-  background-position: -99.99% 0;
-}
-
-.label {
-  background: #dceff7;
-  border-radius: 2px;
-  padding: 0.2rem;
-
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  text-transform: uppercase;
-  text-decoration: none;
+  color: #faed27;
 }
 
 code {
-  color: var(--pink);
+  /* color: var(--pink); */
+  color: #faed27;
   border: 1px solid #e20f66;
-  padding: 0 0.25rem;
+  padding: 0.1rem 0.25rem;
+  font-size: 16px;
+  font-family: "Inconsolata";
+  /* background: white; */
 }
 
 img {
@@ -102,8 +88,9 @@ img {
 }
 
 .large-font {
-  font-family: "Inter", sans-serif;
-  font-size: 2.5rem;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 3rem;
+  color: #fff;
   letter-spacing: -0.022em;
   line-height: 56px;
 }
@@ -120,4 +107,12 @@ body {
 
 .active {
   color: red;
+}
+
+table,
+tr,
+td,
+th {
+  padding: 0;
+  margin: 0;
 }

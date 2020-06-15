@@ -80,7 +80,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
     "deploy": "gatsby build && gh-pages -d public -b master",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test --passWithNoTests"
   },
   "resolutions": {
     "**/serialize-javascript": "^2.1.1",

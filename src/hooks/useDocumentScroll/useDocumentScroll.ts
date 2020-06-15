@@ -20,9 +20,11 @@ function useDocumentScroll(callback: {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleDocumentScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleDocumentScroll);
 
-    return () => window.removeEventListener("scroll", handleDocumentScroll);
+      return () => window.removeEventListener("scroll", handleDocumentScroll);
+    }
   });
 }
 

@@ -14,11 +14,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-contentful-typescript",
-        short_name: "starter",
+        name: "Corrina Chow | Web Developer and Designer",
+        short_name: "Corrina Chow",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#001489",
+        theme_color: "#001489",
         display: "minimal-ui",
         icon: "src/images/favicon.png"
       }

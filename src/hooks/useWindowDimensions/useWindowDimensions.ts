@@ -6,25 +6,28 @@ export const DEFAULT_MOBILE_WIDTH = 768;
 export const DEFAULT_SMALL_MOBILE_WIDTH = 450;
 
 const useWindowDimensions = (): WindowDimensions => {
+  const isClient = typeof window === "object";
+
   function getWindowDimensions(): WindowDimensions {
     return { height: window.innerHeight, width: window.innerWidth };
   }
 
   const [dimensions, setDimensions] = useState({
-    height: undefined,
-    width: undefined
+    height: window.innerHeight,
+    width: window.innerWidth
   });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = (): void => {
-        setDimensions(getWindowDimensions());
-      };
-      window.addEventListener("resize", handleResize);
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
+    if (!isClient) {
+      return;
     }
+    const handleResize = (): void => {
+      setDimensions(getWindowDimensions());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return dimensions;

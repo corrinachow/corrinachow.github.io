@@ -4,6 +4,14 @@ import classNames from "classnames";
 import Layout from "../components/Layout";
 import Window from "../components/Window";
 import useAboutContent from "../hooks/useAboutContent";
+import styled from "@emotion/styled";
+
+const StyledH1 = styled.h1({
+  fontFamily: "Inconsolata, monospace",
+  fontWeight: 500,
+  // TODO: Fix alignment in all Windows
+  marginLeft: "-.75rem"
+});
 
 const About = () => {
   const { aboutPage } = useAboutContent();

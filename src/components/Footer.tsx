@@ -17,49 +17,38 @@ interface Props {
   emailLink: ContentfulSiteMetadataSiteMetadataJsonNodeEmail;
 }
 
-const StyledFooter = styled.footer<any>(
-  {
-    position: "absolute",
-    width: "100%",
-    bottom: 0,
-    paddingRight: "inherit",
-    flexWrap: "wrap",
-    "& p": {
-      marginBottom: `${1.5 / 2}rem`
-    },
-    "& ul": {
-      display: "flex",
-      justifyContent: "center",
-      flexWrap: "wrap"
-    },
-    "& ul li": {
-      "& a": {
-        display: "inline-block",
-        width: "100%",
-        padding: "0 0.5rem",
-        backgroundSize: "0 100%",
-        backgroundImage: "linear-gradient(180deg, transparent 65%,  #faed27 0)",
-        backgroundRepeat: "no-repeat",
-        transition: "background .4s ease",
-        ":hover": {
-          backgroundSize: "74% 100%",
-          height: "1.25rem",
-          backgroundColor: "transparent"
-        }
+const StyledFooter = styled.footer<any>({
+  position: "absolute",
+  width: "100%",
+  bottom: 0,
+  paddingRight: "inherit",
+  flexWrap: "wrap",
+  "& p": {
+    marginBottom: `${1.5 / 2}rem`
+  },
+  "& ul": {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap"
+  },
+  "& ul li": {
+    marginRight: "1rem",
+    "& a": {
+      display: "inline-block",
+      width: "100%",
+      padding: "0 0.5rem",
+      backgroundSize: "0 100%",
+      backgroundImage: "linear-gradient(180deg, transparent 65%,  #faed27 0)",
+      backgroundRepeat: "no-repeat",
+      transition: "background .4s ease",
+      ":hover, :focus": {
+        backgroundSize: "100% 100%",
+        height: "1.25rem",
+        backgroundColor: "transparent"
       }
     }
-  },
-  (props: any): {} => {
-    const { width } = props;
-
-    if (width <= DEFAULT_MOBILE_WIDTH && width > DEFAULT_SMALL_MOBILE_WIDTH) {
-      return {
-        padding: "2.5rem 2.5rem"
-      };
-    }
-    return {};
   }
-);
+});
 
 const ContactInfo = styled.div({
   padding: 0,

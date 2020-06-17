@@ -61,7 +61,7 @@ const Content = styled.div<ContentStyleProps>(
     }
 
     return {
-      padding: "8rem 2.5rem",
+      padding: "7.5rem 2.5rem",
       margin: "0 auto"
     };
   }

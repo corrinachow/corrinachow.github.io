@@ -52,16 +52,9 @@ const StyledFooter = styled.footer<any>(
   (props: any): {} => {
     const { width } = props;
 
-    if (width > DEFAULT_MOBILE_WIDTH) {
-      return {
-        // padding: "3rem 0 2.5rem 0rem",
-        // margin: "0 2rem 0 2rem"
-      };
-    }
     if (width <= DEFAULT_MOBILE_WIDTH && width > DEFAULT_SMALL_MOBILE_WIDTH) {
       return {
         padding: "2.5rem 2.5rem"
-        // margin: "0 4rem"
       };
     }
     return {};

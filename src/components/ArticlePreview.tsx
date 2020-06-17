@@ -1,7 +1,8 @@
-import React from "react";
 import styled from "@emotion/styled";
-import { ContentfulBlogPost } from "../graphqlTypes";
 import { Link } from "gatsby";
+import React from "react";
+import { ContentfulBlogPost } from "../graphqlTypes";
+import Window from "./Window";
 
 interface Props {
   post: ContentfulBlogPost;
@@ -12,10 +13,11 @@ const Article = styled.article({
   flexDirection: "column",
   "& h3": {
     fontSize: "1.5rem",
-    marginBottom: "0.5rem"
+    margin: "0.5rem 0 0.5rem 0"
   },
+
   "& p": {
-    margin: "0 0 1.5rem 0",
+    margin: "0.75rem 0 0.5rem 0",
     padding: 0
   }
 });
@@ -24,15 +26,17 @@ const ArticlePreview: React.FC<Props> = (props: Props) => {
     post: { title, slug, description, createdAt }
   } = props;
   return (
-    <Article>
-      <header>
-        <h3>
-          <Link to={`/blog/${slug}`}>{title}</Link>
-        </h3>
-        <small>{createdAt}</small>
-      </header>
-      <p>{description}</p>
-    </Article>
+    <Window fullWidth={true} name={`~/blog/${slug}.md`}>
+      <Article>
+        <header>
+          <h3>
+            <Link to={`/blog/${slug}`}>{title}</Link>
+          </h3>
+          <small>{createdAt}</small>
+        </header>
+        <p>{description}</p>
+      </Article>
+    </Window>
   );
 };
 

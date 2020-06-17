@@ -5,8 +5,8 @@ import { ContentfulSiteMetadataSiteMetadataJsonNodeMenuLinks } from "../graphqlT
 
 import useDocumentScroll from "../hooks/useDocumentScroll/useDocumentScroll";
 import useWindowDimensions, {
-  DEFAULT_TABLET_WIDTH,
-  DEFAULT_MOBILE_WIDTH
+  DEFAULT_MOBILE_WIDTH,
+  DEFAULT_SMALL_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
 
 interface NavbarProps {
@@ -21,19 +21,22 @@ interface NavStyleProps {
 
 const Nav = styled.nav<NavStyleProps>(
   {
-    fontSize: "3rem",
     fontWeight: 500,
     zIndex: 2,
     position: "fixed",
     top: "0",
     display: "flex",
     transition: "transform 0.3s ease",
+    width: "100%",
+    height: "4rem",
+    marginTop: "2.5rem",
     "& ul": {
+      margin: "0 auto",
       display: "flex",
       alignItems: "center"
     },
     "& ul li": {
-      margin: "1.25rem"
+      margin: "1rem"
     },
     "& ul a": {
       display: "inline-block",
@@ -45,8 +48,8 @@ const Nav = styled.nav<NavStyleProps>(
       backgroundRepeat: "no-repeat",
       transition: "background .4s ease",
       height: "2rem",
-      ":hover": {
-        backgroundSize: "77% 100%",
+      ":hover, :focus": {
+        backgroundSize: "80% 100%",
         height: "2rem",
         backgroundColor: "transparent"
       }
@@ -54,54 +57,57 @@ const Nav = styled.nav<NavStyleProps>(
   },
   (props: NavStyleProps): {} => {
     const { isHidden, width } = props;
+    let stylesToRender = {};
 
-    const narrowStyles = {
-      justifyContent: "center",
-      "& ul": {
-        justifyContent: "center",
-        margin: "0 auto"
-      },
-      "& ul li a": {
-        margin: 0,
-        fontSize: "1.5rem",
-        ":hover": {
-          backgroundSize: "100% 100%"
+    if (width > DEFAULT_MOBILE_WIDTH) {
+      stylesToRender = {
+        ...stylesToRender,
+        fontSize: "4rem",
+        justifyContent: "flex-end",
+        "& ul": {
+          justifyContent: "flex-end"
         }
-      }
-    };
-
-    const mediumStyles = {
-      justifyContent: "center",
-      "& ul": {
+      };
+    }
+    if (width <= DEFAULT_MOBILE_WIDTH && width > DEFAULT_SMALL_MOBILE_WIDTH) {
+      stylesToRender = {
+        ...stylesToRender,
         justifyContent: "center",
-        margin: "0 auto"
-      },
-      "& ul li a": {
-        fontSize: "2.5rem"
-      }
-    };
+        "& ul": {
+          justifyContent: "center",
+          margin: "0 auto"
+        },
+        "& ul a": {
+          backgroundImage:
+            "linear-gradient(180deg, transparent 65%,  #faed27 0)",
+          ":hover, :focus": {
+            backgroundSize: "73% 100%"
+          }
+        }
+      };
+    }
 
-    const fullWidthStyles = {
-      justifyContent: "flex-end",
-      "& ul": {
-        justifyContent: "flex-end"
-      }
-    };
+    if (width <= DEFAULT_SMALL_MOBILE_WIDTH) {
+      stylesToRender = {
+        ...stylesToRender,
+        justifyContent: "center",
+        "& ul": {
+          justifyContent: "center",
+          margin: "0 auto"
+        },
+        "& ul li a": {
+          margin: "0 auto",
+          ":hover, :focus": {
+            backgroundSize: "100% 100%"
+          }
+        }
+      };
+    }
 
     return {
-      width: "100%",
-      height: "4rem",
-      marginTop: "2rem",
-      transform: isHidden ? "translateY(-120%)" : "translateY(0)",
-      "& ul": {
-        width: "1024px",
-        margin: "0 auto"
-      },
-      ...(width < DEFAULT_TABLET_WIDTH && width > DEFAULT_MOBILE_WIDTH
-        ? mediumStyles
-        : width > DEFAULT_TABLET_WIDTH
-        ? fullWidthStyles
-        : narrowStyles)
+      fontSize: "2rem",
+      transform: isHidden ? "translateY(-160%)" : "translateY(0)",
+      ...stylesToRender
     };
   }
 );

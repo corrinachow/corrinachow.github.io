@@ -14,6 +14,8 @@ Other features I wanted and are included in this version:
 - redesign
 - a CMS for copy, projects, blog posts, site settings
 - pages
+- PWA
+- better site performance (could still use some work but infinitely better than previous version)
 
 ### Blog
 
@@ -23,8 +25,13 @@ Other features I wanted and are included in this version:
 
 ![Projects](./docs/projects.png)
 
+### Audit
+
+![Lighthouse Audit](./docs/lighthouse-audit.png)
+
 ## Features To Be Added
 
 - Themable via config in CMS (namely dark/light theme)
 - Case studies for projects
 - Tags for blog and related articles
+- 100 for all categories on Lighthouse audit

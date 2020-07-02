@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import classNames from "classnames";
-import { snakeCase } from "lodash";
+import { snakeCase, random } from "lodash";
 import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import { ContentfulProject } from "../graphqlTypes";
@@ -77,7 +77,7 @@ const PreviewImage = styled.div<any>(
     padding: "1rem",
     position: "relative",
     width: "100%",
-    minHeight: "20rem"
+    minHeight: "25rem"
   },
   props => ({
     "::before": {
@@ -159,9 +159,9 @@ const Project: React.FC<Props> = (props: Props) => {
     const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
 
     const secondaryWindowPosition = {
-      top: `${Math.random() * 0.3 * plusOrMinus}rem`,
-      right: `${!isMobile && Math.random() * 2 * plusOrMinus}rem`,
-      left: `${isMobile && Math.random() * 5}rem`
+      top: `${random(1.2, 5.2)}rem`,
+      right: `${random(10, 20)}rem`,
+      left: `${random(10, 10)}rem`
     };
 
     setSecondaryWindowPosition(secondaryWindowPosition);
@@ -169,7 +169,7 @@ const Project: React.FC<Props> = (props: Props) => {
 
   return (
     <ProjectContainer>
-      <Draggable>
+      <Draggable handle=".handle">
         <ProjectWindow
           onClick={() => setTopWindow(`${name}-img`)}
           name={`${name}-img`}
@@ -178,7 +178,7 @@ const Project: React.FC<Props> = (props: Props) => {
           secondaryWindowPosition={secondaryWindowPosition}
           className={classNames("row", "middle-sm")}
         >
-          <TopBar>
+          <TopBar className="handle">
             <div>
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />
@@ -190,7 +190,7 @@ const Project: React.FC<Props> = (props: Props) => {
         </ProjectWindow>
       </Draggable>
 
-      <Draggable>
+      <Draggable handle=".handle">
         <ProjectWindow
           onClick={() => setTopWindow(`${name}-description`)}
           topWindow={topWindow}
@@ -198,7 +198,7 @@ const Project: React.FC<Props> = (props: Props) => {
           isPrimary={true}
           className={classNames("row", "middle-sm", "margin-8")}
         >
-          <TopBar>
+          <TopBar className="handle">
             <div>
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />

@@ -89,7 +89,7 @@ const Window: React.FC<any> = ({ children, name, fullWidth }) => {
   const [topWindow, setTopWindow] = useState<string>("");
 
   return (
-    <Draggable>
+    <Draggable handle=".handle">
       <ProjectContainer>
         <ProjectWindow
           onClick={() => setTopWindow(`${name}-description`)}
@@ -99,7 +99,7 @@ const Window: React.FC<any> = ({ children, name, fullWidth }) => {
           isPrimary={true}
           className={classNames("row", "middle-sm", "margin-8")}
         >
-          <TopBar>
+          <TopBar className="handle">
             <div>
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />

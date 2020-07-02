@@ -23,6 +23,11 @@ const Seo = () => {
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={siteDescription} />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@corrinachow" />
+      <meta
+        name="twitter:image"
+        content="https://images.ctfassets.net/c3b73bxvesf2/3vvkZFfbldqfCWT6AXNx82/cbae170549b786775ddd953be01eb142/favicon.png?w=300&h=300&fm=png&fit=thumb&f=face"
+      />
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:url" content={siteUrl} />
       <meta name="twitter:description" content={siteDescription} />

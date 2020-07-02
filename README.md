@@ -35,3 +35,5 @@ Other features I wanted and are included in this version:
 - Case studies for projects
 - Tags for blog and related articles
 - 100 for all categories on Lighthouse audit
+- Resizable windows
+- Fix CI pipeline

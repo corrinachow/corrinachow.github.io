@@ -1,14 +1,13 @@
-import classNames from "classnames";
-import { css } from "@emotion/core";
-import React, { useRef, useState, useEffect } from "react";
-
 import styled from "@emotion/styled";
+import classNames from "classnames";
+import { snakeCase } from "lodash";
+import React, { useEffect, useRef, useState } from "react";
+import Draggable from "react-draggable";
 import { ContentfulProject } from "../graphqlTypes";
-import { themes } from "./Layout";
 import useWindowDimensions, {
   DEFAULT_MOBILE_WIDTH
 } from "../hooks/useWindowDimensions/useWindowDimensions";
-import { snakeCase } from "lodash";
+import { themes } from "./Layout";
 
 interface Props {
   project: ContentfulProject;
@@ -170,65 +169,70 @@ const Project: React.FC<Props> = (props: Props) => {
 
   return (
     <ProjectContainer>
-      <ProjectWindow
-        onClick={() => setTopWindow(`${name}-img`)}
-        name={`${name}-img`}
-        topWindow={topWindow}
-        isPrimary={false}
-        secondaryWindowPosition={secondaryWindowPosition}
-        className={classNames("row", "middle-sm")}
-      >
-        <TopBar>
-          <div>
-            <Dot backgroundColor={"#FF605C"} />
-            <Dot backgroundColor={"#FFBD44"} />
-            <Dot backgroundColor={"#00CA4E"} />
-            <span>{`${snakeCase(name)}${imageExtension.current}`}</span>
-          </div>
-        </TopBar>
-        <PreviewImage backgroundUrl={logo.sizes.src}></PreviewImage>
-      </ProjectWindow>
-      <ProjectWindow
-        onClick={() => setTopWindow(`${name}-description`)}
-        topWindow={topWindow}
-        name={`${name}-description`}
-        isPrimary={true}
-        className={classNames("row", "middle-sm", "margin-8")}
-      >
-        <TopBar>
-          <div>
-            <Dot backgroundColor={"#FF605C"} />
-            <Dot backgroundColor={"#FFBD44"} />
-            <Dot backgroundColor={"#00CA4E"} />
-            <span>{`~/select-projects/${snakeCase(name)}.md`}</span>
-          </div>
-        </TopBar>
-
-        <ProjectBody backgroundUrl={logo.sizes.src}>
-          <ProjectContent>
-            <span>{`${type}`}</span>
-            <ProjectTitle>{name}</ProjectTitle>
+      <Draggable>
+        <ProjectWindow
+          onClick={() => setTopWindow(`${name}-img`)}
+          name={`${name}-img`}
+          topWindow={topWindow}
+          isPrimary={false}
+          secondaryWindowPosition={secondaryWindowPosition}
+          className={classNames("row", "middle-sm")}
+        >
+          <TopBar>
             <div>
-              <p>{description}</p>
-              <TechStack>{techStack && techStack.join(", ")}</TechStack>
-              <ProjectLinks>
-                <p>
-                  <a target="_blank" href={repositoryUrl!}>
-                    Github →
-                  </a>
-                </p>
-                {projectUrl && (
+              <Dot backgroundColor={"#FF605C"} />
+              <Dot backgroundColor={"#FFBD44"} />
+              <Dot backgroundColor={"#00CA4E"} />
+              <span>{`${snakeCase(name)}${imageExtension.current}`}</span>
+            </div>
+          </TopBar>
+          <PreviewImage backgroundUrl={logo.sizes.src}></PreviewImage>
+        </ProjectWindow>
+      </Draggable>
+
+      <Draggable>
+        <ProjectWindow
+          onClick={() => setTopWindow(`${name}-description`)}
+          topWindow={topWindow}
+          name={`${name}-description`}
+          isPrimary={true}
+          className={classNames("row", "middle-sm", "margin-8")}
+        >
+          <TopBar>
+            <div>
+              <Dot backgroundColor={"#FF605C"} />
+              <Dot backgroundColor={"#FFBD44"} />
+              <Dot backgroundColor={"#00CA4E"} />
+              <span>{`~/select-projects/${snakeCase(name)}.md`}</span>
+            </div>
+          </TopBar>
+
+          <ProjectBody backgroundUrl={logo.sizes.src}>
+            <ProjectContent>
+              <span>{`${type}`}</span>
+              <ProjectTitle>{name}</ProjectTitle>
+              <div>
+                <p>{description}</p>
+                <TechStack>{techStack && techStack.join(", ")}</TechStack>
+                <ProjectLinks>
                   <p>
-                    <a target="_blank" href={projectUrl}>
-                      View Online →
+                    <a target="_blank" href={repositoryUrl!}>
+                      Github →
                     </a>
                   </p>
-                )}
-              </ProjectLinks>
-            </div>
-          </ProjectContent>
-        </ProjectBody>
-      </ProjectWindow>
+                  {projectUrl && (
+                    <p>
+                      <a target="_blank" href={projectUrl}>
+                        View Online →
+                      </a>
+                    </p>
+                  )}
+                </ProjectLinks>
+              </div>
+            </ProjectContent>
+          </ProjectBody>
+        </ProjectWindow>
+      </Draggable>
     </ProjectContainer>
   );
 };

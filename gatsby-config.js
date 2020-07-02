@@ -14,7 +14,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Corrina Chow | Web Developer and Designer",
+        name:
+          "Corrina Chow | Full Stack Web Developer & Multidisciplinary Designer",
         short_name: "Corrina Chow",
         start_url: "/",
         background_color: "#001489",

@@ -22,7 +22,7 @@ const Seo = () => {
       <meta property="og:site_name" content={siteTitle} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={siteDescription} />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="@corrinachow" />
       <meta
         name="twitter:image"

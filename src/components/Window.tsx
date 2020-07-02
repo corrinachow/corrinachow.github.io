@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import classNames from "classnames";
 import React, { useState } from "react";
+import Draggable from "react-draggable";
 import { themes } from "./Layout";
 
 const ProjectContainer = styled.div({
@@ -88,28 +89,30 @@ const Window: React.FC<any> = ({ children, name, fullWidth }) => {
   const [topWindow, setTopWindow] = useState<string>("");
 
   return (
-    <ProjectContainer>
-      <ProjectWindow
-        onClick={() => setTopWindow(`${name}-description`)}
-        topWindow={topWindow}
-        name={`${name}-description`}
-        fullWidth={fullWidth}
-        isPrimary={true}
-        className={classNames("row", "middle-sm", "margin-8")}
-      >
-        <TopBar>
-          <div>
-            <Dot backgroundColor={"#FF605C"} />
-            <Dot backgroundColor={"#FFBD44"} />
-            <Dot backgroundColor={"#00CA4E"} />
-            <span>{name}</span>
-          </div>
-        </TopBar>
-        <ProjectBody>
-          <ProjectContent>{children}</ProjectContent>
-        </ProjectBody>
-      </ProjectWindow>
-    </ProjectContainer>
+    <Draggable>
+      <ProjectContainer>
+        <ProjectWindow
+          onClick={() => setTopWindow(`${name}-description`)}
+          topWindow={topWindow}
+          name={`${name}-description`}
+          fullWidth={fullWidth}
+          isPrimary={true}
+          className={classNames("row", "middle-sm", "margin-8")}
+        >
+          <TopBar>
+            <div>
+              <Dot backgroundColor={"#FF605C"} />
+              <Dot backgroundColor={"#FFBD44"} />
+              <Dot backgroundColor={"#00CA4E"} />
+              <span>{name}</span>
+            </div>
+          </TopBar>
+          <ProjectBody>
+            <ProjectContent>{children}</ProjectContent>
+          </ProjectBody>
+        </ProjectWindow>
+      </ProjectContainer>
+    </Draggable>
   );
 };
 

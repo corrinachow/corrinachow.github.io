@@ -24,7 +24,7 @@ const Seo = () => {
       <meta property="og:description" content={siteDescription} />
       <meta
         property="og:image"
-        content="https://images.ctfassets.net/c3b73bxvesf2/3vvkZFfbldqfCWT6AXNx82/cbae170549b786775ddd953be01eb142/favicon.png?w=300&h=300&fm=png&fit=thumb&f=face"
+        content="https://images.ctfassets.net/c3b73bxvesf2/48tUeOHJOMltJw3r8RLSXk/a8ac826675e23408893564532c94631e/Untitled-1.png"
       />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="@corrinachow" />

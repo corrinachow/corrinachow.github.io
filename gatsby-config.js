@@ -31,6 +31,13 @@ module.exports = {
         head: false
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`
+      }
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",

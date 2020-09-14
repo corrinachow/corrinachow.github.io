@@ -84,7 +84,8 @@
     "test": "test --passWithNoTests"
   },
   "resolutions": {
-    "**/serialize-javascript": "^2.1.1",
+    "**/serialize-javascript": "^3.1.0",
+    "**/jpeg-js": "^0.4.0",
     "**/minimist": "^1.2.2"
   }
 }

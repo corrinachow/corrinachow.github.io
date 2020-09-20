@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/src/content/blog`,
         name: `blog`
       }
     },
@@ -47,6 +47,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          "gatsby-remark-autolink-headers",
           {
             resolve: "gatsby-remark-prismjs",
             options: {

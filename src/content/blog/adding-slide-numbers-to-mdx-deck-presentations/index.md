@@ -1,7 +1,7 @@
 ---
 title: Adding Slide Numbers to MDX Deck Presentations
 date: "2020-07-26T22:12:03.284Z"
-description: "A few things that helped me prepare for my first remote lecture, which can hopefully start a dialogue for us to share best practices."
+description: "A tutorial on how to add slide numbers to MDX deck presentation."
 ---
 
 MDX Deck is a fast and lightweight library that lets you write presentations in markdown. More specifically, it uses [MDX](https://github.com/mdx-js/mdx), an extension of markdown that allows you to use JSX and React components. This allows you to do cool things like import React components into your slide deck and interact with them.

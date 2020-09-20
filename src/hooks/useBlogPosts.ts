@@ -1,22 +1,31 @@
-import { useStaticQuery, graphql } from "gatsby";
-import { ContentfulBlogPostEdge } from "../graphqlTypes";
+import { graphql, useStaticQuery } from "gatsby";
+import { MarkdownRemarkEdge } from "../graphqlTypes";
 
-const useBlogPosts = (): Array<ContentfulBlogPostEdge> => {
+const useBlogPosts = (): Array<MarkdownRemarkEdge | undefined> => {
   const data = useStaticQuery(graphql`
-    query BlogPostsQuery {
-      allContentfulBlogPost {
+    {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { title: { ne: "" } } }
+      ) {
         edges {
           node {
-            title
-            slug
-            description
-            createdAt(formatString: "MMMM Do, YYYY")
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+            }
+            id
           }
         }
       }
     }
   `);
-  return data.allContentfulBlogPost.edges;
+  return data.allMarkdownRemark.edges;
 };
 
 export default useBlogPosts;

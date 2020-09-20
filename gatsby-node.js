@@ -5,7 +5,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  // TODO: Remove node.frontmatter.title filter once Contentful is removed
+  if (node.internal.type === `MarkdownRemark` && node.frontmatter.title) {
     const value = createFilePath({ node, getNode });
 
     createNodeField({
@@ -22,8 +23,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { frontmatter: { title: { ne: "" } } }
       ) {
         edges {
           node {
@@ -44,12 +45,13 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const posts = result.data.allMarkdownRemark.edges;
+
   posts.forEach(post => {
     return createPage({
-      path: `/blog/${post.node.slug}/`,
+      path: `/blog${post.node.fields.slug}`,
       component: path.resolve("./src/templates/BlogPostTemplate.tsx"),
       context: {
-        slug: post.node.slug
+        slug: post.node.fields.slug
       }
     });
   });

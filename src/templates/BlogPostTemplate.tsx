@@ -2,27 +2,30 @@ import { graphql } from "gatsby";
 import React from "react";
 import { ContentfulBlogPost, Query } from "../graphqlTypes";
 import Layout from "../components/Layout";
+import { kebabCase } from "lodash";
+import Window from "../components/Window";
 
 interface Props {
   data: Query;
 }
 
 const BlogPostTemplate: React.FC<Props> = ({ data }: Props): JSX.Element => {
-  const {
-    title,
-    createdAt,
-    body: {
-      childMarkdownRemark: { html }
-    },
-    heroImage
-  }: ContentfulBlogPost = data.contentfulBlogPost;
+  const { frontmatter, html } = data.markdownRemark;
+
+  const { title, date } = frontmatter;
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <p>{createdAt}</p>
-      <img src={heroImage?.fluid.src} alt={heroImage?.description} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Window
+        fullWidth={true}
+        isThin={false}
+        name={`~/blog${kebabCase(title)}.md`}
+      >
+        <h1>{title}</h1>
+        <p>{date}</p>
+        {/* <img src={heroImage?.fluid.src} alt={heroImage?.description} /> */}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Window>
     </Layout>
   );
 };
@@ -30,19 +33,15 @@ const BlogPostTemplate: React.FC<Props> = ({ data }: Props): JSX.Element => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      createdAt(formatString: "MMMM Do, YYYY")
-      title
-      heroImage {
-        fluid {
-          src
-        }
-      }
-      body {
-        childMarkdownRemark {
-          html
-        }
+  query BlogPostBySlug($slug: String) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
       }
     }
   }

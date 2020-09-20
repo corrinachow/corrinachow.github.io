@@ -1,9 +1,8 @@
-import classNames from "classnames";
-import Layout from "../components/Layout";
-import ArticlePreview from "../components/ArticlePreview";
-import useBlogPosts from "../hooks/useBlogPosts";
-import { ContentfulBlogPostEdge } from "../graphqlTypes";
 import styled from "@emotion/styled";
+import classNames from "classnames";
+import ArticlePreview from "../components/ArticlePreview";
+import Layout from "../components/Layout";
+import useBlogPosts from "../hooks/useBlogPosts";
 
 const StyledH1 = styled.h1({
   fontFamily: "Inconsolata, monospace",
@@ -14,13 +13,14 @@ const StyledH1 = styled.h1({
 
 const WritingPage = (): JSX.Element => {
   const edges = useBlogPosts();
+
   return (
     <Layout>
       <div className={classNames("row")}>
         <div className={classNames("col-xs-12")}>
           <StyledH1>Latest Articles |</StyledH1>
-          {edges.map(({ node }: ContentfulBlogPostEdge, index: number) => (
-            <ArticlePreview post={node} index={index} />
+          {edges.map(({ node }) => (
+            <ArticlePreview post={node} key={node.id} />
           ))}
         </div>
       </div>

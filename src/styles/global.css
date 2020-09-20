@@ -19,7 +19,8 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-ul {
+nav > ul,
+footer ul {
   list-style-type: none;
   padding-left: 0;
   line-height: calc(1rem * 1.25);
@@ -36,14 +37,6 @@ a:hover {
 
 .highlight {
   color: #faed27;
-}
-
-code {
-  color: #faed27;
-  border: 1px solid #e20f66;
-  padding: 0.1rem 0.25rem;
-  font-size: 16px;
-  font-family: "Inconsolata";
 }
 
 img {
@@ -107,10 +100,36 @@ body {
   color: red;
 }
 
-table,
-tr,
-td,
-th {
-  padding: 0;
-  margin: 0;
+figcaption {
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.gatsby-highlight,
+code {
+  font-size: 0.8rem;
+  font-family: "Inconsolata", sans-serif !important;
+  margin-bottom: 2rem;
+}
+
+code > ul {
+  list-style-type: circle;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0.25rem 0.5rem;
+}
+table tr:nth-child(even) {
+  background: #0d1317;
+}
+
+table thead {
+  background: #0d1317;
 }

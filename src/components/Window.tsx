@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { themes } from "./Layout";
 
-const ProjectContainer = styled.div({
+const Container = styled.div({
   position: "relative",
   padding: "2rem 0 5rem 0"
 });
@@ -60,17 +60,20 @@ const TopBar = styled.div({
   }
 });
 
-const ProjectBody = styled.div<any>({
+const Body = styled.div<any>({
   padding: "1rem",
   position: "relative",
   width: "100%",
   background: "black"
 });
 
-const ProjectContent = styled.div({
-  position: "relative",
-  fontSize: "1rem"
-});
+const Content = styled.div<{ isThin: boolean }>(
+  {
+    position: "relative",
+    fontSize: "1rem"
+  },
+  props => ({ padding: props.isThin ? "0rem" : "3rem" })
+);
 
 const Dot = styled.div<any>(
   {
@@ -85,12 +88,17 @@ const Dot = styled.div<any>(
   })
 );
 
-const Window: React.FC<any> = ({ children, name, fullWidth }) => {
+const Window: React.FC<any> = ({
+  children,
+  name,
+  fullWidth,
+  isThin = true
+}) => {
   const [topWindow, setTopWindow] = useState<string>("");
 
   return (
     <Draggable handle=".handle">
-      <ProjectContainer>
+      <Container>
         <ProjectWindow
           onClick={() => setTopWindow(`${name}-description`)}
           topWindow={topWindow}
@@ -107,11 +115,11 @@ const Window: React.FC<any> = ({ children, name, fullWidth }) => {
               <span>{name}</span>
             </div>
           </TopBar>
-          <ProjectBody>
-            <ProjectContent>{children}</ProjectContent>
-          </ProjectBody>
+          <Body>
+            <Content isThin={isThin}>{children}</Content>
+          </Body>
         </ProjectWindow>
-      </ProjectContainer>
+      </Container>
     </Draggable>
   );
 };

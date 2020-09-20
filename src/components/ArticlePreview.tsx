@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import React from "react";
-import { ContentfulBlogPost } from "../graphqlTypes";
+import { MarkdownRemark } from "../graphqlTypes";
 import Window from "./Window";
 
 interface Props {
-  post: ContentfulBlogPost;
-  index: number;
+  post: MarkdownRemark;
 }
 const Article = styled.article({
   display: "flex",
@@ -23,18 +22,21 @@ const Article = styled.article({
 });
 const ArticlePreview: React.FC<Props> = (props: Props) => {
   const {
-    post: { title, slug, description, createdAt }
+    post: { fields, frontmatter }
   } = props;
+
+  const slug = fields.slug;
+
   return (
-    <Window fullWidth={true} name={`~/blog/${slug}.md`}>
+    <Window fullWidth={true} name={`~/blog${slug.slice(0, -1)}.md`}>
       <Article>
         <header>
           <h3>
-            <Link to={`/blog/${slug}`}>{title}</Link>
+            <Link to={`/blog${slug}`}>{frontmatter.title}</Link>
           </h3>
-          <small>{createdAt}</small>
+          <small>{frontmatter.date}</small>
         </header>
-        <p>{description}</p>
+        <p>{frontmatter.description}</p>
       </Article>
     </Window>
   );

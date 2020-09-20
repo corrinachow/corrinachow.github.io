@@ -24,6 +24,7 @@ module.exports = {
         icon: "src/images/favicon.png"
       }
     },
+
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -31,11 +32,31 @@ module.exports = {
         head: false
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content/blog`,
+        name: `blog`
+      }
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          "gatsby-remark-autolink-headers",
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              inlineCodeMarker: "÷"
+            }
+          }
+        ]
+      }
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-transition-link",
     {

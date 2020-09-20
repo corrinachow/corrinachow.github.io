@@ -24,6 +24,7 @@ module.exports = {
         icon: "src/images/favicon.png"
       }
     },
+
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -42,7 +43,19 @@ module.exports = {
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-plugin-typescript",
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              inlineCodeMarker: "÷"
+            }
+          }
+        ]
+      }
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-transition-link",
     {

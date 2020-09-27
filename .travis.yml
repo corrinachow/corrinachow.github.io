@@ -3,7 +3,7 @@ before_script:
   - npm install -g gatsby
 cache:
   directories:
-  - node_modules
+    - node_modules
 node_js:
   - "10"
 deploy:

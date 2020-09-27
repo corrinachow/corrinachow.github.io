@@ -84,7 +84,7 @@
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
-    "deploy": "gatsby build && gh-pages -d public -b master",
+    "deploy": "gatsby build && gh-pages -d public -b https://$GH_TOKEN@github.com/corrinachow/corrinachow.github.io.git",
     "test": "test --passWithNoTests"
   },
   "resolutions": {

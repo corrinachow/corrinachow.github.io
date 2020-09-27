@@ -72,25 +72,6 @@ img {
   margin-bottom: 10rem;
 }
 
-.small-font {
-  font-size: 11px;
-  letter-spacing: 0.005em;
-  line-height: 15px;
-}
-
-.large-font {
-  font-family: "Inconsolata", sans-serif;
-  font-size: 3rem;
-  color: #fff;
-  letter-spacing: -0.022em;
-  line-height: 56px;
-}
-
-.large-text {
-  font-size: 1.5rem;
-  line-height: 1.2;
-}
-
 body {
   width: 100%;
   margin: 0;

@@ -1,9 +1,12 @@
 import { graphql } from "gatsby";
-import React from "react";
-import { ContentfulBlogPost, Query } from "../graphqlTypes";
-import Layout from "../components/Layout";
 import { kebabCase } from "lodash";
+import React from "react";
+import Layout from "../components/Layout";
 import Window from "../components/Window";
+import { Query } from "../graphqlTypes";
+import useWindowDimensions, {
+  DEFAULT_SMALL_MOBILE_WIDTH
+} from "../hooks/useWindowDimensions/useWindowDimensions";
 
 interface Props {
   data: Query;
@@ -11,6 +14,8 @@ interface Props {
 
 const BlogPostTemplate: React.FC<Props> = ({ data }: Props): JSX.Element => {
   const { frontmatter, html } = data.markdownRemark;
+  const { width } = useWindowDimensions();
+  const isMobile = width < DEFAULT_SMALL_MOBILE_WIDTH;
 
   const { title, date } = frontmatter;
 
@@ -18,7 +23,7 @@ const BlogPostTemplate: React.FC<Props> = ({ data }: Props): JSX.Element => {
     <Layout>
       <Window
         fullWidth={true}
-        isThin={false}
+        isThin={isMobile}
         name={`~/blog${kebabCase(title)}.md`}
       >
         <h1>{title}</h1>

@@ -156,8 +156,6 @@ const Project: React.FC<Props> = (props: Props) => {
   const imageExtension = useRef(Math.random() < 0.5 ? ".png" : ".jpg");
 
   useEffect(() => {
-    const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-
     const secondaryWindowPosition = {
       top: `${random(1.2, 5.2)}rem`,
       right: `${random(10, 20)}rem`,

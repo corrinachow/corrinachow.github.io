@@ -60,6 +60,8 @@ I created [gists](https://gist.github.com/) for each solution to compare solutio
 
 I combined the above by creating an Excel sheet like below:
 
+<div style="overflow-y:auto;">
+
 | Date       | Problem Name          | Link | gist | JS  | Java | Reviewed   | Notes               |
 | ---------- | --------------------- | ---- | ---- | --- | ---- | ---------- | ------------------- |
 | 2020-01-01 | Remove Linked List El | 🔗   | 🔗   | ✅  | ✅   | 2020-01-15 | Linked list         |
@@ -71,9 +73,11 @@ I also kept track of system design questions I had covered in a simplified table
 | ---------- | -------------- | ---- | ------------- |
 | 2020-01-01 | Design TinyURL | 🔗   | 2020-01-15    |
 
----
+</div>
 
 ## Resources
+
+<div style="overflow-y:auto;">
 
 | Symbol    | Definition                         |
 | --------- | ---------------------------------- |
@@ -82,6 +86,8 @@ I also kept track of system design questions I had covered in a simplified table
 | ⭐️⭐️⭐️ | Advanced/Ample time (6+ weeks)     |
 | JS        | Examples in JavaScript             |
 | Java      | Examples in Java                   |
+
+</div>
 
 ### Books and eBooks
 

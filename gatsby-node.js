@@ -46,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.allMarkdownRemark.edges;
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     return createPage({
       path: `/blog${post.node.fields.slug}`,
       component: path.resolve("./src/templates/BlogPostTemplate.tsx"),

@@ -1,20 +1,16 @@
-import React from "react";
-
 import classNames from "classnames";
+import { graphql } from "gatsby";
+import React from "react";
 import Layout from "../components/Layout";
 import Window from "../components/Window";
-import useAboutContent from "../hooks/useAboutContent";
-import styled from "@emotion/styled";
+import { Query } from "../graphqlTypes";
 
-const StyledH1 = styled.h1({
-  fontFamily: "Inconsolata, monospace",
-  fontWeight: 500,
-  // TODO: Fix alignment in all Windows
-  marginLeft: "-.75rem"
-});
+interface Props {
+  data: Query;
+}
 
-const About = () => {
-  const { aboutPage } = useAboutContent();
+const About = ({ data }: Props) => {
+  const { file } = data;
 
   return (
     <Layout>
@@ -25,7 +21,7 @@ const About = () => {
               <div
                 className={classNames("col-xs-12")}
                 dangerouslySetInnerHTML={{
-                  __html: aboutPage.childMarkdownRemark.html
+                  __html: file.childMarkdownRemark.html
                 }}
               />
             </div>
@@ -37,3 +33,13 @@ const About = () => {
 };
 
 export default About;
+
+export const pageQuery = graphql`
+  {
+    file(childMarkdownRemark: { frontmatter: { title: { eq: "About" } } }) {
+      childMarkdownRemark {
+        html
+      }
+    }
+  }
+`;

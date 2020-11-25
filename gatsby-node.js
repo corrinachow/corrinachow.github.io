@@ -46,7 +46,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   posts.forEach((post) => {
     const slug = `/${post.node.relativeDirectory}/`;
-    console.log(JSON.stringify(post, null, 2));
+
     return createPage({
       path: `/blog${slug}`,
       component: path.resolve("./src/templates/BlogPostTemplate.tsx"),

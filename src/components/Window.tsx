@@ -19,7 +19,7 @@ const ProjectWindow = styled.div<{
   {
     border: "1px solid #fff"
   },
-  props => {
+  (props) => {
     const {
       isPrimary,
       secondaryWindowPosition,
@@ -34,7 +34,7 @@ const ProjectWindow = styled.div<{
       transition: "z-index 0.3s ease"
     };
     return {
-      zIndex: name === topWindow ? 1 : 0,
+      zIndex: name === topWindow ? 100 : 0,
       position: isPrimary ? "relative" : "absolute",
       maxWidth: fullWidth ? "1024px" : "500px",
       ...(!isPrimary && secondaryStyles)
@@ -45,17 +45,20 @@ const ProjectWindow = styled.div<{
 const TopBar = styled.div({
   display: "flex",
   width: "100%",
-  padding: "0.4rem 1rem",
+  padding: "0.25rem 1rem",
   borderBottom: "1px solid #fff",
   background: themes.light.primaryColor,
   "> div": {
     display: "flex",
+    alignItems: "center",
     width: "85%"
   },
-  "& span": {
+  "& p": {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
     fontSize: "0.5rem",
     color: themes.light.invertedPrimary,
-    display: "inline-block",
     margin: "0 auto"
   }
 });
@@ -72,18 +75,18 @@ const Content = styled.div<{ isThin: boolean }>(
     position: "relative",
     fontSize: "1rem"
   },
-  props => ({ padding: props.isThin ? "0rem" : "3rem" })
+  (props) => ({ padding: props.isThin ? "0rem" : "3rem" })
 );
 
 const Dot = styled.div<any>(
   {
-    height: "0.65rem",
-    width: "0.65rem",
-    marginRight: "0.5rem",
+    minHeight: "0.5rem",
+    minWidth: "0.5rem",
+    marginRight: "0.75rem",
     borderRadius: "50%",
     display: "inline-block"
   },
-  props => ({
+  (props) => ({
     backgroundColor: props.backgroundColor
   })
 );
@@ -112,7 +115,7 @@ const Window: React.FC<any> = ({
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />
               <Dot backgroundColor={"#00CA4E"} />
-              <span>{name}</span>
+              <p>{name}</p>
             </div>
           </TopBar>
           <Body>

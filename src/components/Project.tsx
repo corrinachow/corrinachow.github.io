@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import classNames from "classnames";
-import { snakeCase, random } from "lodash";
+import { random, snakeCase } from "lodash";
 import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import { ContentfulProject } from "../graphqlTypes";
@@ -29,7 +29,7 @@ const ProjectWindow = styled.div<{
     // margin: "0 auto",
     border: "1px solid #fff"
   },
-  props => {
+  (props) => {
     const { isPrimary, secondaryWindowPosition, topWindow, name } = props;
 
     const secondaryStyles = {
@@ -50,17 +50,20 @@ const ProjectWindow = styled.div<{
 const TopBar = styled.div({
   display: "flex",
   width: "100%",
-  padding: "0.4rem 1rem",
+  padding: "0.25rem 1rem",
   borderBottom: "1px solid #fff",
   background: themes.light.primaryColor,
   "> div": {
     display: "flex",
+    alignItems: "center",
     width: "85%"
   },
-  "& span": {
+  "& p": {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
     fontSize: "0.5rem",
     color: themes.light.invertedPrimary,
-    display: "inline-block",
     margin: "0 auto"
   }
 });
@@ -79,7 +82,7 @@ const PreviewImage = styled.div<any>(
     width: "100%",
     minHeight: "25rem"
   },
-  props => ({
+  (props) => ({
     "::before": {
       content: '""',
       top: "0",
@@ -101,13 +104,13 @@ const ProjectContent = styled.div({
 
 const Dot = styled.div<any>(
   {
-    height: "0.65rem",
-    width: "0.65rem",
-    marginRight: "0.5rem",
+    minHeight: "0.5rem",
+    minWidth: "0.5rem",
+    marginRight: "0.75rem",
     borderRadius: "50%",
     display: "inline-block"
   },
-  props => ({
+  (props) => ({
     backgroundColor: props.backgroundColor
   })
 );
@@ -181,7 +184,7 @@ const Project: React.FC<Props> = (props: Props) => {
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />
               <Dot backgroundColor={"#00CA4E"} />
-              <span>{`${snakeCase(name)}${imageExtension.current}`}</span>
+              <p>{`${snakeCase(name)}${imageExtension.current}`}</p>
             </div>
           </TopBar>
           <PreviewImage backgroundUrl={logo.sizes.src}></PreviewImage>
@@ -201,13 +204,13 @@ const Project: React.FC<Props> = (props: Props) => {
               <Dot backgroundColor={"#FF605C"} />
               <Dot backgroundColor={"#FFBD44"} />
               <Dot backgroundColor={"#00CA4E"} />
-              <span>{`~/select-projects/${snakeCase(name)}.md`}</span>
+              <p>{`~/select-projects/${snakeCase(name)}.md`}</p>
             </div>
           </TopBar>
 
           <ProjectBody backgroundUrl={logo.sizes.src}>
             <ProjectContent>
-              <span>{`${type}`}</span>
+              <p>{`${type}`}</p>
               <ProjectTitle>{name}</ProjectTitle>
               <div>
                 <p>{description}</p>

@@ -1,27 +1,18 @@
-import { useStaticQuery, graphql } from "gatsby";
-import { ContentfulAbout } from "../graphqlTypes";
+import { graphql, useStaticQuery } from "gatsby";
+import { File } from "../graphqlTypes";
 
-const useAboutContent = (): ContentfulAbout => {
+const useAboutContent = (): File => {
   const data = useStaticQuery(graphql`
-    query aboutMeQuery {
-      contentfulAbout {
-        name
-        shortBio
-        aboutMe {
-          childMarkdownRemark {
-            html
-          }
-        }
-        aboutPage {
-          childMarkdownRemark {
-            html
-          }
+    {
+      file(relativeDirectory: { eq: "summary" }) {
+        childMarkdownRemark {
+          html
         }
       }
     }
   `);
 
-  return data.contentfulAbout;
+  return data.file;
 };
 
 export default useAboutContent;

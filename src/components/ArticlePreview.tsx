@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import React from "react";
-import { MarkdownRemark } from "../graphqlTypes";
+import { File } from "../graphqlTypes";
 import Window from "./Window";
 
 interface Props {
-  post: MarkdownRemark;
+  post: File;
 }
 const Article = styled.article({
   display: "flex",
@@ -20,15 +20,16 @@ const Article = styled.article({
     padding: 0
   }
 });
-const ArticlePreview: React.FC<Props> = (props: Props) => {
-  const {
-    post: { fields, frontmatter }
-  } = props;
 
-  const slug = fields.slug;
+const ArticlePreview: React.FC<Props> = (props: Props) => {
+  const { post } = props;
+  const { childMarkdownRemark } = post;
+  const { frontmatter } = childMarkdownRemark;
+
+  const slug = `/${post.relativeDirectory}`;
 
   return (
-    <Window fullWidth={true} name={`~/blog${slug.slice(0, -1)}.md`}>
+    <Window fullWidth={true} name={`~/blog${slug}.md`}>
       <Article>
         <header>
           <h3>

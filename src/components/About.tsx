@@ -1,6 +1,6 @@
-import React from "react";
-import classNames from "classnames";
 import styled from "@emotion/styled";
+import classNames from "classnames";
+import React from "react";
 import useAboutContent from "../hooks/useAboutContent";
 import Window from "./Window";
 
@@ -34,14 +34,17 @@ function renderLongBio(html: string): JSX.Element {
 }
 
 const About = (): JSX.Element => {
-  const { aboutMe, name, shortBio } = useAboutContent();
+  const data = useAboutContent();
   return (
     <>
       <div className={classNames("row", "padding-10")}>
         <div className={classNames("col-xs-12")}>
           <Window name={`~/home/corrina.md`} fullWidth={true}>
-            {renderShortBio(name, shortBio)}
-            {renderLongBio(aboutMe.childMarkdownRemark.html)}
+            {renderShortBio(
+              "Corrina Chow",
+              " is a software developer based in Tio'tia:ke."
+            )}
+            {renderLongBio(data.childMarkdownRemark.html)}
           </Window>
         </div>
       </div>

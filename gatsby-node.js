@@ -22,17 +22,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { title: { ne: "" } } }
-      ) {
+      allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
         edges {
           node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
+            relativeDirectory
+            childMarkdownRemark {
+              excerpt
+              frontmatter {
+                title
+              }
             }
           }
         }
@@ -44,14 +42,16 @@ exports.createPages = async ({ graphql, actions }) => {
     return result.error;
   }
 
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.allFile.edges;
 
   posts.forEach((post) => {
+    const slug = `/${post.node.relativeDirectory}/`;
+    console.log(JSON.stringify(post, null, 2));
     return createPage({
-      path: `/blog${post.node.fields.slug}`,
+      path: `/blog${slug}`,
       component: path.resolve("./src/templates/BlogPostTemplate.tsx"),
       context: {
-        slug: post.node.fields.slug
+        slug: slug
       }
     });
   });

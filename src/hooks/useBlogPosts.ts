@@ -1,31 +1,34 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { MarkdownRemarkEdge } from "../graphqlTypes";
+import { FileConnection, FileEdge, MarkdownRemarkEdge } from "../graphqlTypes";
 
-const useBlogPosts = (): Array<MarkdownRemarkEdge | undefined> => {
+const useBlogPosts = (): Array<FileEdge | undefined> => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { title: { ne: "" } } }
+      allFile(
+        filter: { sourceInstanceName: { eq: "blog" } }
+        sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
       ) {
         edges {
           node {
-            excerpt
-            fields {
-              slug
+            relativeDirectory
+            childMarkdownRemark {
+              excerpt
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                description
+                date(formatString: "MMMM DD, YYYY")
+              }
+              id
             }
-            frontmatter {
-              date(formatString: "MMMM DD, YYYY")
-              title
-              description
-            }
-            id
           }
         }
       }
     }
   `);
-  return data.allMarkdownRemark.edges;
+  return data.allFile.edges;
 };
 
 export default useBlogPosts;

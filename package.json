@@ -63,7 +63,7 @@
     "gatsby-source-dev": "^0.1.4",
     "gatsby-transformer-remark": "^2.6.33",
     "graphql": "^15.3.0",
-    "gsap": "^3.2.4",
+    "gsap": "^3.6.0",
     "prettier": "^2.1.2",
     "react-emotion": "^10.0.0",
     "react-is": "^16.13.0",

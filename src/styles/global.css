@@ -1,116 +1,27 @@
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
+@layer base {
+  :root,
+  :root[data-theme='light'] {
+    color-scheme: light;
+    /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
+    --theme-bg: 0deg 0% 98%;
+    --theme-link: 172deg 18% 41%;
+    --theme-text: 203deg 11% 15%;
+    --theme-accent: 351deg 66% 48%;
+    --theme-accent-2: 0deg 0% 7%;
+    --theme-quote: 351deg 66% 48%;
+  }
 
-html {
-  --pink: #e20f66;
-  --reflexBlueC: #001489;
-  --palePink: rgb(8, 7, 6);
-
-  letter-spacing: 0.007em;
-}
-
-html::-webkit-scrollbar {
-  display: none;
-}
-
-nav > ul,
-footer ul {
-  list-style-type: none;
-  padding-left: 0;
-  line-height: calc(1rem * 1.25);
-}
-
-a {
-  text-decoration: none;
-  transition: background 0.4s ease;
-}
-
-a:hover {
-  background: #fff;
-}
-
-.highlight {
-  color: #faed27;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-#projects {
-  opacity: 0;
-}
-
-.margin-1 {
-  margin-bottom: 1rem;
-}
-
-.margin-2 {
-  margin-bottom: 2rem;
-}
-
-.margin-3 {
-  margin-bottom: 3rem;
-}
-
-.margin-4 {
-  margin-bottom: 4rem;
-}
-
-.margin-5 {
-  margin-bottom: 5rem;
-}
-
-.margin-10 {
-  margin-bottom: 10rem;
-}
-
-body {
-  width: 100%;
-  margin: 0;
-}
-
-.active {
-  color: red;
-}
-
-figcaption {
-  font-style: italic;
-  margin-bottom: 1rem;
-  font-size: 0.8rem;
-}
-
-.gatsby-highlight,
-code {
-  font-size: 0.8rem;
-  font-family: "Inconsolata", sans-serif !important;
-  margin-bottom: 2rem;
-}
-
-code > ul {
-  list-style-type: circle;
-}
-
-table {
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-}
-table td,
-table th {
-  padding: 0.25rem 0.5rem;
-}
-table tr:nth-child(even) {
-  background: #0d1317;
-}
-
-table thead {
-  background: #0d1317;
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --theme-bg: 210deg 6% 12%;
+    --theme-link: 330deg 49% 67%;
+    --theme-text: 220deg 3% 79%;
+    --theme-accent: 159deg 64% 45%;
+    --theme-accent-2: 0deg 0% 93%;
+    --theme-quote: 102deg 100% 86%;
+  }
 }

@@ -1,23 +1,12 @@
 {
-  "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
-    "lib": ["es6", "es7", "dom"],
-    "sourceMap": true,
-    "allowJs": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noUnusedLocals": true
-  },
-  "types": ["node", "@emotion/core"],
-  "include": ["./src/**.ts", "./**.js"],
-  "exclude": [
-    "**/build/**",
-    "**/coverage/**",
-    "**/dist/**",
-    "**/node_modules/**",
-    "**/types/**"
-  ]
+	"extends": "astro/tsconfigs/strictest",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"lib": ["es2022", "dom", "dom.iterable"],
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }
